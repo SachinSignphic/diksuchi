@@ -1,20 +1,23 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import './Loaders.css'
-import gsap from 'gsap'
 import { progressBarAnimation } from './animation';
 
-const Loader = () => {
+const Loader = ({ timeline, setState }) => {
     const loadingProgressRef = useRef();
     const loadingPercentRef = useRef();
     const loadingTitleRef = useRef();
     const loadingBarRef = useRef();
 
-    useLayoutEffect(() => {
-        const timeline = gsap.timeline();
-
-        timeline.add(progressBarAnimation(loadingProgressRef, loadingPercentRef, loadingTitleRef, loadingBarRef));
-        // timeline.to(loadingBarRef.current, { opacity: 0 });
-    }, []);
+    useEffect(() => {
+        // Use the timeline prop to create the timeline in the Loader component
+        timeline && timeline.add(progressBarAnimation(
+            loadingProgressRef,
+            loadingPercentRef,
+            loadingTitleRef,
+            loadingBarRef,
+            setState
+        ));
+    }, [timeline]);
 
     return (
         <div className='loading-screen'>

@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-export const menuBarAnimation = (menuBarRef) => {
+export const navBarAnimation = (menuBarRef) => {
     const menuBarTimeline = gsap.timeline();
 
     menuBarTimeline.fromTo(menuBarRef.current,

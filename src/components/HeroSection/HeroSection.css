@@ -3,5 +3,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    min-height: 100vh;
     padding: 0.4rem;
+    background-color: #323232; /* this is just an example color. change to actual one and then chnage color of the hr in loader too */
 }

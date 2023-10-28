@@ -1,15 +1,15 @@
 import { useLayoutEffect, useRef } from 'react';
-import './MenuBar.css';
+import './Navbar.css';
 import { gsap } from 'gsap';
-import { menuBarAnimation } from './animation';
+import { navBarAnimation } from './animation';
 
-const MenuBar = () => {
+const Navbar = () => {
   const menuBarRef = useRef();
 
   useLayoutEffect(() => {
       const timeline = gsap.timeline();
 
-      timeline.add(menuBarAnimation(menuBarRef));
+      timeline.add(navBarAnimation(menuBarRef));
 
   }, []);
 
@@ -20,4 +20,4 @@ const MenuBar = () => {
   )
 }
 
-export default MenuBar
+export default Navbar
