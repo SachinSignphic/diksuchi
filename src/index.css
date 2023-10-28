@@ -1,8 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Pearl;
+  src: url('./assets/fonts/TAN-PEARL.otf');
+}
+
+@font-face {
+  font-family: Glacial-Regular;
+  src: url('./assets/fonts/GlacialIndifference-Regular.otf');
+}
+
+@font-face {
+  font-family: Glacial-Bold;
+  src: url('./assets/fonts/GlacialIndifference-Bold.otf');
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  font-size: 14px;
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -11,9 +33,18 @@
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.font-pearl {
+  font-family: Pearl, serif;
+}
+
+.font-glacial-r {
+  font-family: Glacial-Regular, sans-serif;
+}
+
+.font-glacial-b {
+  font-family: Glacial-Bold, sans-serif;
 }

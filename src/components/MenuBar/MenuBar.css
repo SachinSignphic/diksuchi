@@ -1,0 +1,9 @@
+.menu-nav {
+    display: flex;
+    padding: 0.8rem 0.6rem;
+    align-items: center;
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    width: 90%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.063);
+}

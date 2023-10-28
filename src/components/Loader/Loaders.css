@@ -1,0 +1,51 @@
+.loading-title {
+    font-size: 4.5rem;
+    background: rgb(0,0,0);
+    background: linear-gradient(60deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 35%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 51%, rgba(0,0,0,1) 65%, rgba(0,0,0,1) 100%);
+    background-size: 150% auto;
+    background-origin: border-box;
+    background-position-x: -350px;
+    width: fit-content;
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loading-subtitle {
+    font-size: 2rem;
+}
+
+.loading-screen {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.loading-progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12rem;
+    width: 0;
+    position: relative;
+}
+
+.loading-percent {
+    margin-left: auto;
+}
+
+.loading-bar {
+    border: none;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    /* outline: 1px solid red; */
+    /* transform: scaleX(0); */
+    /* transform-origin: bottom;  */
+}
