@@ -1,0 +1,15 @@
+.company-name {
+    font-size: 9rem;
+    /* line-height: 18rem; */
+    width: 100%;
+    padding-left: 5rem;
+    text-align: left;
+}
+
+.company-subname {
+    font-size: 6rem;
+    background: transparent !important;
+    color: black !important;
+    -webkit-text-stroke-color: aliceblue;
+    -webkit-text-stroke-width: 1px;
+}

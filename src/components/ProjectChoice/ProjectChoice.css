@@ -1,0 +1,14 @@
+.project-choice {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: black;
+}
+
+.fw-card {
+    position: relative;
+}
+
+.fw-card img {
+    width: 100%;
+}

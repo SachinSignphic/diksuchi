@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import { Navbar, HeroSection, Loader, Menu } from "../components";
+import { Navbar, HeroSection, Loader, Menu, Socials, ProjectChoice, HeroHeading } from "../components";
 import './Home.css';
 import { gsap } from "gsap";
 
@@ -24,11 +24,16 @@ const Home = () => {
             {!hasLoaded ? (
                 <Loader timeline={timeline} setState={setHasLoaded} />
             ) : (
-                <HeroSection>
-                    <Navbar />
-                    <Menu /> 
-                    {/* ipodhiku menu ah inga vei.. but it should acutally come at the top after adding button and all */}
-                </HeroSection>
+                <>
+                    <HeroSection>
+                        <Navbar />
+                        {/* <Menu />  */}
+                        {/* ipodhiku menu ah inga vei.. but it should acutally come at the top after adding button and all */}
+                        <Socials />
+                        <HeroHeading />
+                    </HeroSection>
+                    <ProjectChoice />
+                </>
             )}
         </>
     );

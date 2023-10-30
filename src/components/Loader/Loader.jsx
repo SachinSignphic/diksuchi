@@ -21,8 +21,14 @@ const Loader = ({ timeline, setState }) => {
 
     return (
         <div className='loading-screen'>
-            <h1 className='font-pearl loading-title' ref={loadingTitleRef}>DIKSUCHI</h1>
-            <h1 className='font-glacial-r loading-subtitle'>CONSTRUCTIONS</h1>
+            <div className="loading-title-container">
+                <hr className="loading-hr" />
+                <div className="title-container">
+                    <h1 className='font-pearl loading-title' ref={loadingTitleRef}>DIKSUCHI</h1>
+                    <h1 className='font-glacial-r loading-subtitle'>DESIGN STUDIO</h1>
+                </div>
+                <hr className="loading-hr" />
+            </div>
             <div className="loading-progress-wrapper" ref={loadingProgressRef}>
                 <h3 className="loading-percent font-glacial-r" ref={loadingPercentRef} >0</h3>
                 <hr className="loading-bar" ref={loadingBarRef} />
