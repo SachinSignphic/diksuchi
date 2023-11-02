@@ -3,17 +3,14 @@ import './Loaders.css'
 import { progressBarAnimation } from './animation';
 
 const Loader = ({ timeline, setState }) => {
-    const loadingPercentRef = useRef(); // use soon for numbering
+    // const loadingPercentRef = useRef(); // use soon for numbering
     const loadingTitleRef = useRef();
     const loadingSideHRRef = useRef();
 
     useEffect(() => {
         // Use the timeline prop to create the timeline in the Loader component
         timeline && timeline.add(progressBarAnimation(
-            loadingProgressRef,
-            loadingPercentRef,
             loadingTitleRef,
-            loadingBarRef,
             loadingSideHRRef,
             setState
         ));

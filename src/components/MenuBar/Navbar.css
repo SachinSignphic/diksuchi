@@ -9,5 +9,17 @@
 }
 
 .menu-icon {
-    height: 3rem;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.menu-line {
+    width: 2px;
+    height: 2rem;
+    background: black;
+}
+
+.menu-line.short  {
+    height: 1.6rem !important;
 }

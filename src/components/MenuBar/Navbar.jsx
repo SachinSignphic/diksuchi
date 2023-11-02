@@ -15,7 +15,10 @@ const Navbar = () => {
 
   return (
     <div className='menu-nav' ref={menuBarRef}>
-        <div className="menu-icon">||</div>
+        <div className="menu-icon">
+          <span className="menu-line"></span>
+          <span className="menu-line short"></span>
+        </div>
     </div>
   )
 }

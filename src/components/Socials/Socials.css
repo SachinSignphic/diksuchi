@@ -1,6 +1,6 @@
 .socials-bar {
     display: grid;
-    grid-template-rows: 0.2fr 0.5fr 0.2fr;
+    grid-template-rows: 0.25fr 0.45fr 0.2fr;
     gap: 0rem;
     height: 100%;
     place-items: center;
@@ -22,6 +22,7 @@
     transform: rotate(-90deg);
     background: #141413;
     background: linear-gradient(to right, rgb(123, 123, 123) 8%, #FFFFFF 56%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
