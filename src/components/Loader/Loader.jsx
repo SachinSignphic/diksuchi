@@ -3,10 +3,9 @@ import './Loaders.css'
 import { progressBarAnimation } from './animation';
 
 const Loader = ({ timeline, setState }) => {
-    const loadingProgressRef = useRef();
-    const loadingPercentRef = useRef();
+    const loadingPercentRef = useRef(); // use soon for numbering
     const loadingTitleRef = useRef();
-    const loadingBarRef = useRef();
+    const loadingSideHRRef = useRef();
 
     useEffect(() => {
         // Use the timeline prop to create the timeline in the Loader component
@@ -15,6 +14,7 @@ const Loader = ({ timeline, setState }) => {
             loadingPercentRef,
             loadingTitleRef,
             loadingBarRef,
+            loadingSideHRRef,
             setState
         ));
     }, [timeline]);
@@ -22,17 +22,17 @@ const Loader = ({ timeline, setState }) => {
     return (
         <div className='loading-screen'>
             <div className="loading-title-container">
-                <hr className="loading-hr" />
+                <hr className="loading-hr" ref={loadingSideHRRef} />
                 <div className="title-container">
-                    <h1 className='font-pearl loading-title' ref={loadingTitleRef}>DIKSUCHI</h1>
+                    <h1 className='font-glacial-r loading-title' ref={loadingTitleRef}>DIKSUCHI</h1>
                     <h1 className='font-glacial-r loading-subtitle'>DESIGN STUDIO</h1>
                 </div>
-                <hr className="loading-hr" />
+                {/* <hr className="loading-hr" ref={loadingSideHRRef} /> */}
             </div>
-            <div className="loading-progress-wrapper" ref={loadingProgressRef}>
+            {/* <div className="loading-progress-wrapper" ref={loadingProgressRef}>
                 <h3 className="loading-percent font-glacial-r" ref={loadingPercentRef} >0</h3>
                 <hr className="loading-bar" ref={loadingBarRef} />
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -4,7 +4,7 @@ import './Home.css';
 import { gsap } from "gsap";
 
 const Home = () => {
-    const [hasLoaded, setHasLoaded] = useState(true);
+    const [hasLoaded, setHasLoaded] = useState(false);
     const [timeline, setTimeline] = useState(null);
 
     console.log('hasloaded', hasLoaded);

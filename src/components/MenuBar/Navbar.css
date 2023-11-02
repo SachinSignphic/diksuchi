@@ -7,3 +7,7 @@
     width: 90%;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.063);
 }
+
+.menu-icon {
+    height: 3rem;
+}
