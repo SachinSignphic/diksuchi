@@ -30,7 +30,7 @@ const Home = () => {
                         {/* <Menu />  */}
                         {/* ipodhiku menu ah inga vei.. but it should acutally come at the top after adding button and all */}
                         <Socials />
-                        {/* <HeroHeading /> ipodhiku vendaam maybe needed */}
+                        <HeroHeading /> 
                         <HouseModel />
                     </HeroSection>
                     <ProjectChoice />

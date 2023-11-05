@@ -15,7 +15,8 @@
 .cursor-dot {
   width: var(--cursor-size);
   height: var(--cursor-size);
-  background-color: var(--cursor-bg);
+  /* background-color: var(--cursor-bg); */
+  background-color: red;
 }
 
 .cursor-dot-outline {

@@ -1,12 +1,13 @@
 .socials-bar {
-    display: grid;
-    grid-template-rows: 0.25fr 0.45fr 0.2fr;
+    display: flex;
+    flex-direction: column;
     gap: 0rem;
-    height: 100%;
+    height: 80vh;
     place-items: center;
+    justify-content: space-between;
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 43%;
+    left: 1%;
     transform: translateY(-40%);
     /* transform-origin: top left 0; */
 }
@@ -39,7 +40,9 @@
 
 .socials-hr {
     border: none;
-    height: 100%;
+    height: 60vh;
+    margin-top: 50%;
+    margin-bottom: 10%;
     width: 1px;
     background-color: white;
 }
