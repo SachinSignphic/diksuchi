@@ -7,6 +7,8 @@
 
 .fw-card {
     position: relative;
+    height: 50vh;
+    overflow: hidden;
 }
 
 .fw-card img {

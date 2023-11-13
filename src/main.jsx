@@ -4,14 +4,16 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import AnimatedCursor from 'react-animated-cursor'
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  
-    <BrowserRouter>
+
+  <BrowserRouter>
+    <ReactLenis root>
       <App />
       {/* <Cursor /> */}
       <AnimatedCursor
-      color='164, 164, 164'
+        color='164, 164, 164'
         trailingSpeed={10}
         // innerSize={8}
         innerScale={0.8}
@@ -22,7 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         outerStyle={{
           mixBlendMode: 'exclusion'
         }}
-      />    
-    </BrowserRouter>
-  
+      />
+    </ReactLenis>
+  </BrowserRouter>
+
 )

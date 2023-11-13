@@ -1,13 +1,12 @@
 import { OrbitControls, OrthographicCamera, Stats } from '@react-three/drei';
 import './HouseModel.css';
 import { Canvas } from '@react-three/fiber';
-import { Model } from './House3DModel';
+import { Model } from './HouseBaked';
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const HouseModel = () => {
     const canvasRef = useRef();
-    
     
     useLayoutEffect(() => {
         const context = gsap.context(() => {
@@ -22,8 +21,11 @@ const HouseModel = () => {
     return (
         <Canvas ref={canvasRef} className='react-three'>
             {/* <PerspectiveCamera makeDefault position={[Math.PI, Math.PI, Math.PI]} zoom={1} /> */}
-            <OrthographicCamera makeDefault position={[Math.PI/2, Math.PI/2, Math.PI]} far={100} near={-10} rotation={[10, 0, 0]} zoom={100} />
-            <OrbitControls />
+            {/* <OrthographicCamera makeDefault position={[Math.PI/2, Math.PI/2, Math.PI]} far={100} near={-10} rotation={[10, 0, 0]} zoom={100} /> */}
+            {/* <OrbitControls /> */}
+            <ambientLight />
+            <directionalLight intensity={2} />
+            <pointLight position={[0, 1, 0]} />
             <Model />
             <gridHelper args={[20, 20, 0xff0000, 'teal']} />
             {/* <cameraHelper /> */}

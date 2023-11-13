@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import './Navbar.css';
-import { gsap } from 'gsap';
-import { navBarAnimation } from './animation';
+import gsap from 'gsap';
 
 const Navbar = () => {
   const menuBarRef = useRef();
@@ -9,7 +8,12 @@ const Navbar = () => {
   useLayoutEffect(() => {
       const timeline = gsap.timeline();
 
-      timeline.add(navBarAnimation(menuBarRef));
+      timeline.fromTo(menuBarRef.current,
+        { yPercent: -150 },
+        { yPercent: 20, ease: "expo.inOut", duration: 2 }
+      );
+
+      return () => timeline.revert();
 
   }, []);
 

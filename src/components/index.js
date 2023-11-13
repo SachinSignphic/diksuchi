@@ -7,5 +7,6 @@ import Cursor from "./Cursor/Cursor";
 import ProjectChoice from "./ProjectChoice/ProjectChoice";
 import HeroHeading from "./HeroHeading/HeroHeading";
 import HouseModel from "./HouseModel/HouseModel";
+import SwirlingSection from "./SwirlingSection/SwirlingSection";
 
-export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, HouseModel };
+export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, HouseModel, SwirlingSection };
