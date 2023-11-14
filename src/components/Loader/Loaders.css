@@ -51,6 +51,7 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
+    background-color: white;
 }
 
 .loading-progress-wrapper {

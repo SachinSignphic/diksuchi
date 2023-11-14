@@ -8,10 +8,7 @@ const Navbar = () => {
   useLayoutEffect(() => {
       const timeline = gsap.timeline();
 
-      timeline.fromTo(menuBarRef.current,
-        { yPercent: -150 },
-        { yPercent: 20, ease: "expo.inOut", duration: 2 }
-      );
+      timeline.from(menuBarRef.current, { y: -50, opacity: 0, duration: 2, ease: "expo.inOut" })
 
       return () => timeline.revert();
 
