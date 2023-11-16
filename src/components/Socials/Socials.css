@@ -44,3 +44,9 @@
     width: 1px;
     background-color: white;
 } */
+
+@media screen and (max-width: 768px) {
+    .icon {
+        --icon-size: 7vw
+    }
+}

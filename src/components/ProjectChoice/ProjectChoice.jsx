@@ -1,18 +1,121 @@
+import { useLayoutEffect, useRef } from 'react';
 import './ProjectChoice.css';
 import architecture from '/architecture.jpg'
+import gsap from 'gsap';
+import SplitType from 'split-type';
+import { ScrollTrigger } from 'gsap/all';
 
 const ProjectChoice = () => {
-  return (
-    <div className='project-choice'>
-        <div className="fw-card from-right">
-            <img src={architecture} alt="Architecture" />
-            <h1 className="fw-card-title">Architecture</h1>
-        </div>
-        <div className="fw-card from-left">
-            <img src="/interior.jpg" alt="Interior" />
-            <h1 className="fw-card-title">Interior</h1>
-        </div>
-    </div>
+    gsap.registerPlugin(ScrollTrigger)
+    const projectChoiceImage = useRef();
+    const interiorImage = useRef();
+    const architectureTextRef = useRef();
+    const interiorTextRef = useRef();
+    const rightCardRef = useRef();
+    const leftCardRef = useRef();
+
+    const handleImageMouseMove = (e) => {
+        let xValue = e.clientX;
+        let yValue = e.clientY;
+
+        gsap.set(projectChoiceImage.current, { x: xValue * 0.1, duration: 0.1, ease: "expo.inOut" })
+        gsap.set(projectChoiceImage.current, { y: yValue * 0.1, duration: 0.1, ease: "expo.inOut" })
+    }
+
+    const handleImageMouseLeave = (e) => {
+        gsap.set(projectChoiceImage.current, { x: 0, duration: 0.3, ease: "expo.inOut" });
+        gsap.set(projectChoiceImage.current, { y: 0, duration: 0.3, ease: "expo.inOut" });
+    }
+
+    useLayoutEffect(() => {
+        const mM = gsap.matchMedia();
+
+        mM.add("(max-width: 768px)", () => {
+            const tl = gsap.timeline({
+                
+            });
+
+            tl.from(architectureTextRef.current, {
+                scale: 2,
+                ease: "expo.inOut",
+                scrollTrigger: {
+                    trigger: rightCardRef.current,
+                    scrub: true,
+                    start: "-50% bottom",
+                    end: "200 80%",
+                    // markers: true,
+                }
+            })
+            tl.to(projectChoiceImage.current, {
+                x: 30,
+                y: 40,
+                ease: "expo.inOut",
+                scrollTrigger: {
+                    trigger: rightCardRef.current,
+                    scrub: true,
+                    start: "-50% bottom",
+                    end: "200 80%",
+                    // markers: true,
+                }
+            }, "<")
+
+            tl.from(interiorTextRef.current, {
+                scale: 2,
+                ease: "expo.inOut",
+                scrollTrigger: {
+                    trigger: leftCardRef.current,
+                    scrub: true,
+                    start: "-10% bottom",
+                    end: "200 80%",
+                    // markers: true,
+                }
+            })
+            tl.to(interiorImage.current, {
+                x: -30,
+                y: 40,
+                ease: "expo.inOut",
+                scrollTrigger: {
+                    trigger: leftCardRef.current,
+                    scrub: true,
+                    start: "-10% bottom",
+                    end: "200 80%",
+                    // markers: true,
+                }
+            })
+        })
+
+        mM.add("(min-width: 769px)", () => {
+            const architectureLetters = SplitType.create(architectureTextRef.current);
+            const interiotLetter = SplitType.create(interiorTextRef.current);
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: projectChoiceImage.current,
+                    start: "center center",
+                    markers: { fontSize: 20 },
+                }
+            });
+
+            tl.from(architectureLetters.chars, {
+                yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut",    
+            })
+
+            tl.from(interiotLetter.chars, { yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut", })
+        })  
+
+    }, [])
+
+    return (
+      <div className='project-choice'>
+        <div className="fw-card from-right" ref={rightCardRef}>
+              <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+              <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
+          </div>
+          <div className="fw-card from-left" ref={leftCardRef}>
+                <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} />
+                <h1 className="fw-card-title font-glacial-b right-align" ref={interiorTextRef}>Interior</h1>
+          </div>
+      </div>
   )
 }
 

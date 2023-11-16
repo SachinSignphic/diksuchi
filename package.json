@@ -14,11 +14,13 @@
     "@react-three/fiber": "^8.15.9",
     "@studio-freight/react-lenis": "^0.0.36",
     "@types/three": "^0.158.1",
+    "blobity": "^0.2.3",
     "gsap": "^3.12.2",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
+    "split-type": "^0.3.4",
     "three": "^0.158.0"
   },
   "devDependencies": {

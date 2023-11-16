@@ -1,17 +1,15 @@
-import { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import './Navbar.css';
-import gsap from 'gsap';
+import {gsap} from 'gsap';
 
 const Navbar = () => {
   const menuBarRef = useRef();
 
   useLayoutEffect(() => {
-      const timeline = gsap.timeline();
+    const tl = gsap.timeline();
+    tl.from(menuBarRef.current, { y: -145, duration: 2, ease: "expo.inOut" })
 
-      timeline.from(menuBarRef.current, { y: -50, opacity: 0, duration: 2, ease: "expo.inOut" })
-
-      return () => timeline.revert();
-
+    return () => tl.revert();
   }, []);
 
   return (
