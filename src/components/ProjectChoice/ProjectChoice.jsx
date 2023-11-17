@@ -18,13 +18,13 @@ const ProjectChoice = () => {
         let xValue = e.clientX;
         let yValue = e.clientY;
 
-        gsap.set(projectChoiceImage.current, { x: xValue * 0.1, duration: 0.1, ease: "expo.inOut" })
-        gsap.set(projectChoiceImage.current, { y: yValue * 0.1, duration: 0.1, ease: "expo.inOut" })
+        gsap.to(e.target, { x: -xValue * 0.1, duration: 0.3 })
+        gsap.to(e.target, { y: -yValue * 0.3, duration: 0.3 })
     }
 
     const handleImageMouseLeave = (e) => {
-        gsap.set(projectChoiceImage.current, { x: 0, duration: 0.3, ease: "expo.inOut" });
-        gsap.set(projectChoiceImage.current, { y: 0, duration: 0.3, ease: "expo.inOut" });
+        gsap.to(e.target, { x: 0, duration: 0.6, ease: "expo.inOut" });
+        gsap.to(e.target, { y: 0, duration: 0.6, ease: "expo.inOut" });
     }
 
     useLayoutEffect(() => {
@@ -91,7 +91,7 @@ const ProjectChoice = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: projectChoiceImage.current,
-                    start: "center center",
+                    start: "top center",
                     // markers: { fontSize: 20 },
                 }
             });
@@ -101,7 +101,9 @@ const ProjectChoice = () => {
             })
 
             tl.from(interiotLetter.chars, { yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut", })
-        })  
+        })
+
+        return () => mM.revert();
 
     }, [])
 
@@ -112,7 +114,7 @@ const ProjectChoice = () => {
               <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
           </div>
           <div className="fw-card from-left" ref={leftCardRef}>
-                <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} />
+                <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
                 <h1 className="fw-card-title font-glacial-b right-align" ref={interiorTextRef}>Interior</h1>
           </div>
       </div>

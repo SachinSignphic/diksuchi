@@ -16,7 +16,8 @@
 .fw-card img {
     width: 100%;
     filter: grayscale(1);
-    transition: filter 0.4s ease, transform 0.4s ease;
+    transform: scale(1.3);
+    transition: filter 0.4s ease;
 }
 
 .fw-card-title {
@@ -25,17 +26,21 @@
     color: white;
     top: 0;
     left: 3vw;
-    -webkit-text-stroke: 1px;
+    -webkit-text-stroke: 2px;
     overflow: hidden;
     text-transform: uppercase;
     -webkit-text-fill-color: transparent;
+    /* mix-blend-mode: color; */
     /* outline: 1px solid red; */
 }
 
 .fw-card img:hover {
     filter: grayscale(0);
-    transform: scale(1.3);
 }
+
+/* .fw-card img:hover ~ .fw-card-title {
+    -webkit-text-fill-color: white;
+} */
 
 .right-align {
     left: unset;
