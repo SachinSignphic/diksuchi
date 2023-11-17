@@ -8,5 +8,6 @@ import ProjectChoice from "./ProjectChoice/ProjectChoice";
 import HeroHeading from "./HeroHeading/HeroHeading";
 import HouseModel from "./HouseModel/HouseModel";
 import SwirlingSection from "./SwirlingSection/SwirlingSection";
+import ScrollIndicator from "./ScrollIndicator/ScrollIndicator";
 
-export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, HouseModel, SwirlingSection };
+export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, HouseModel, SwirlingSection, ScrollIndicator };

@@ -2,6 +2,7 @@ import React, { useRef, useLayoutEffect } from 'react'
 import './SwirlingSection.css'
 import gsap from 'gsap'
 import { ScrollTrigger, MotionPathPlugin } from 'gsap/all';
+import ScrollIndicator from '../ScrollIndicator/ScrollIndicator';
 
 const SwirlingSection = () => {
     const swirlIntroTextRef = useRef();
@@ -94,7 +95,13 @@ const SwirlingSection = () => {
             tl.from(swirlIntroTextRef.current, { '--rot': 0, duration: 1 })
             tl.to(swirlIntroTextRef.current, { scale: 103, ease: "expo.inOut", duration: 2 })
             tl.to(swirlIntroTextRef.current, { '--perc': 0, duration: 1 })
-            tl.eventCallback("onComplete", () => console.log("over"))
+            tl.eventCallback("onComplete", () => {
+                tl.revert()
+                window.scrollTo({
+                    top: portfolioImagesSectionRef.current.offsetTop,
+                    behavior: "instant"
+                })
+            })
         })
 
         return () => mM.revert();

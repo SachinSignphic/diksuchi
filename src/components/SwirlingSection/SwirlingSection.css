@@ -81,6 +81,7 @@
 
 @media screen and (max-width: 768px) {
     .swirling-section {
+        outline: 1px solid red;
         min-height: 100vh !important;
     }
     .swirling-text-heading {

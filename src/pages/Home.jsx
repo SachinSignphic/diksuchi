@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import { Navbar, HeroSection, Loader, Menu, Socials, ProjectChoice, HeroHeading, HouseModel, SwirlingSection } from "../components";
+import { Navbar, HeroSection, Loader, Menu, Socials, ProjectChoice, HeroHeading, HouseModel, SwirlingSection, ScrollIndicator } from "../components";
 import './Home.css';
 import { gsap } from "gsap";
 
@@ -26,6 +26,7 @@ const Home = () => {
             ) : (
                 <>
                     <HeroSection>
+                        <ScrollIndicator />
                         <Navbar />
                         {/* <Menu />  */}
                         {/* ipodhiku menu ah inga vei.. but it should acutally come at the top after adding button and all */}

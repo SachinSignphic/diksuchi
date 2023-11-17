@@ -26,10 +26,10 @@
     top: 0;
     left: 3vw;
     -webkit-text-stroke: 1px;
-    -webkit-text-fill-color: transparent;
-    /* outline: 1px solid red; */
     overflow: hidden;
     text-transform: uppercase;
+    -webkit-text-fill-color: transparent;
+    /* outline: 1px solid red; */
 }
 
 .fw-card img:hover {

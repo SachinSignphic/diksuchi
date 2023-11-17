@@ -92,7 +92,7 @@ const ProjectChoice = () => {
                 scrollTrigger: {
                     trigger: projectChoiceImage.current,
                     start: "center center",
-                    markers: { fontSize: 20 },
+                    // markers: { fontSize: 20 },
                 }
             });
 
