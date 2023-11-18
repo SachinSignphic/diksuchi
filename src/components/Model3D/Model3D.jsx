@@ -1,11 +1,11 @@
 import { OrbitControls, OrthographicCamera, Stats } from '@react-three/drei';
-import './HouseModel.css';
 import { Canvas } from '@react-three/fiber';
-import { Model } from './HouseBaked';
 import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { Model } from './CityBuildingModel';
+import './Model3D.css'
 
-const HouseModel = () => {
+const Model3D = () => {
     const canvasRef = useRef();
     
     useLayoutEffect(() => {
@@ -14,7 +14,7 @@ const HouseModel = () => {
             
             tl.from(canvasRef.current, { opacity: 0, duration: 2, ease: "power3.inOut" })
         });
-
+        
         return () => context.revert();
     })
     
@@ -35,4 +35,4 @@ const HouseModel = () => {
     )
 }
 
-export default HouseModel
+export default Model3D

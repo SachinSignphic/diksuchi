@@ -6,10 +6,10 @@ import Socials from "./Socials/Socials";
 import Cursor from "./Cursor/Cursor";
 import ProjectChoice from "./ProjectChoice/ProjectChoice";
 import HeroHeading from "./HeroHeading/HeroHeading";
-import HouseModel from "./HouseModel/HouseModel";
+import Model3D from "./Model3D/Model3D";
 import SwirlingSection from "./SwirlingSection/SwirlingSection";
 import ScrollIndicator from "./ScrollIndicator/ScrollIndicator";
 import ArchitectureGallery from "./ArchitectureGallery/ArchitectureGallery";
 import InteriorGallery from "./InteriorGallery/InteriorGallery";
 
-export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, HouseModel, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery };
+export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, Model3D, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery };

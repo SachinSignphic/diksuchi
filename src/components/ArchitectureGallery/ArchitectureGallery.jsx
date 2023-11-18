@@ -15,16 +15,21 @@ const ArchitectureGallery = () => {
                         <img src="/Frame 76.png" alt="" />
                     </div>
                     <div className="modern-container">
+                        <h1 className='font-glacial-r'>THE MODERN</h1>
                         <img src="/Frame 77.png" alt="" />
                     </div>
                 </div>
                 <div className="right-images">
                     <div className="text-and-image">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptate?</p>
-                        <img src="/Frame 78.png" alt="" />
+                        <p className='font-glacial-r'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptate?</p>
+                        <div>
+                            <img src="/Frame 78.png" alt="" />
+                            <p className='font-glacial-r'>Lorem ipsum dolor sit amet consectetur.</p>
+                        </div>
                     </div>
                     <div className="image-bottom">
                         <img src="/Frame 79.png" alt="" />
+                        <h1 className='font-glacial-r'>HYDERABAD</h1>
                     </div>
                 </div>
             </div>

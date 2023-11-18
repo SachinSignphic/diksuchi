@@ -5,6 +5,14 @@
     flex-direction: column;
 }
 
+.architecture-wrapper h1, .architecture-wrapper p {
+    color: white;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .architecture-title-wrapper {
     display: flex;
     /* justify-content: space-between; */
@@ -32,7 +40,7 @@
     letter-spacing: 0.7vw;
 }
 
-.architecture-images, .right-images, .left-images, .small-big-container {
+.architecture-images, .right-images, .left-images, .small-big-container, .text-and-image, .image-bottom {
     display: flex;
 }
 
@@ -57,4 +65,34 @@
 
 .small-big-container img:nth-child(2) {
     width: 15vw;
+}
+
+.right-images {
+    flex-direction: column;
+    padding: 1vw;
+    gap: 1vw
+}
+
+.image-bottom {
+    width: 100%;
+    flex-direction: column;
+    gap: 1vh
+}
+
+.image-bottom img {
+    width: 60% !important;
+    margin-left: 5vw;
+}
+
+.image-bottom h1 {
+    margin-left: 6vw;
+}
+
+.modern-container h1 {
+    letter-spacing: 0.7vw;
+}
+
+.text-and-image {
+    align-items: center;
+    gap: 1.5vw;
 }
