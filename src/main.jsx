@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ReactLenis root>
       <App />
       {/* <Cursor />  probably remove this and use blobity.. its more customizable*/}
-      <AnimatedCursor
+      {/* <AnimatedCursor
         color='164, 164, 164'
         trailingSpeed={10}
         // innerSize={8}
@@ -24,7 +24,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         outerStyle={{
           mixBlendMode: 'exclusion'
         }}
-      />
+      /> */}
+
     </ReactLenis>
   </BrowserRouter>
 

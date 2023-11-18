@@ -18,13 +18,13 @@
     right: 2vw;
     top: 50%;
     transform: translateY(-50%);
-    gap: 8vh;
+    gap: 10vh;
     /* outline: 1px solid red; */
 }
 
 .scroll-bar-wrapper {
     --height: 0%;
-    height: 40vh;
+    height: 30vh;
     /* border: 1px solid white; */
     width: 3px;
     border-radius: 10px;
@@ -36,7 +36,7 @@
     content: '';
     position: absolute;
     background-color: rgb(208, 208, 208);
-    height: 40vh;
+    height: 30vh;
     width: 1px;
     top: 0;
     left: 50%;
@@ -48,4 +48,6 @@
     color: white;
     transform: rotate(-90deg);
     cursor: pointer;
+    font-size: 0.8vw;
+    letter-spacing: 0.2vh;
 }

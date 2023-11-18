@@ -28,7 +28,7 @@ const ScrollIndicator = () => {
     return (
         <div className="scoll-indicator-container">
             <div className='scroll-indicator'>
-                <h4 className='font-glacial-r' onClick={scrollToTop}>SCROLL TO TOP</h4>
+                <h4 className='font-glacial-r' onClick={scrollToTop} data-blobity data-blobity-magnetic="false" >SCROLL TO TOP</h4>
                 <div className="scroll-bar-wrapper" ref={scrollBarRef}>
                 </div>
             </div>

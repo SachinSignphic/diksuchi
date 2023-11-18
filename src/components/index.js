@@ -9,5 +9,7 @@ import HeroHeading from "./HeroHeading/HeroHeading";
 import HouseModel from "./HouseModel/HouseModel";
 import SwirlingSection from "./SwirlingSection/SwirlingSection";
 import ScrollIndicator from "./ScrollIndicator/ScrollIndicator";
+import ArchitectureGallery from "./ArchitectureGallery/ArchitectureGallery";
+import InteriorGallery from "./InteriorGallery/InteriorGallery";
 
-export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, HouseModel, SwirlingSection, ScrollIndicator };
+export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, HouseModel, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery };

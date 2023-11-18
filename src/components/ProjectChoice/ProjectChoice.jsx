@@ -4,6 +4,7 @@ import architecture from '/architecture.jpg'
 import gsap from 'gsap';
 import SplitType from 'split-type';
 import { ScrollTrigger } from 'gsap/all';
+import { Link } from "react-router-dom"
 
 const ProjectChoice = () => {
     gsap.registerPlugin(ScrollTrigger)
@@ -32,7 +33,7 @@ const ProjectChoice = () => {
 
         mM.add("(max-width: 768px)", () => {
             const tl = gsap.timeline({
-                
+
             });
 
             tl.from(architectureTextRef.current, {
@@ -97,7 +98,7 @@ const ProjectChoice = () => {
             });
 
             tl.from(architectureLetters.chars, {
-                yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut",    
+                yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut",
             })
 
             tl.from(interiotLetter.chars, { yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut", })
@@ -108,17 +109,17 @@ const ProjectChoice = () => {
     }, [])
 
     return (
-      <div className='project-choice'>
-        <div className="fw-card from-right" ref={rightCardRef}>
-              <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
-              <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
-          </div>
-          <div className="fw-card from-left" ref={leftCardRef}>
+        <div className='project-choice'>
+            <Link className="fw-card from-right" ref={rightCardRef} data-blobity-tooltip="visit ↗" data-no-blobity to="/architecture">
+                <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+                <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
+            </Link>
+            <Link className="fw-card from-left" data-blobity-tooltip="visit ↗" data-no-blobity ref={leftCardRef} to="/interiors">
                 <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
                 <h1 className="fw-card-title font-glacial-b right-align" ref={interiorTextRef}>Interior</h1>
-          </div>
-      </div>
-  )
+            </Link>
+        </div>
+    )
 }
 
 export default ProjectChoice

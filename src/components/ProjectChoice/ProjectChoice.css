@@ -11,6 +11,11 @@
     height: 60vh;
     width: 90%;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.from-right[data-blobity-tooltip] {
+    content: 'x'
 }
 
 .fw-card img {
