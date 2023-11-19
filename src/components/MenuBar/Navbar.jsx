@@ -7,7 +7,7 @@ const Navbar = () => {
 
   useLayoutEffect(() => {
     const tl = gsap.timeline();
-    tl.from(menuBarRef.current, { y: -145, duration: 2, ease: "expo.inOut" })
+    tl.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
 
     return () => tl.revert();
   }, []);

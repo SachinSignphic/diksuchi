@@ -1,3 +1,4 @@
 .react-three {
     height: 100vh !important;
+    outline: 1px solid red;
 }

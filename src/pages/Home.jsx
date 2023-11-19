@@ -4,7 +4,7 @@ import './Home.css';
 import { gsap } from "gsap";
 
 const Home = () => {
-    const [hasLoaded, setHasLoaded] = useState(true);
+    const [hasLoaded, setHasLoaded] = useState(false);
     const [timeline, setTimeline] = useState(null);
 
     console.log('hasloaded', hasLoaded);
@@ -26,12 +26,12 @@ const Home = () => {
             ) : (
                 <>
                     <HeroSection>
-                        <ScrollIndicator />
+                        <Model3D />
                         <Navbar />
+                        <ScrollIndicator />
                         {/* <Menu />  */}
                         {/* ipodhiku menu ah inga vei.. but it should acutally come at the top after adding button and all */}
                         <Socials />
-                        <Model3D />
                     </HeroSection>
                     <ProjectChoice />
                     <SwirlingSection />
