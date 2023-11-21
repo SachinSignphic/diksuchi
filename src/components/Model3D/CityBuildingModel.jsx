@@ -9,7 +9,7 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader"
 import { useFrame, useThree } from "@react-three/fiber";
 import gsap from "gsap";
 
-const modelURL = "/models/alpha_city_scene_cloud.glb"
+const modelURL = "/models/alpha_city_scene_withText.glb"
 
 export function Model(props) {
     const { nodes, materials } = useGLTF(modelURL);
@@ -45,13 +45,40 @@ export function Model(props) {
     const dubaiBAARef = useRef()
     const nightBuildingRef = useRef()
 
+    //text ref
+    const diksuchiRef = useRef()
+    const designStudioRef = useRef()
+
     // loading transparent texture
-    const transpTexture = new TextureLoader().loadAsync('/models/cb2.png').then((transparent) => {
+    const transpTexture = new TextureLoader().load('/models/cb2.png', (transparent) => {
         materials.Material.alphaMap = transparent
+        console.log(materials.Material)
     })
 
     const { gl, scene, camera } = useThree()
 
+    const loadEnv = async () => {
+        new RGBELoader().setPath('/models/').loadAsync('/moonless_golf_1k.hdr').then((texture) => {
+            texture.mapping = EquirectangularReflectionMapping;
+    
+            texture.matrixAutoUpdate = true;
+            texture.updateMatrix()
+            texture.rotation = 20
+    
+            // scene.background = texture;
+            scene.environment = texture;
+            scene.backgroundIntensity = 0.1;
+    
+            gl.toneMapping = ACESFilmicToneMapping
+            gl.toneMappingExposure = 0.35
+    
+            gl.setClearAlpha(1)
+            
+            gl.compileAsync(scene, camera)
+        })
+    }
+
+    loadEnv()
     // useFrame((state) => {
     //     state.camera.rotation.y += (0.01 * (state.pointer.y) - state.camera.rotation.y)
     //     // state.camera.rotation.x = 0.01 * (state.pointer.x)
@@ -59,60 +86,46 @@ export function Model(props) {
     //     state.camera.updateProjectionMatrix()
     // })
 
-    useCamera((camera) => {
-        console.log(camera)
-    })
+    // useCamera((camera) => {
+    //     console.log(camera)
+    // })
 
     useLayoutEffect(() => {
-        if (gl && scene) {
-            new RGBELoader().setPath('/models/').loadAsync('/moonless_golf_1k.hdr').then((texture) => {
-                texture.mapping = EquirectangularReflectionMapping;
-
-                texture.matrixAutoUpdate = true;
-                texture.updateMatrix()
-                texture.rotation = 20
-
-                scene.background = texture;
-                scene.environment = texture;
-                scene.backgroundIntensity = 0.1;
-
-                gl.toneMapping = ACESFilmicToneMapping
-                gl.toneMappingExposure = 0.35
-            })
-
+        if (props.beginAnim) {
+            // buildings TL
             const tl = gsap.timeline()
-
             const thatArray = [
-                b1.current.position,
-                b2.current.position,
-                b3.current.position,
-                b4.current.position,
-                b5.current.position,
-                b6.current.position,
-                b7.current.position,
-                b8.current.position,
-                b9.current.position,
+                diksuchiRef.current.position,
+                designStudioRef.current.position,
+                nightBuildingRef.current.position,
+                b15.current.position,
                 b10.current.position,
-                b11.current.position,
+                b18.current.position,
+                b6.current.position,
+                b2.current.position,
+                b20.current.position,
+                b1.current.position,
+                b9.current.position,
                 b12.current.position,
+                b7.current.position,
+                b16.current.position,
+                b19.current.position,
+                dubaiBAARef.current.position,
+                b8.current.position,
+                b5.current.position,
+                b11.current.position,
+                b4.current.position,
+                b3.current.position,
+                b17.current.position,
                 b13.current.position,
                 b14.current.position,
-                b15.current.position,
-                b16.current.position,
-                b17.current.position,
-                b18.current.position,
-                b19.current.position,
-                b20.current.position,
-                dubaiBAARef.current.position,
-                nightBuildingRef.current.position,
             ]
-            tl.from(thatArray, { y: -300, duration: 2, stagger: 0.05, ease: "expo.inOut" })
+            tl.from(thatArray, { y: -300, duration: 4, stagger: 0.05, ease: "expo.inOut" })
 
-            // tl.from(b2.current.position, { y: -300, duration: 4 }, `<+=${startPercent}`)
-            // CLOUDS APROMA ANIMATE PANNIKO
+            // clouds TL
             const cloudsTL = gsap.timeline({
                 defaults: {
-                    duration: 10, stagger: 0.5, yoyo: true, repeat: -1
+                    duration: 20, stagger: 0.5,
                 }
             })
             const cloudArrays =
@@ -125,13 +138,14 @@ export function Model(props) {
                 cloudBackRef.current.position,
                 cloudLB.current.position,
             ]
-            cloudsTL.fromTo(cloudArrays, { z: 100 }, { z: -100 })
-            cloudsTL.fromTo(cloudArrays2, { z: -100 }, { z: 100, }, "<")
-            // tl.from(cloudRRref.current.position, {z: -187, duration: 6 })
-            // tl.from(cloudBackRef.current.position, { z: cloudBackRef.current.position + 100, duration: 6 })
+            cloudsTL.from(cloudArrays, { z: 300 }, )
+            cloudsTL.from(cloudArrays2, { z: -300 },  "<")
+            
+            // tl.pause()
+            // cloudsTL.pause()
         }
 
-    }, [gl, scene])
+    }, [props.beginAnim])
 
     return (
         <group {...props} dispose={null}>
@@ -140,9 +154,29 @@ export function Model(props) {
                 far={10000}
                 near={0.1}
                 fov={8.515}
-                position={[813.792, 56.695, -43.139]}
+                position={[813.792, 68.695, -43.139]}
                 rotation={[-2.98, 1.52, 2.978]}
                 scale={68.043}
+            />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Text.geometry}
+                material={materials.white_text}
+                position={[-68.098, 83.631, 67.339]}
+                rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+                scale={32.685}
+                ref={diksuchiRef}
+                />
+            <mesh
+                castShadow
+                receiveShadow
+                geometry={nodes.Text001.geometry}
+                material={materials.white_text}
+                position={[-26.084, 68.227, -16.405]}
+                rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+                scale={10.234}
+                ref={designStudioRef}
             />
             <mesh
                 castShadow

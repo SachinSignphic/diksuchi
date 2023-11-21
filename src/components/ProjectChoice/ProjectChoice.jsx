@@ -24,8 +24,8 @@ const ProjectChoice = () => {
     }
 
     const handleImageMouseLeave = (e) => {
-        gsap.to(e.target, { x: 0, duration: 0.6, ease: "expo.inOut" });
-        gsap.to(e.target, { y: 0, duration: 0.6, ease: "expo.inOut" });
+        gsap.to(e.target, { x: 0, duration: 0.6, });
+        gsap.to(e.target, { y: 0, duration: 0.6, });
     }
 
     useLayoutEffect(() => {
@@ -110,7 +110,7 @@ const ProjectChoice = () => {
 
     return (
         <div className='project-choice'>
-            <Link className="fw-card from-right" ref={rightCardRef} data-blobity-tooltip="visit ↗" data-no-blobity to="/architecture">
+            <Link className="fw-card from-right" ref={rightCardRef} data-blobity-tooltip="visit ↗" data-blobity-magnetic="false" data-no-blobity to="/architecture">
                 <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
                 <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
             </Link>

@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import './ScrollIndicator.css'
+import gsap from 'gsap'
 
 const ScrollIndicator = () => {
     const scrollBarRef = useRef()

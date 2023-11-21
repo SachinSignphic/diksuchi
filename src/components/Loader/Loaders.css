@@ -52,6 +52,10 @@
     justify-content: center;
     overflow: hidden;
     background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
 }
 
 .loading-progress-wrapper {

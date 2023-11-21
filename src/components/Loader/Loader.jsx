@@ -6,18 +6,20 @@ const Loader = ({ timeline, setState }) => {
     // const loadingPercentRef = useRef(); // use soon for numbering
     const loadingTitleRef = useRef();
     const loadingSideHRRef = useRef();
+    const loadingScreenRef = useRef()
 
     useEffect(() => {
         // Use the timeline prop to create the timeline in the Loader component
         timeline && timeline.add(progressBarAnimation(
             loadingTitleRef,
             loadingSideHRRef,
+            loadingScreenRef,
             setState
         ));
     }, [timeline]);
 
     return (
-        <div className='loading-screen'>
+        <div className='loading-screen' ref={loadingScreenRef}>
             <div className="loading-title-container">
                 <hr className="loading-hr" ref={loadingSideHRRef} />
                 <div className="title-container">

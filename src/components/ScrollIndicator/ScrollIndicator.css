@@ -24,7 +24,7 @@
 
 .scroll-bar-wrapper {
     --height: 0%;
-    height: 30vh;
+    height: 25vh;
     /* border: 1px solid white; */
     width: 3px;
     border-radius: 10px;
@@ -36,7 +36,7 @@
     content: '';
     position: absolute;
     background-color: rgb(208, 208, 208);
-    height: 30vh;
+    height: 25vh;
     width: 1px;
     top: 0;
     left: 50%;
@@ -48,6 +48,6 @@
     color: white;
     transform: rotate(-90deg);
     cursor: pointer;
-    font-size: 0.8vw;
+    font-size: 0.75vw;
     letter-spacing: 0.2vh;
 }

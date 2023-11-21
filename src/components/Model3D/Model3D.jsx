@@ -1,12 +1,12 @@
 import { OrbitControls, Stats } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { useLayoutEffect, useRef } from 'react';
+import { Suspense, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Model } from './CityBuildingModel';
 import './Model3D.css'
 import { useInView } from 'react-intersection-observer'
 
-const Model3D = () => {
+const Model3D = (props) => {
     const {ref, inView} = useInView();
     
     useLayoutEffect(() => {
@@ -17,7 +17,7 @@ const Model3D = () => {
         });
         
         return () => context.revert();
-    })
+    }, [])
     
     return (
         <Canvas ref={ref} className='react-three' frameloop={inView? 'always': 'never'}>
@@ -27,10 +27,10 @@ const Model3D = () => {
             <ambientLight />
             {/* <directionalLight intensity={2} /> */}
             {/* <pointLight position={[0, 1, 0]} /> */}
-            <Model />
+            <Model beginAnim={props.beginAnim} />
             <gridHelper args={[20, 20, 0xff0000, 'teal']} />
             {/* <Stars /> */}
-            <Stats />
+            {/* <Stats /> */}
             {/* <directionalLight intensity={2} castShadow={true} rotateX={10} setRotationFromAxisAngle={([1, 1, 0], 30.0)} /> */}
         </Canvas>
     )
