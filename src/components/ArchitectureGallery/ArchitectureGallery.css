@@ -27,7 +27,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 5vw;
+    font-size: 4.6vw;
     line-height: 117px;
     letter-spacing: 1vw;
 }
@@ -74,18 +74,18 @@
     gap: 1vw
 }
 
-.image-bottom {
+.image-bottom-2 {
     width: 100%;
     flex-direction: column;
     gap: 1vh
 }
 
-.image-bottom img {
-    width: 60% !important;
+.image-bottom-2 img {
+    width: 30vw !important;
     margin-left: 5vw;
 }
 
-.image-bottom h1 {
+.image-bottom-2 h1 {
     margin-left: 6vw;
 }
 

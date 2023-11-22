@@ -11,5 +11,6 @@ import SwirlingSection from "./SwirlingSection/SwirlingSection";
 import ScrollIndicator from "./ScrollIndicator/ScrollIndicator";
 import ArchitectureGallery from "./ArchitectureGallery/ArchitectureGallery";
 import InteriorGallery from "./InteriorGallery/InteriorGallery";
+import HeroSlider from "./HeroSlider/HeroSlider";
 
-export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery };
+export { Navbar, HeroSection, Menu, Loader, Socials, Cursor, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery, HeroSlider };

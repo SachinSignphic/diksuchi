@@ -114,7 +114,7 @@ const ProjectChoice = () => {
                 <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
                 <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
             </Link>
-            <Link className="fw-card from-left" data-blobity-tooltip="visit ↗" data-no-blobity ref={leftCardRef} to="/interiors">
+            <Link className="fw-card from-left" data-blobity-tooltip="visit ↗" data-no-blobity data-blobity-magnetic="false" ref={leftCardRef} to="/interiors">
                 <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
                 <h1 className="fw-card-title font-glacial-b right-align" ref={interiorTextRef}>Interior</h1>
             </Link>

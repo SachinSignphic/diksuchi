@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import './ArchitectureGallery.css'
 import gsap from 'gsap'
 
@@ -9,21 +9,22 @@ const ArchitectureGallery = () => {
     const image3 = useRef()
     const image4 = useRef()
     const image5 = useRef()
-
-    const images = [
-        image1.current, 
-        p1.current,
-        image2.current,
-        image3.current,
-        image4.current,
-        image5.current,
-    ]
-
+    
     useLayoutEffect(() => {
         const tl = gsap.timeline()
-        console.log("odtuah")
-        // tl.from(toArray(images), { x: '-100vw' })
+        
+        const images = [
+            image1.current, 
+            p1.current,
+            image2.current,
+            image3.current,
+            image4.current,
+            image5.current,
+        ]
+        
         tl.from(images, { x: '-100vw', stagger: 0.1, duration: 3, ease: "expo.inOut" })
+
+        return () => tl.revert()
     }, [])
 
     return (
@@ -51,7 +52,7 @@ const ArchitectureGallery = () => {
                             <p className='font-glacial-r'>Lorem ipsum dolor sit amet consectetur.</p>
                         </div>
                     </div>
-                    <div className="image-bottom" ref={image2}>
+                    <div className="image-bottom-2" ref={image2}>
                         <img src="/Frame 79.png" alt="" />
                         <h1 className='font-glacial-r'>HYDERABAD</h1>
                     </div>

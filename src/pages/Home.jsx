@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import { Navbar, HeroSection, Loader, Menu, Socials, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator } from "../components";
+import { Navbar, HeroSection, Loader, Menu, Socials, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, HeroSlider } from "../components";
 import './Home.css';
 import { gsap } from "gsap";
 
@@ -26,12 +26,12 @@ const Home = () => {
                     <>
                         <HeroSection>
                             {/* <Model3D beginAnim={hasLoaded} /> */}
+                            <HeroSlider />
                             <Navbar />
                             <ScrollIndicator />
                             {/* <Menu />  */}
                             {/* ipodhiku menu ah inga vei.. but it should acutally come at the top after adding button and all */}
-                            {/* <h1 style={{color: "white", position: "absolute", top: '50%'}}>DIKSUCHI</h1> mobile maybe */}
-                            <Socials />
+                            {/* <Socials /> */}
                         </HeroSection>
                         <ProjectChoice />
                         <SwirlingSection />
