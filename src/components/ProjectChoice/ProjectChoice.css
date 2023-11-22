@@ -3,7 +3,6 @@
     width: 88%;
     flex-direction: column;
     background-color: black;
-    /* outline: 1px solid red; */
     margin-top: 30vh;
 }
 
@@ -11,6 +10,7 @@
     position: relative;
     height: 60vh;
     width: 90%;
+    /* outline: 1px solid red; */
     overflow: hidden;
     cursor: pointer;
 }
@@ -21,6 +21,7 @@
 
 .fw-card img {
     width: 100%;
+    /* height: 70vh; */
     filter: grayscale(1);
     transform: scale(1.3);
     transition: filter 0.4s ease;
@@ -50,7 +51,9 @@
 
 .right-align {
     left: unset;
-    right: 3vw
+    top: unset;
+    right: 2vw;
+    bottom: 1vh;
 }
 
 @media screen and (max-width: 768px) {

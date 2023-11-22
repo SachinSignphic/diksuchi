@@ -15,6 +15,9 @@ const ProjectChoice = () => {
     const rightCardRef = useRef();
     const leftCardRef = useRef();
 
+    const rightCardImgWrapper = useRef()
+    const leftCartImgWrapper = useRef()
+
     const handleImageMouseMove = (e) => {
         let xValue = e.clientX;
         let yValue = e.clientY;
@@ -58,7 +61,7 @@ const ProjectChoice = () => {
                     end: "200 80%",
                     // markers: true,
                 }
-            }, "<")
+            })
 
             tl.from(interiorTextRef.current, {
                 scale: 2,
@@ -111,11 +114,15 @@ const ProjectChoice = () => {
     return (
         <div className='project-choice'>
             <Link className="fw-card from-right" ref={rightCardRef} data-blobity-tooltip="visit ↗" data-blobity-magnetic="false" data-no-blobity to="/architecture">
-                <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+                <div ref={rightCardImgWrapper}>
+                    <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+                </div>
                 <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
             </Link>
             <Link className="fw-card from-left" data-blobity-tooltip="visit ↗" data-no-blobity data-blobity-magnetic="false" ref={leftCardRef} to="/interiors">
-                <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+                <div ref={leftCartImgWrapper}>
+                    <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+                </div>
                 <h1 className="fw-card-title font-glacial-b right-align" ref={interiorTextRef}>Interior</h1>
             </Link>
         </div>
