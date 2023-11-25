@@ -1,7 +1,7 @@
 .swirling-section {
     margin-top: 35vh;
     display: flex;
-    min-height: 320vh;
+    min-height: 350vh;
     width: 100%;
     /* justify-content: center; */
     padding-left: 6vw;
@@ -105,26 +105,25 @@
 .images-container {
     width: 40vw;
     aspect-ratio: 1;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     border-radius: 50%;
     position: absolute;
     z-index: -5;
 }
 
-.precision-image {
-    outline: 1px solid red;
+.precision-image, .excellence-image, .marvelous-image {
+    /* outline: 1px solid red; */
     width: 7vw;
     position: absolute;
-    /* opacity: 0; */
+    opacity: 0.3;
 }
 
-.precision-image::after {
-    content: '1';
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: black;
-    font-size: 1rem;
+#excellence {
+    width: 65vw;
+}
+
+#marvelous {
+    width: 95vw;
 }
 
 #message {

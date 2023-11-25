@@ -81,6 +81,7 @@ body {
   min-height: 100vh;
   background: url('/bg.jpg');
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .font-pearl {
