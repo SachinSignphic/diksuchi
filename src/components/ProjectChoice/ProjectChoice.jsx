@@ -18,19 +18,34 @@ const ProjectChoice = () => {
     const rightCardImgWrapper = useRef()
     const leftCartImgWrapper = useRef()
 
-    const handleImageMouseMove = (e) => {
-        let xValue = e.clientX;
-        let yValue = e.clientY;
+    const handleOnMouseEnter = ({ currentTarget }) => {
+        const selectionFrom = gsap.utils.selector(currentTarget)
 
-        gsap.to(e.target, { x: -xValue * 0.1, duration: 0.3 })
-        gsap.to(e.target, { y: -yValue * 0.3, duration: 0.3 })
+        gsap.to(selectionFrom('h1'), { xPercent: -5, yPercent: -25, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: 20, yPercent: 20, duration: 0.6, ease: "power3.inOut" })
     }
+    
+    const handleOnMouseLeave = ({ currentTarget }) => {
+        const selectionFrom = gsap.utils.selector(currentTarget)
 
-    const handleImageMouseLeave = (e) => {
-        gsap.to(e.target, { x: 0, duration: 0.6, });
-        gsap.to(e.target, { y: 0, duration: 0.6, });
+        gsap.to(selectionFrom('h1'), { xPercent: 0, yPercent: 0, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: 0, yPercent: 0, duration: 0.6, ease: "power3.inOut" })
     }
+    
+    const handleOnMouseEnter1 = ({ currentTarget }) => {
+        const selectionFrom = gsap.utils.selector(currentTarget)
 
+        gsap.to(selectionFrom('h1'), { xPercent: 4, yPercent: 28, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: -20, yPercent: -58, duration: 0.6, ease: "power3.inOut" })
+    }
+    
+    const handleOnMouseLeave1 = ({ currentTarget }) => {
+        const selectionFrom = gsap.utils.selector(currentTarget)
+
+        gsap.to(selectionFrom('h1'), { xPercent: 0, yPercent: 0, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: 0, yPercent: 0, duration: 0.6, ease: "power3.inOut" })
+    }
+    
     useLayoutEffect(() => {
         const mM = gsap.matchMedia();
 
@@ -113,15 +128,15 @@ const ProjectChoice = () => {
 
     return (
         <div className='project-choice'>
-            <Link className="fw-card from-right" ref={rightCardRef} data-blobity-tooltip="visit ↗" data-blobity-magnetic="false" data-no-blobity to="/architecture">
+            <Link className="fw-card from-right" onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave} ref={rightCardRef} data-blobity-tooltip="visit ↗" data-blobity-magnetic="false" data-no-blobity to="/architecture">
                 <div ref={rightCardImgWrapper}>
-                    <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+                    <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} />
                 </div>
                 <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
             </Link>
-            <Link className="fw-card from-left" data-blobity-tooltip="visit ↗" data-no-blobity data-blobity-magnetic="false" ref={leftCardRef} to="/interiors">
+            <Link className="fw-card from-left" onMouseEnter={handleOnMouseEnter1} onMouseLeave={handleOnMouseLeave1} data-blobity-tooltip="visit ↗" data-no-blobity data-blobity-magnetic="false" ref={leftCardRef} to="/interiors">
                 <div ref={leftCartImgWrapper}>
-                    <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} onMouseMove={handleImageMouseMove} onMouseLeave={handleImageMouseLeave} />
+                    <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} />
                 </div>
                 <h1 className="fw-card-title font-glacial-b right-align" ref={interiorTextRef}>Interior</h1>
             </Link>
