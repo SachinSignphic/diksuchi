@@ -56,7 +56,7 @@ const SwirlingSection = () => {
                     // markers: {indent: 30, startColor: "white"}
                 },
             });
-            // console.log(swirlIntroTextRef.current)
+            
             tl.from(swirlIntroTextRef.current.childNodes, { '--rot': 0 })
             tl.to(introScrollProgressRef.current, { scaleX: 1.323 }, "<")
             tl.to(scrollingImagesRef.current, { yPercent: -100, ease: "power2.inOut" }, "<")
@@ -66,54 +66,32 @@ const SwirlingSection = () => {
             tl.eventCallback("onComplete", () => {
                 window.scrollTo({ top: portfolioImagesSectionRef.current.offsetTop, behavior: "smooth" })
                 tl.set(swirlIntroTextRef.current, { clearProps: true }, )
-                // maybe create a new timeline for placing the text after zooming automatically, then once complete, automatically
-                // play the timeline after being paused
-                // setAnimation(
-                //     TweenMax.to(imgRef, 10, {
-                //         rotation: 360,
-                //         repeat: -1
-                //     }).pause()
-                // );
-
-                // like this
                 const portfolioImageAppearTL = gsap.timeline()
                 portfolioImageAppearTL.to(portfolioImagesSectionRef.current, { opacity: 1, duration: 1.5, ease: "power2.inOut" })
             })
 
 
             const swirlTimeline = gsap.timeline({
-                defaults: { ease: "none", duration: 10, },
+                defaults: { ease: "none", duration: 10, repeat: -1 },
             })
 
-            const precisionImagesCircle = getBezier(250, 250, 250, 250, false)
-
-            swirlTimeline.set(precisionImages.current.children, { xPercent: -50, yPercent: -50, })
-            console.log(precisionImagesCircle.path)
-            
-            for (let i = 0; i < precisionImages.current.children.length; i++) {
-                    let newPath = rotateArray(precisionImagesCircle.path, i)
-                
-                    console.log("current elemtn starting x and y are:" + precisionImagesCircle.path[i].x + " " + precisionImagesCircle.path[i].y)
-                    console.dir("current elemtn path" + JSON.stringify(newPath), { depth: 5 })
-                
-                    swirlTimeline
-                        .fromTo(precisionImages.current.children[i], { x: precisionImagesCircle.path[i].x, y: precisionImagesCircle.path[i].y, } , { motionPath: { ...precisionImagesCircle, path: newPath }, repeat: -1 }, "<")
-                }
-            // const r = 300;
-            // swirlTimeline.set(precisionImages.current.children[4], { xPercent: 0, yPercent: 0, })
-            // swirlTimeline.to(precisionImages.current.children[4], { motionPath: {
-            //     path: `M 0%, 50%
-            //             a ${r},${r} 0 1,0 ${r * 2},0
-            //             a ${r},${r} 0 1,0 -${r * 2},0z`
-            // } , repeat: -1 }, "<")
-            // swirlTimeline.set(precisionImages.current.children[3], { xPercent: 50, yPercent: 100, }, "<")
-            // swirlTimeline.to(precisionImages.current.children[3], { motionPath: {
-            //     path: `M 0%, 50%
-            //             a ${r},${r} 0 1,0 ${r * 2},0
-            //             a ${r},${r} 0 1,0 -${r * 2},0z`
-            // } , repeat: -1 }, "<")
-            // swirlTimeline.to(precisionImages.current.children[5], { motionPath: 'M100,10 A90,90 0 1,1 10,100 A90,90 0 1,1 100,190' , repeat: -1 }, "<")
-
+            swirlTimeline.to(precisionImages.current, { rotation: 360 })
+            swirlTimeline.set(precisionImages.current.children[0], { xPercent: 0, yPercent: 0 }, "<")
+            swirlTimeline.to(precisionImages.current.children[0], { rotation: -360 }, "<")
+            swirlTimeline.set(precisionImages.current.children[1], { xPercent: -20, yPercent: 150 }, "<")
+            swirlTimeline.to(precisionImages.current.children[1], { rotation: -360 }, "<")
+            swirlTimeline.set(precisionImages.current.children[2], { xPercent: 0, yPercent: "+=300" }, "<")
+            swirlTimeline.to(precisionImages.current.children[2], { rotation: -360 }, "<")
+            swirlTimeline.set(precisionImages.current.children[3], { xPercent: 225, yPercent: "+=350" }, "<")
+            swirlTimeline.to(precisionImages.current.children[3], { rotation: -360 }, "<")
+            swirlTimeline.set(precisionImages.current.children[4], { xPercent: 450, yPercent: "+=300" }, "<")
+            swirlTimeline.to(precisionImages.current.children[4], { rotation: -360 }, "<")
+            swirlTimeline.set(precisionImages.current.children[5], { xPercent: 500, yPercent: "+=150" }, "<")
+            swirlTimeline.to(precisionImages.current.children[5], { rotation: -360 }, "<")
+            swirlTimeline.set(precisionImages.current.children[6], { xPercent: 450, yPercent: "+=0" }, "<")
+            swirlTimeline.to(precisionImages.current.children[6], { rotation: -360 }, "<")
+            swirlTimeline.set(precisionImages.current.children[7], { xPercent: 225, yPercent: "-=20" }, "<")
+            swirlTimeline.to(precisionImages.current.children[7], { rotation: -360 }, "<")
         })
 
         mM.add("(max-width: 768px)", () => {
@@ -170,6 +148,9 @@ const SwirlingSection = () => {
             <div className="swirling-section portfolio-section" ref={portfolioImagesSectionRef}>
                 <div className="images-container" id="precision" ref={precisionImages}>
                     {/* repalce with a map on array */}
+                    <img src="/placeholder.jpg" className='precision-image' alt="" />
+                    <img src="/placeholder.jpg" className='precision-image' alt="" />
+                    <img src="/placeholder.jpg" className='precision-image' alt="" />
                     <img src="/placeholder.jpg" className='precision-image' alt="" />
                     <img src="/placeholder.jpg" className='precision-image' alt="" />
                     <img src="/placeholder.jpg" className='precision-image' alt="" />
