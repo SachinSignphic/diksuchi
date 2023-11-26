@@ -1,57 +1,99 @@
 import './HeroSlider.css'
 import sliderData from './HeroSliderData'
-import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import { Autoplay, Navigation, Parallax } from 'swiper/modules'
-import { useRef } from 'react'
+import 'swiper/css/thumbs'
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import { Autoplay, Navigation, Parallax, Thumbs, FreeMode } from 'swiper/modules'
+import { useState, useRef, useEffect } from 'react'
 import SliderControls from './SliderControls'
 import gsap from 'gsap'
+import SplitType from 'split-type'
 
 const HeroSlider = () => {
   const nextButtonRef = useRef()
   const prevButtonRef = useRef()
+  const [thumbSwiper, setThumbSwiper] = useState(null)
+
+  useEffect(() => {
+    return () => thumbSwiper?.destroy()
+  }, [thumbSwiper])
 
   return (
     <div className='hero-slider'>
-      {/* <Swiper
-        className='swiper-slider'
-        spaceBetween={50}
+      <Swiper
+        onSwiper={setThumbSwiper}
+        className='swiper-thumb'
+        spaceBetween={1}
+        speed={2000}
+        direction={"vertical"}
         parallax={true}
-        speed={800}
-        modules={[Autoplay, Navigation, Parallax]}
-        // onSlideChange={(swiper) => {
-        //   const slideToAnimate = swiper.slides.at(swiper.activeIndex)
+        modules={[Navigation, FreeMode, Parallax, Thumbs]}
+        slidesPerView={5}
+        freeMode={true}
+        watchSlidesProgress={true}
+        centeredSlides={true}
+      >
+        {
+          sliderData.map((slideData, id) => (
+            <SwiperSlide key={id + (id*2)} className='thumb-slide'>
+              <img src={slideData.image} alt={slideData.title} />
+            </SwiperSlide>
+          ))
+        }
+      </Swiper>
 
-        //   const title = slideToAnimate.querySelector('h1')
-        //   const categoryBadge = slideToAnimate.querySelector('h4')
-        //   const description = slideToAnimate.querySelector('p')
-
-        //   //decide how to use gsap with this, or custom animation or gsap with swiperjs in Google.
-        //   gsap.from([title, categoryBadge, description], { y: '500px', duration: 2, ease: "expo.inOut", stagger: 0.1 });
-        // }}
-        onSliderMove={(swiper) => {
-          console.log(swiper.progress)
+      <Swiper
+        className='swiper-slider'
+        // navigation={true}
+        slidesPerView={1}
+        speed={2000}
+        thumbs={{ swiper: thumbSwiper? thumbSwiper: null }}
+        modules={[Thumbs, Navigation, Parallax, Autoplay]}
+        parallax={true}
+        autoplay={{
+          delay: 2000
         }}
-      // autoplay={{
-      //   delay: 4000,
-      // }}
-      // onSwiper={() => hasSwiperLoaded.current = true}
+        // on={(swiper) => {
+        //   const currentSlide = swiper.slides
+        //   console.log(currentSlide)
+        //   // const badge = currentSlide.querySelector("h4")
+        //   // const title = currentSlide.querySelector("h1")
+        //   // const charsFromTitle = SplitType.create(title)
+        //   // const desc = currentSlide.querySelector("p")
+        //   // gsap.from(badge, { yPercent: 100, opacity: 0, duration: 2, ease: "expo.inOut" })
+        //   // gsap.from(charsFromTitle.chars, { yPercent: 100, duration: 2, ease: "expo.inOut", stagger: 0.1 })
+        //   // gsap.from(desc, { yPercent: 200, duration: 2, ease: "expo.inOut" })
+        // }}
+        onSlideChange={(swiper) => {
+          const currentSlide = swiper.slides[swiper.activeIndex]
+          
+          const badge = currentSlide.querySelector("h4")
+          const title  = currentSlide.querySelector("h1")
+          const charsFromTitle = SplitType.create(title)
+          const desc = currentSlide.querySelector("p")
+
+          gsap.from(badge, { yPercent: 100, opacity: 0, duration: 2, ease: "expo.inOut" })
+          gsap.from(charsFromTitle.chars, { yPercent: 100, duration: 2, ease: "expo.inOut", stagger: 0.05 })
+          gsap.from(desc, { yPercent: 200, duration: 2, ease: "expo.inOut" })
+        }}
       >
         {
           sliderData.map((slideData, id) => (
             <SwiperSlide key={id} className='swiper-slide'>
-              <img src={slideData.image} data-swiper-parallax="-100%" data-swiper-parallax-scale="1.4" alt={slideData.title} />
+              <img src={slideData.image} alt={slideData.title} data-swiper-parallax="40%" />
               <div className="slide-details">
-                <h4 className='font-glacial-r' data-swiper-parallax="-100">{slideData.category}</h4>
-                <h1 className='font-glacial-r' data-swiper-parallax="-200">{slideData.title}</h1>
-                <p className='font-glacial-r' data-swiper-parallax="-300">{slideData.description}</p>
+                <h4 className='font-glacial-r'><span>{slideData.category}</span></h4>
+                <h1 className='font-glacial-r'>{slideData.title}</h1>
+                <p className='font-glacial-r'>{slideData.description}</p>
               </div>
             </SwiperSlide>
           ))
         }
         <SliderControls prevButtonRef={prevButtonRef} nextButtonRef={nextButtonRef}  />
-      </Swiper> */}
-      
+      </Swiper>
+    
     </div>
   )
 }

@@ -6,12 +6,12 @@ import { useLenis } from '@studio-freight/react-lenis';
 
 const SwirlingSection = () => {
     const swirlIntroTextRef = useRef();
-    const swirlingIntroTextContainerRef = useRef();
-    const portfolioTextRef = useRef();
-    const portfolioImagesSectionRef = useRef();
+    const swirlingIntroTextContainerRef = useRef()
+    const portfolioTextRef = useRef()
+    const portfolioImagesSectionRef = useRef()
     const introScrollProgressRef = useRef()
     const scrollingImagesRef = useRef()
-    const precisionImages = useRef();
+    const precisionImages = useRef()
     const excellenceImages = useRef()
     const scrollAmount = useRef(0)
 
@@ -51,7 +51,7 @@ const SwirlingSection = () => {
                     scrub: 1,
                     end: `bottom bottom`,
                     pin: true,
-                    markers: true,
+                    // markers: true,
                     onLeave: (self) => {
                         console.log(self.scroll())
                         scrollAmount.current = self.scroll()

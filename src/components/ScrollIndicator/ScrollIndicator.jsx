@@ -8,8 +8,10 @@ const ScrollIndicator = () => {
     const scrollController = useLenis()
 
     const scrollToTop = () => {
-        console.log(1 + (scrollController.scroll * 0.001))
-        scrollController.scrollTo(0, { duration: 0.5 + (scrollController.scroll * 0.003), lerp: (scrollController.scroll * 0.0001)  })
+        // let lerpAmount = Math.abs(1 - (scrollController.scroll * 0.0005))
+        let duration = (scrollController.scroll * 0.0005)
+        // console.log(duration, lerpAmount)
+        scrollController.scrollTo(0, { duration: duration })
     }
 
     useLayoutEffect(() => {
