@@ -13,8 +13,16 @@ const SwirlingSection = () => {
     const scrollingImagesRef = useRef()
     const precisionImages = useRef();
     const excellenceImages = useRef()
-    const marvelousImages = useRef()
+    const scrollAmount = useRef(0)
 
+    useLenis(scrollController => {
+        // console.log(scrollAmount, scrollController.scroll, scrollAmount == scrollController.scroll)
+        if (scrollAmount.current != 0 && scrollController.direction == 1) { 
+            scrollController.scrollTo(portfolioImagesSectionRef.current.offsetTop, { duration: 3 })
+            scrollAmount.current = 0
+        }
+        return () => scrollController.destroy()
+    })
     
     const handleTextMouseOver = ({ currentTarget }) => {
         gsap.to(document.querySelectorAll(".precision"), { opacity: 1 })
@@ -23,14 +31,6 @@ const SwirlingSection = () => {
     const handleTextMouseLeave = ({ currentTarget }) => {
         gsap.to(document.querySelectorAll(".precision"), { opacity: 0.3 })
     }
-    
-    useLenis((f) => {
-
-        let scrollAmount = parseInt(f.scroll.toFixed(0))
-        if (scrollAmount > 2800 && scrollAmount < 3000 && f.direction == 1) {
-            f.scrollTo(portfolioImagesSectionRef.current.offsetTop + 50, { duration: 4 })
-        }
-    })
 
     useLayoutEffect(() => {
 
@@ -49,12 +49,13 @@ const SwirlingSection = () => {
                 scrollTrigger: {
                     trigger: swirlingIntroTextContainerRef.current,
                     scrub: 1,
-                    end: `60% bottom`,
+                    end: `bottom bottom`,
                     pin: true,
                     markers: true,
                     onLeave: (self) => {
-                        window.scrollTo({ top: portfolioImagesSectionRef.current.offsetTop, behavior: "smooth" }) // works without Lenis
-                    }
+                        console.log(self.scroll())
+                        scrollAmount.current = self.scroll()
+                    },
                 },
                 // gotta try react lenis docs to learn how to scroll to certain position
                 // or else, add separate eventListener to window and then do manually
@@ -66,7 +67,6 @@ const SwirlingSection = () => {
             tl.to(swirlIntroTextRef.current, { scale: '+=175', ease: "power1.in",})
             tl.to(scrollingImagesRef.current, { opacity: 0, ease: "power2.inOut", onComplete: () => {
                 tl.to(swirlIntroTextRef.current, { opacity: 0 }, )
-                console.log("vela seidhaa illayaa", portfolioImagesSectionRef.current.offsetTop)
             } }, "<-=40%")
             tl.eventCallback("onComplete", () => {
                 const portfolioImageAppearTL = gsap.timeline()
@@ -111,25 +111,6 @@ const SwirlingSection = () => {
             swirlTimeline.to(excellenceImages.current.children[6], { rotation: 360 }, "<")
             swirlTimeline.set(excellenceImages.current.children[7], { xPercent: 420, yPercent: "-=40" }, "<")
             swirlTimeline.to(excellenceImages.current.children[7], { rotation: 360 }, "<")
-            
-            swirlTimeline.to(marvelousImages.current, { rotation: 360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[0], { xPercent: 70, yPercent: 150 }, "<")
-            swirlTimeline.to(marvelousImages.current.children[0], { rotation: -360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[1], { xPercent: -50, yPercent: "+=480" }, "<")
-            swirlTimeline.to(marvelousImages.current.children[1], { rotation: -360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[2], { xPercent: 80, yPercent: "+=780" }, "<")
-            swirlTimeline.to(marvelousImages.current.children[2], { rotation: -360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[3], { xPercent: 650, yPercent: "+=950" }, "<")
-            swirlTimeline.to(marvelousImages.current.children[3], { rotation: -360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[4], { xPercent: 1320, yPercent: "+=480" }, "<")
-            swirlTimeline.to(marvelousImages.current.children[4], { rotation: -360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[5], { xPercent: 1180, yPercent: "+=780" }, "<")
-            swirlTimeline.to(marvelousImages.current.children[5], { rotation: -360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[6], { xPercent: 1180, yPercent: "+150" }, "<")
-            swirlTimeline.to(marvelousImages.current.children[6], { rotation: -360 }, "<")
-            swirlTimeline.set(marvelousImages.current.children[7], { xPercent: 650, yPercent: "-=40" }, "<")
-            swirlTimeline.to(marvelousImages.current.children[7], { rotation: -360 }, "<")
-
 
         })
 
@@ -157,7 +138,6 @@ const SwirlingSection = () => {
         })
 
         return () =>{ 
-            window.removeEventListener("scroll", () => {})
             mM.revert();
         }
     }, [])
@@ -212,16 +192,6 @@ const SwirlingSection = () => {
                     <img src="/placeholder.jpg" className='excellence-image' alt="" />
                     <img src="/placeholder.jpg" className='excellence-image' alt="" />
                     <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                </div>
-                <div className="images-container" id="marvelous" ref={marvelousImages}>
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
-                    <img src="/placeholder.jpg" className='marvelous-image' alt="" />
                 </div>
 
                 <div className="swirling-section-text-wrapper">

@@ -1,15 +1,15 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import './ScrollIndicator.css'
 import gsap from 'gsap'
+import { useLenis } from '@studio-freight/react-lenis'
 
 const ScrollIndicator = () => {
     const scrollBarRef = useRef()
+    const scrollController = useLenis()
 
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
+        console.log(1 + (scrollController.scroll * 0.001))
+        scrollController.scrollTo(0, { duration: 0.5 + (scrollController.scroll * 0.003), lerp: (scrollController.scroll * 0.0001)  })
     }
 
     useLayoutEffect(() => {

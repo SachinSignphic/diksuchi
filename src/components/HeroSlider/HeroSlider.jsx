@@ -13,7 +13,7 @@ const HeroSlider = () => {
 
   return (
     <div className='hero-slider'>
-      <Swiper
+      {/* <Swiper
         className='swiper-slider'
         spaceBetween={50}
         parallax={true}
@@ -40,12 +40,6 @@ const HeroSlider = () => {
         {
           sliderData.map((slideData, id) => (
             <SwiperSlide key={id} className='swiper-slide'>
-              {/* <img src={slideData.image} alt={slideData.title} />
-              <div className="slide-details">
-                <h4 className='font-glacial-r'>{slideData.category}</h4>
-                <h1 className='font-glacial-r'>{slideData.title}</h1>
-                <p className='font-glacial-r'>{slideData.description}</p>
-              </div> */}
               <img src={slideData.image} data-swiper-parallax="-100%" data-swiper-parallax-scale="1.4" alt={slideData.title} />
               <div className="slide-details">
                 <h4 className='font-glacial-r' data-swiper-parallax="-100">{slideData.category}</h4>
@@ -56,7 +50,8 @@ const HeroSlider = () => {
           ))
         }
         <SliderControls prevButtonRef={prevButtonRef} nextButtonRef={nextButtonRef}  />
-      </Swiper>
+      </Swiper> */}
+      
     </div>
   )
 }
