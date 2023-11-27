@@ -30,10 +30,12 @@ const Navbar = () => {
         tl
           .from(contactFormWrapper.current, { xPercent: 100 })
           .fromTo(contactFormWrapper.current, { autoAlpha: 0 },  { autoAlpha: 1 })
+          .from(contactForm.current, { xPercent: 100 })
           .from(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
         } else {
           tl
           .to(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
+          .to(contactForm.current, { xPercent: 100 })
           .fromTo(contactFormWrapper.current, { autoAlpha: 1 },  { autoAlpha: 0 })
           .to(contactFormWrapper.current, { xPercent: 100 })
       }
@@ -49,7 +51,7 @@ const Navbar = () => {
             <span className="menu-line"></span>
             <span className="menu-line short"></span>
           </div>
-          <Link to={"#"} onClick={() => setOpenMenu(!openMenu)} className='contact-btn font-glacial-r'>+ Contact</Link>
+          <Link to={"#"} data-blobity-magnetic="false" data-no-blobity onClick={() => setOpenMenu(!openMenu)} className='contact-btn font-glacial-r'>+ Contact</Link>
       </div>
       <div className='contact-form-wrapper' ref={contactFormWrapper}>
               <div className="contact-form" ref={contactForm}>

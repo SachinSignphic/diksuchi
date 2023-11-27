@@ -27,6 +27,48 @@ const sliderData = [
         description: 'Ain\'t no way this is real. Period.',
         link: '#',
     },
+    {
+        image: '/test-slider-image-4.jpg',
+        title: 'Super futuristic building',
+        category: 'building',
+        description: 'Ain\'t no way this is real. Period.',
+        link: '#',
+    },
+    {
+        image: '/test-slider-image-4.jpg',
+        title: 'Super futuristic building',
+        category: 'building',
+        description: 'Ain\'t no way this is real. Period.',
+        link: '#',
+    },
+    {
+        image: '/test-slider-image-4.jpg',
+        title: 'Super futuristic building',
+        category: 'building',
+        description: 'Ain\'t no way this is real. Period.',
+        link: '#',
+    },
+    {
+        image: '/test-slider-image-4.jpg',
+        title: 'Super futuristic building',
+        category: 'building',
+        description: 'Ain\'t no way this is real. Period.',
+        link: '#',
+    },
+    {
+        image: '/test-slider-image-4.jpg',
+        title: 'Super futuristic building',
+        category: 'building',
+        description: 'Ain\'t no way this is real. Period.',
+        link: '#',
+    },
+    {
+        image: '/test-slider-image-4.jpg',
+        title: 'Super futuristic building',
+        category: 'building',
+        description: 'Ain\'t no way this is real. Period.',
+        link: '#',
+    },
 ]
 
 export default sliderData

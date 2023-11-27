@@ -1,14 +1,14 @@
 .menu-nav {
     display: flex;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8vw 1.2vw;
+    height: 7vh;
     align-items: center;
     background-color: #f7f7f7;
     backdrop-filter: blur(12px) saturate(200%);
     -webkit-backdrop-filter: blur(12px) saturate(200%);
     background-color: rgba(247, 247, 247, 0.5);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
     border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     width: 90%;
     position: absolute;
     top: 0;
@@ -58,7 +58,7 @@
 }
 
 .contact-form {
-    width: 50%;
+    width: 55%;
     background-color: black;
     height: 100vh;
     display: flex;

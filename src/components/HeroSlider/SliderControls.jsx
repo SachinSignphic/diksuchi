@@ -13,8 +13,12 @@ const SliderControls = ({ prevButtonRef, nextButtonRef }) => {
 
     return (
         <div className="swiper-controls">
-            <button data-blobity-magnetic="true" onClick={() => heroSliderInstance.slidePrev()} ref={prevButtonRef}>←</button>
-            <button data-blobity-magnetic="true" onClick={() => heroSliderInstance.slideNext()} ref={nextButtonRef}>→</button>
+            <button data-blobity-magnetic="true" data-no-blobity onClick={() => heroSliderInstance.slidePrev()} ref={prevButtonRef}>
+                <img src="/caret-right.png" alt="" />
+            </button>
+            <button data-blobity-magnetic="true" data-no-blobity onClick={() => heroSliderInstance.slideNext()} ref={nextButtonRef}>
+                <img src="/caret-right.png" alt="" />
+            </button>
         </div>
     )
 }

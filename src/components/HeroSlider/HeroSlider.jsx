@@ -28,17 +28,17 @@ const HeroSlider = () => {
         spaceBetween={1}
         speed={2000}
         direction={"vertical"}
-        parallax={true}
+        // parallax={true}
         modules={[Navigation, FreeMode, Parallax, Thumbs]}
         slidesPerView={5}
         freeMode={true}
         watchSlidesProgress={true}
-        centeredSlides={true}
+        // centeredSlides={true}
       >
         {
           sliderData.map((slideData, id) => (
             <SwiperSlide key={id + (id*2)} className='thumb-slide'>
-              <img src={slideData.image} alt={slideData.title} />
+              <img src={`/slider-${id+1}.webp`} alt={slideData.title} />
             </SwiperSlide>
           ))
         }
@@ -52,6 +52,7 @@ const HeroSlider = () => {
         thumbs={{ swiper: thumbSwiper? thumbSwiper: null }}
         modules={[Thumbs, Navigation, Parallax, Autoplay]}
         parallax={true}
+        spaceBetween={20}
         autoplay={{
           delay: 2000
         }}
@@ -82,7 +83,7 @@ const HeroSlider = () => {
         {
           sliderData.map((slideData, id) => (
             <SwiperSlide key={id} className='swiper-slide'>
-              <img src={slideData.image} alt={slideData.title} data-swiper-parallax="40%" />
+              <img src={`/slider-${id + 1}.webp`} alt={slideData.title} data-swiper-parallax="40%" />
               <div className="slide-details">
                 <h4 className='font-glacial-r'><span>{slideData.category}</span></h4>
                 <h1 className='font-glacial-r'>{slideData.title}</h1>

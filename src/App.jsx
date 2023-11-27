@@ -8,7 +8,7 @@ import useBlobity from 'blobity/lib/react/useBlobity';
 
 function App() {
   const { pathname } = useLocation();
-  const blobity = useBlobity({ zIndex: 100, opacity: 0.8, dotSize: 8, color: 'rgb(180, 180, 180)', dotColor: "rgb(180, 180, 180)", kineticMorphing: true, font: 'Glacial-Regular', fontColor: 'rgb(100, 100, 100)', tooltipPadding: 10, radius: 1 })
+  const blobity = useBlobity({ zIndex: 9999, opacity: 0.8, dotSize: 8, color: 'rgb(180, 180, 180)', dotColor: "rgb(180, 180, 180)", kineticMorphing: true, font: 'Glacial-Regular', fontColor: 'rgb(100, 100, 100)', tooltipPadding: 10, radius: 1 })
 
   useEffect(() => {
     window.scroll({ top: 0, left: 0, behavior: "smooth" });

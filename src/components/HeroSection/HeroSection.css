@@ -9,20 +9,3 @@
     position: relative;
     /* background-color: #323232; this is just an example color. change to actual one and then chnage color of the hr in loader too */
 }
-
-.swiper-controls {
-    display: flex;
-    position: absolute;
-    right: 10vw;
-    bottom: 4vw;
-    z-index: 1050;
-    gap: 5px
-}
-
-.swiper-controls button {
-    padding: 1rem;
-    cursor: pointer;
-    background: black;
-    border: none;
-    color: white;
-}

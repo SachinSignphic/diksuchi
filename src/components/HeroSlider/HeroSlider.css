@@ -4,6 +4,10 @@
     display: flex;
 }
 
+.swiper-thumb {
+    width: 100vw;
+}
+
 .swiper-thumb > .swiper-wrapper {
     display: flex;
     flex-direction: column;
@@ -14,8 +18,8 @@
 }
 
 .thumb-slide img {
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: fit-content !important;
     object-fit: cover;
     margin-left: 0 !important;
     /* outline: 1px solid white; */
@@ -34,9 +38,9 @@
     filter: grayscale(0);
 }
 
-/* .swiper-thumb .swiper-slide-thumb-active {
-    width: 50vw;
-} */
+.thumb-slide {
+    height: 8vh !important;
+}
 
 .swiper-slide {
     display: flex !important;
@@ -50,20 +54,12 @@
 
 .swiper-slide img {
     width: 100%;
-    /* margin-left: 20%; */
+    margin-left: 20%;
     /* transform: translateX(-100%); */
-    height: 100vh;
+    /* height: 120vh; */
     object-fit: contain;
     opacity: 0.6;
 }
-
-/* .slider {
-}
-
-.slide h1 {
-    color: white
-} */
-
 
 .slide-details {
     display: flex;
@@ -96,4 +92,35 @@
     font-size: 1.2vw;
     letter-spacing: 0.4px;
     overflow: hidden;
+}
+
+.swiper-controls {
+    display: flex;
+    position: absolute;
+    right: 10vw;
+    bottom: 4vw;
+    z-index: 1050;
+    gap: 0.5vw
+}
+
+.swiper-controls button {
+    padding: 0.7vw;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    outline: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-controls button img {
+    filter: invert(1);
+    width: 1vw;
+}
+
+.swiper-controls button:first-child {
+    transform: rotate(180deg);
 }
