@@ -51,11 +51,11 @@ const Navbar = () => {
             <span className="menu-line"></span>
             <span className="menu-line short"></span>
           </div>
-          <Link to={"#"} data-blobity-magnetic="false" data-no-blobity onClick={() => setOpenMenu(!openMenu)} className='contact-btn font-glacial-r'>+ Contact</Link>
+          <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="open ←" onClick={() => setOpenMenu(!openMenu)} className='contact-btn font-glacial-r'>+ Contact</Link>
       </div>
       <div className='contact-form-wrapper' ref={contactFormWrapper}>
               <div className="contact-form" ref={contactForm}>
-                  <button ref={closeBtn} data-blobity-magnetic="false" onClick={() => setOpenMenu(!openMenu)}>
+                  <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close →" onClick={() => setOpenMenu(!openMenu)}>
                     <span></span>
                     <span></span>
                   </button>

@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import './ProjectChoice.css';
-import architecture from '/architecture.jpg'
+import architecture from '/slider-1.webp'
 import gsap from 'gsap';
 import SplitType from 'split-type';
 import { ScrollTrigger } from 'gsap/all';

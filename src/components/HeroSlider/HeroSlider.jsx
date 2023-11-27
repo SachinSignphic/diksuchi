@@ -28,10 +28,8 @@ const HeroSlider = () => {
         spaceBetween={1}
         speed={2000}
         direction={"vertical"}
-        // parallax={true}
-        modules={[Navigation, FreeMode, Parallax, Thumbs]}
-        slidesPerView={5}
-        freeMode={true}
+        modules={[Navigation, Parallax, Thumbs]}
+        slidesPerView={3}
         watchSlidesProgress={true}
         // centeredSlides={true}
       >
@@ -52,7 +50,7 @@ const HeroSlider = () => {
         thumbs={{ swiper: thumbSwiper? thumbSwiper: null }}
         modules={[Thumbs, Navigation, Parallax, Autoplay]}
         parallax={true}
-        spaceBetween={20}
+        spaceBetween={30}
         autoplay={{
           delay: 2000
         }}
@@ -73,21 +71,18 @@ const HeroSlider = () => {
           const badge = currentSlide.querySelector("h4")
           const title  = currentSlide.querySelector("h1")
           const charsFromTitle = SplitType.create(title)
-          const desc = currentSlide.querySelector("p")
 
           gsap.from(badge, { yPercent: 100, opacity: 0, duration: 2, ease: "expo.inOut" })
           gsap.from(charsFromTitle.chars, { yPercent: 100, duration: 2, ease: "expo.inOut", stagger: 0.05 })
-          gsap.from(desc, { yPercent: 200, duration: 2, ease: "expo.inOut" })
         }}
       >
         {
           sliderData.map((slideData, id) => (
             <SwiperSlide key={id} className='swiper-slide'>
-              <img src={`/slider-${id + 1}.webp`} alt={slideData.title} data-swiper-parallax="40%" />
+              <img src={`/slider-${id + 1}.webp`} alt={slideData.title} data-swiper-parallax="60%" />
               <div className="slide-details">
                 <h4 className='font-glacial-r'><span>{slideData.category}</span></h4>
                 <h1 className='font-glacial-r'>{slideData.title}</h1>
-                <p className='font-glacial-r'>{slideData.description}</p>
               </div>
             </SwiperSlide>
           ))
