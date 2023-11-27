@@ -111,3 +111,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.overflow-hidden {
+  overflow: hidden;
+}

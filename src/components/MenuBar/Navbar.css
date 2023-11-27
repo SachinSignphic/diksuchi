@@ -1,6 +1,6 @@
 .menu-nav {
     display: flex;
-    padding: 0.8rem 0.6rem;
+    padding: 0.8rem 1.2rem;
     align-items: center;
     background-color: #f7f7f7;
     backdrop-filter: blur(12px) saturate(200%);
@@ -15,6 +15,13 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 1001;
+    justify-content: space-between;
+}
+
+.contact-btn {
+    text-decoration: none;
+    color: black;
+    font-size: 1vw;
 }
 
 .menu-icon {
@@ -31,4 +38,108 @@
 
 .menu-line.short  {
     height: 1.6rem !important;
+}
+
+.contact-form-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(16px) saturate(150%);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    background-color: rgba(14, 14, 31, 0.434);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1500;
+    transform-origin: right center;
+}
+
+.contact-form {
+    width: 50%;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0.7vw;
+    gap: 1vh;
+}
+
+.contact-form button {
+    width: fit-content;
+    padding: 1.7vw 1vh;
+    border: none;
+    background: black;
+    cursor: pointer;
+    opacity: 0.6;
+    /* outline: 1px solid red; */
+}
+
+.contact-form button:last-child {
+    margin-left: auto;
+}
+
+.contact-form > button span {
+    opacity: 0.6;
+    width: 3vw;
+    height: 1px;
+    background-color: #f7f7f7;
+    color: white;
+    display: flex;
+}
+
+.contact-form > button span:first-child {
+    transform: rotate(45deg);
+}
+
+.contact-form > button span:last-child {
+    transform: rotate(-45deg);
+}
+
+.contact-form h1 {
+    color: white;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 6.63%, rgba(255, 255, 255, 0.00) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3vw;
+    letter-spacing: 9px;
+    margin-left: 2vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    opacity: 0.8
+}
+
+.contact-form label {
+    color: white;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 6.63%, rgba(255, 255, 255, 0.00) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5vw;
+    letter-spacing: 8px;
+    margin-left: 2vw;
+    opacity: 0.8;
+    font-size: 2vw;
+}
+
+.contact-form input[type="email"], .contact-form textarea {
+    background: transparent;
+    color: white;
+    opacity: 0.7;
+    border: none;
+    border-bottom: 1px solid #f7f7f7;
+    margin-left: 2vw;
+    font-size: 1.8vw;
+}
+
+.contact-form input[type="email"]:focus, .contact-form textarea:focus {
+    outline: none;
+}
+
+.contact-form textarea {
+    font-size: 1.2vw;
+    padding: 0.5rem;
 }

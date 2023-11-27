@@ -18,8 +18,10 @@ const SwirlingSection = () => {
     useLenis(scrollController => {
         // console.log(scrollAmount, scrollController.scroll, scrollAmount == scrollController.scroll)
         if (scrollAmount.current != 0 && scrollController.direction == 1) { 
-            scrollController.scrollTo(portfolioImagesSectionRef.current.offsetTop, { duration: 3 })
+            // console.log(scrollAmount.current)
+            scrollController.scrollTo(portfolioImagesSectionRef.current.offsetTop, { duration: 5, lock: true })
             scrollAmount.current = 0
+            // console.log(scrollAmount.current)
         }
         return () => scrollController.destroy()
     })
@@ -38,27 +40,20 @@ const SwirlingSection = () => {
 
         const mM = gsap.matchMedia();
 
-        // window.addEventListener("scroll", (e) => {
-        //     if (window.pageYOffset == portfolioImagesSectionRef.current.offsetTop - 1100) { 
-        //         console.log("triggered")
-        //      }
-        // }) // garbage not working
-
         mM.add("(min-width: 769px)", () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: swirlingIntroTextContainerRef.current,
-                    scrub: 1,
+                    scrub: 2,
                     end: `bottom bottom`,
                     pin: true,
                     // markers: true,
-                    onLeave: (self) => {
-                        console.log(self.scroll())
-                        scrollAmount.current = self.scroll()
-                    },
+                    onUpdate: (self) => {
+                        if (self.progress.toFixed(2) == 0.49 && self.direction == 1) {
+                            scrollAmount.current = 1
+                        }
+                    }
                 },
-                // gotta try react lenis docs to learn how to scroll to certain position
-                // or else, add separate eventListener to window and then do manually
             });
             
             tl.from(swirlIntroTextRef.current.childNodes, { '--rot': 0 })
@@ -76,7 +71,7 @@ const SwirlingSection = () => {
                 defaults: { ease: "none", duration: 32, repeat: -1 },
             })
 
-            swirlTimeline.to(precisionImages.current, { rotation: 360 })
+            // swirlTimeline.to(precisionImages.current, { rotation: 360 })
             swirlTimeline.set(precisionImages.current.children[0], { xPercent: 40, yPercent: 20 }, "<")
             swirlTimeline.to(precisionImages.current.children[0], { rotation: -360 }, "<")
             swirlTimeline.set(precisionImages.current.children[1], { xPercent: -20, yPercent: 160 }, "<")
@@ -94,7 +89,7 @@ const SwirlingSection = () => {
             swirlTimeline.set(precisionImages.current.children[7], { xPercent: 225, yPercent: "-=20" }, "<")
             swirlTimeline.to(precisionImages.current.children[7], { rotation: -360 }, "<")
             
-            swirlTimeline.to(excellenceImages.current, { rotation: -360 }, "<")
+            // swirlTimeline.to(excellenceImages.current, { rotation: -360 }, "<")
             swirlTimeline.set(excellenceImages.current.children[0], { xPercent: 100, yPercent: 40 }, "<")
             swirlTimeline.to(excellenceImages.current.children[0], { rotation: 360 }, "<")
             swirlTimeline.set(excellenceImages.current.children[1], { xPercent: -50, yPercent: "+=280" }, "<")
@@ -167,6 +162,7 @@ const SwirlingSection = () => {
                     </div>
                 </div>
             </div>
+            
             <div className="swirling-section portfolio-section" ref={portfolioImagesSectionRef}>
                 <div className="images-container" id="precision" ref={precisionImages}>
                     {/* repalce with a map on array */}
@@ -199,7 +195,6 @@ const SwirlingSection = () => {
                     <div className="swirling-section-type-selector">
                         <h2 className="portfolio-selector font-glacial-r" onMouseOver={handleTextMouseOver} onMouseLeave={handleTextMouseLeave}>PRECISION</h2>
                         <h2 className="portfolio-selector font-glacial-r">EXCELLENCE</h2>
-                        <h2 className="portfolio-selector font-glacial-r">MARVELOUS</h2>
                     </div>
                 </div>
             </div>

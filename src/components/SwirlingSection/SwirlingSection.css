@@ -1,7 +1,7 @@
 .swirling-section {
     margin-top: 35vh;
     display: flex;
-    min-height: 350vh;
+    min-height: 400vh;
     width: 100%;
     /* justify-content: center; */
     padding-left: 6vw;
@@ -105,7 +105,7 @@
 .images-container {
     width: 40vw;
     aspect-ratio: 1;
-    /* outline: 1px solid red; */
+    outline: 1px solid red;
     border-radius: 50%;
     position: absolute;
     z-index: -5;

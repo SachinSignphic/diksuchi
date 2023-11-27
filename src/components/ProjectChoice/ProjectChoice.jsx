@@ -35,8 +35,8 @@ const ProjectChoice = () => {
     const handleOnMouseEnter1 = ({ currentTarget }) => {
         const selectionFrom = gsap.utils.selector(currentTarget)
 
-        gsap.to(selectionFrom('h1'), { xPercent: 4, yPercent: 28, duration: 0.6, ease: "power3.inOut" })
-        gsap.to(selectionFrom('img'), { xPercent: -20, yPercent: -58, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('h1'), { xPercent: 5, yPercent: 25, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: -20, yPercent: -50, duration: 0.6, ease: "power3.inOut" })
     }
     
     const handleOnMouseLeave1 = ({ currentTarget }) => {

@@ -7,8 +7,6 @@ const Home = () => {
     const [hasLoaded, setHasLoaded] = useState(true);
     const [timeline, setTimeline] = useState(null);
 
-    console.log('hasloaded: so it re-renders?', hasLoaded);
-
     useLayoutEffect(() => {
         const context = gsap.context(() => {
             const tl = gsap.timeline();
@@ -24,6 +22,7 @@ const Home = () => {
             {
                 hasLoaded && (
                     <>
+                        {/* <ContactForm isOpen={isMenuToggled} /> */}
                         <HeroSection>
                             {/* <Model3D beginAnim={hasLoaded} /> */}
                             <HeroSlider />
