@@ -1,12 +1,12 @@
 import React from 'react'
-import { InteriorGallery, Navbar } from '../components'
+import { ArchitectureGallery, Navbar } from '../components'
 
 const Interior = () => {
   return (
     <>
       <Navbar />
       <br />
-      <InteriorGallery />
+      <ArchitectureGallery type={'interior'} title={'INTERIOR'} subtitle={'ELEGANT INTERIORS'} />
     </>
   )
 }

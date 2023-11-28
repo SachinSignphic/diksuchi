@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useState } from 'react';
 import './Navbar.css';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
+import useBlobity from 'blobity/lib/react/useBlobity';
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -22,7 +23,6 @@ const Navbar = () => {
   }, []);
 
   useLayoutEffect(() => {
-    console.log("contact form toggled?", openMenu)
     const contactFormContext = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power1.inOut" } })
       const items = [closeBtn.current, getInTouch.current, email.current, message.current, submitBtn.current]
@@ -32,7 +32,7 @@ const Navbar = () => {
           .fromTo(contactFormWrapper.current, { autoAlpha: 0 },  { autoAlpha: 1 })
           .from(contactForm.current, { xPercent: 100 })
           .from(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
-        } else {
+      } else {
           tl
           .to(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
           .to(contactForm.current, { xPercent: 100 })
@@ -51,11 +51,11 @@ const Navbar = () => {
             <span className="menu-line"></span>
             <span className="menu-line short"></span>
           </div>
-          <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="open ←" onClick={() => setOpenMenu(!openMenu)} className='contact-btn font-glacial-r'>+ Contact</Link>
+          <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu(!openMenu)} className='contact-btn font-glacial-r'>+ Contact</Link>
       </div>
       <div className='contact-form-wrapper' ref={contactFormWrapper}>
               <div className="contact-form" ref={contactForm}>
-                  <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close →" onClick={() => setOpenMenu(!openMenu)}>
+                  <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu(!openMenu)}>
                     <span></span>
                     <span></span>
                   </button>

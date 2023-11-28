@@ -131,7 +131,7 @@ const ProjectChoice = () => {
 
     return (
         <div className='project-choice'>
-            <Link className="fw-card from-right" onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave} ref={rightCardRef} data-blobity-tooltip="visit ↗" data-blobity-magnetic="false" data-no-blobity to="/architecture">
+            <Link preventScrollReset className="fw-card from-right" onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave} ref={rightCardRef} data-blobity-tooltip="visit ↗" data-blobity-magnetic="false" data-no-blobity to="/architecture">
                 <div ref={rightCardImgWrapper}>
                     <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} />
                 </div>

@@ -29,9 +29,9 @@ const HeroSlider = () => {
         speed={2000}
         direction={"vertical"}
         modules={[Navigation, Thumbs]}
-        slidesPerView={3}
         centeredSlides={true}
         centeredSlidesBounds={true}
+        slidesPerView={3}
         watchSlidesProgress={true}
       >
         {

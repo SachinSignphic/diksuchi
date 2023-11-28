@@ -6,7 +6,7 @@ const Architecture = () => {
         <>
             <Navbar />
             <br />
-            <ArchitectureGallery />
+            <ArchitectureGallery type={'architecture'} title={'ARCHITECTURE'} subtitle={'ASTONISHING DESIGNS'} />
         </>
     )
 }
