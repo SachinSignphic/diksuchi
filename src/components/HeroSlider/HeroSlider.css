@@ -8,20 +8,21 @@
 .swiper-thumb {
     width: 100vw;
     /* height: 40vh; */
-    margin-top: 10vh;
+    margin-top: 19vh;
 }
 
 .swiper-thumb > .swiper-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 80%;
+    width: 70%;
     height: fit-content;
+    transform: translateX(-14%) !important;
 }
 
 .thumb-slide img {
-    width: 100% !important;
+    width: 80% !important;
     height: fit-content !important;
     object-fit: cover;
     margin-left: 0 !important;
@@ -40,11 +41,11 @@
 }
 
 .thumb-slide {
-    height: 10vh !important;
+    height: 7.2vh !important;
 }
 
 .swiper-thumb .swiper-slide-thumb-active {
-    width: 20vw;
+    width: 12vw;
 }
 
 .swiper-slide {

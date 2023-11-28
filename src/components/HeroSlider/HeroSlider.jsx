@@ -28,12 +28,11 @@ const HeroSlider = () => {
         spaceBetween={1}
         speed={2000}
         direction={"vertical"}
-        modules={[Navigation, Parallax, Thumbs]}
-        slidesPerView={6}
+        modules={[Navigation, Thumbs]}
+        slidesPerView={3}
         centeredSlides={true}
         centeredSlidesBounds={true}
         watchSlidesProgress={true}
-        // centeredSlides={true}
       >
         {
           sliderData.map((slideData, id) => (

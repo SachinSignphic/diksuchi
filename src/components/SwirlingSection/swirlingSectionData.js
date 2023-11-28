@@ -41,11 +41,11 @@ const data = [
     },
     {
         "src": "swirl-11.webp",
-        "category": "interior"
+        "category": "architecture"
     },
     {
         "src": "swirl-12.webp",
-        "category": "architecture"
+        "category": "interior"
     },
     {
         "src": "swirl-13.webp",

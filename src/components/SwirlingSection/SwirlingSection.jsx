@@ -23,7 +23,7 @@ const SwirlingSection = () => {
         // console.log(scrollAmount, scrollController.scroll, scrollAmount == scrollController.scroll)
         if (scrollAmount.current != 0 && scrollController.direction == 1) { 
             // console.log(scrollAmount.current)
-            scrollController.scrollTo(portfolioImagesSectionRef.current.offsetTop, { duration: 5, lock: true })
+            scrollController.scrollTo(portfolioImagesSectionRef.current.offsetTop, { duration: 3.6, lock: true })
             scrollAmount.current = 0
             // console.log(scrollAmount.current)
         }
@@ -70,7 +70,7 @@ const SwirlingSection = () => {
             } }, "<-=40%")
             tl.eventCallback("onComplete", () => {
                 const portfolioImageAppearTL = gsap.timeline()
-                portfolioImageAppearTL.to(portfolioImagesSectionRef.current, { autoAlpha: 1, duration: 1.5, ease: "power2.inOut" })
+                portfolioImageAppearTL.to(portfolioImagesSectionRef.current, { autoAlpha: 1, duration: 0.5, ease: "power2.inOut" })
             })
             const swirlTimeline = gsap.timeline({
                 defaults: { ease: "none", duration: 32, repeat: -1 },

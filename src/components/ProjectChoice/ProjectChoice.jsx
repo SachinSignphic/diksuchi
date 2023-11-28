@@ -36,7 +36,7 @@ const ProjectChoice = () => {
         const selectionFrom = gsap.utils.selector(currentTarget)
 
         gsap.to(selectionFrom('h1'), { xPercent: 5, yPercent: 25, duration: 0.6, ease: "power3.inOut" })
-        gsap.to(selectionFrom('img'), { xPercent: -20, yPercent: -50, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: -20, yPercent: -55, duration: 0.6, ease: "power3.inOut" })
     }
     
     const handleOnMouseLeave1 = ({ currentTarget }) => {
@@ -114,6 +114,9 @@ const ProjectChoice = () => {
                     // markers: { fontSize: 20 },
                 }
             });
+
+            tl.set(rightCardRef.current, { scale: 0.9 })
+            tl.set(leftCardRef.current, { scale: 0.9 })
 
             tl.from(architectureLetters.chars, {
                 yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut",
