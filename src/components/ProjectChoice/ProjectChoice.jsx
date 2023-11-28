@@ -136,7 +136,7 @@ const ProjectChoice = () => {
             </Link>
             <Link className="fw-card from-left" onMouseEnter={handleOnMouseEnter1} onMouseLeave={handleOnMouseLeave1} data-blobity-tooltip="visit ↗" data-no-blobity data-blobity-magnetic="false" ref={leftCardRef} to="/interiors">
                 <div ref={leftCartImgWrapper}>
-                    <img key={1} src="/interior.jpg" alt="Interior" ref={interiorImage} />
+                    <img key={1} src="/interior.webp" alt="Interior" ref={interiorImage} />
                 </div>
                 <h1 className="fw-card-title font-glacial-b right-align" ref={interiorTextRef}>Interior</h1>
             </Link>

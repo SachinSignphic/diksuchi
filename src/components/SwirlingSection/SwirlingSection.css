@@ -41,7 +41,8 @@
 
 .carousel-card-container {
     display: flex;
-    height: 70%;
+    height: 90%;
+    overflow: hidden;
 }
 
 .swirling-text-heading {
@@ -129,7 +130,7 @@
     flex-direction: column;
     gap: 0.1rem;
     /* outline: 1px solid red; */
-    height: 31.22%;
+    height: 99.22%;
     border-radius: 5px;
     position: absolute;
     top: 0;
@@ -139,7 +140,7 @@
 .carousel-cards img {
     width: 100%;
     object-fit: cover;
-    height: 50vh;
+    height: 70vh;
     border-radius: 5px;
 }
 

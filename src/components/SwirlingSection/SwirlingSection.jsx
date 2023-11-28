@@ -62,7 +62,8 @@ const SwirlingSection = () => {
             
             tl.from(swirlIntroTextRef.current.childNodes, { '--rot': 0 })
             tl.to(introScrollProgressRef.current, { scaleX: 1.323 }, "<")
-            tl.to(scrollingImagesRef.current, { yPercent: -100, ease: "power1.inOut" }, "<")
+            tl.to(scrollingImagesRef.current, { yPercent: -70, ease: "power1.inOut" }, "<")
+            tl.to(scrollingImagesRef.current.querySelectorAll("img"), { yPercent: -30, ease: "power1.inOut" }, "<")
             tl.to(swirlIntroTextRef.current, { scale: '+=175', ease: "power1.in",})
             tl.to(scrollingImagesRef.current, { opacity: 0, ease: "power2.inOut", onComplete: () => {
                 tl.to(swirlIntroTextRef.current, { opacity: 0 }, )
@@ -155,18 +156,15 @@ const SwirlingSection = () => {
                 </div>
                 <div className="carousel-cards" ref={scrollingImagesRef}>
                     {/* repalce with a map on array */}
-                    <div className="carousel-card-container">
-                        <img src="/architecture.jpg" alt="Acrhitecure" />
-                    </div>
-                    <div className="carousel-card-container">
-                        <img src="/interior.jpg" alt="Interior" />
-                    </div>
-                    <div className="carousel-card-container">
-                        <img src="/architecture.jpg" alt="Acrhitecure" />
-                    </div>
-                    <div className="carousel-card-container">
-                        <img src="/interior.jpg" alt="Interior" />
-                    </div>
+                    {
+                        Array(7).fill(1).map((_, i) => {
+                            return (
+                                <div className="carousel-card-container">
+                                    <img src={`/scroll-${i+1}.webp`} alt={`Acrhitecure`} />
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
             
