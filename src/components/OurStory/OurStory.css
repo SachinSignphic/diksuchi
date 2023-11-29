@@ -47,7 +47,7 @@
 .our-story-left {
     height: 45vh;
     overflow: hidden;
-    margin-top: 10vh;
+    margin-top: 7vh;
 }
 
 .story-paras {
@@ -64,7 +64,7 @@
     letter-spacing: 0.5vw;
     line-height: 3.125vh;
     font-size: 2vw;
-    margin-top: 5vh;
+    margin-top: 2vh;
 }
 
 .our-story p {
@@ -74,7 +74,7 @@
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     letter-spacing: 5px;
-    line-height: 177%;
+    line-height: 220%;
     text-align: justify;
 }
 
@@ -86,7 +86,7 @@
 .story-image {
     width: 30vw;
     height: 63vh;
-    /* overflow: hidden; */
+    overflow: hidden;
     display: flex;
     /* outline: 1px solid red; */
     display: flex;

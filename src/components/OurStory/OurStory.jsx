@@ -35,7 +35,7 @@ const OurStory = ({ pageRef }) => {
 
             // tl.fromTo(firstPara.lines, {opacity: 0}, { opacity: 1, stagger: 0.05 })
             tl.to(selector(".story-paras"), { yPercent: -100 })
-            tl.to(ourStoryImages.current.children, { yPercent: -450, ease: "power2.inOut" }, 0.1, )
+            tl.to(ourStoryImages.current.children, { yPercent: -450, ease: "power2.inOut" }, "<")
         })
 
         return () => aboutContext.revert()
@@ -60,6 +60,9 @@ const OurStory = ({ pageRef }) => {
                         <p className='font-glacial-r'>
                             Diksuchi's expertise lies in crafting comprehensive solutions, offering a clear vision that effortlessly navigates through challenges. Every space under their guidance is a testament to a seamless and captivating experience, ensuring it reflects its intended purpose with grace and purpose. In the world of architecture, Diksuchi stands as a beacon, guiding projects to new heights of design excellence.
                         </p>
+                        <div className="social-links">
+
+                        </div>
                     </div>
                 </div>
                 <div className="our-story-right" ref={ourStoryImages}>
