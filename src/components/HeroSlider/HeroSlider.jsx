@@ -1,6 +1,6 @@
 import './HeroSlider.css'
 import sliderData from './HeroSliderData'
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/thumbs'
 import 'swiper/css/free-mode';
@@ -22,6 +22,7 @@ const HeroSlider = () => {
 
   return (
     <div className='hero-slider'>
+      <div className="filler-gradient"></div>
       <Swiper
         onSwiper={setThumbSwiper}
         className='swiper-thumb'
@@ -42,7 +43,6 @@ const HeroSlider = () => {
           ))
         }
       </Swiper>
-
       <Swiper
         className='swiper-slider'
         // navigation={true}
@@ -55,24 +55,13 @@ const HeroSlider = () => {
         autoplay={{
           delay: 2000
         }}
-        // on={(swiper) => {
-        //   const currentSlide = swiper.slides
-        //   console.log(currentSlide)
-        //   // const badge = currentSlide.querySelector("h4")
-        //   // const title = currentSlide.querySelector("h1")
-        //   // const charsFromTitle = SplitType.create(title)
-        //   // const desc = currentSlide.querySelector("p")
-        //   // gsap.from(badge, { yPercent: 100, opacity: 0, duration: 2, ease: "expo.inOut" })
-        //   // gsap.from(charsFromTitle.chars, { yPercent: 100, duration: 2, ease: "expo.inOut", stagger: 0.1 })
-        //   // gsap.from(desc, { yPercent: 200, duration: 2, ease: "expo.inOut" })
-        // }}
         onSlideChange={(swiper) => {
           const currentSlide = swiper.slides[swiper.activeIndex]
           
           const badge = currentSlide.querySelector("h4")
           const title  = currentSlide.querySelector("h1")
           const charsFromTitle = SplitType.create(title)
-
+          
           gsap.from(badge, { yPercent: 100, opacity: 0, duration: 2, ease: "expo.inOut" })
           gsap.from(charsFromTitle.chars, { yPercent: 100, duration: 2, ease: "expo.inOut", stagger: 0.05 })
         }}
@@ -84,6 +73,11 @@ const HeroSlider = () => {
               <div className="slide-details">
                 <h4 className='font-glacial-r'><span>{slideData.category}</span></h4>
                 <h1 className='font-glacial-r'>{slideData.title}</h1>
+              </div>
+              <div className='hero-slider-counter'>
+                <h1 data-swiper-parallax="200%" className='font-glacial-b color-bw-gradient-title'>
+                  {(id+1).toString().padStart(2, "0")}
+                </h1>
               </div>
             </SwiperSlide>
           ))

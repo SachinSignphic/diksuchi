@@ -19,10 +19,8 @@ const Navbar = () => {
   const menuItemsRef = useRef()
   const menuWrapperRef = useRef()
   const menuStripsRef = useRef()
-  console.log("reredR?")
 
   useLayoutEffect(() => {
-    gsap.set(menuItemsRef.current, { xPercent: -50, yPercent: -50 })
 
     const tl = gsap.timeline();
     tl.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
@@ -68,14 +66,14 @@ const Navbar = () => {
       const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power1.inOut" } })
       const items = [closeBtn.current, getInTouch.current, email.current, message.current, submitBtn.current]
       if (openMenu) {
-        console.log("opening")
+        // console.log("opening")
         tl
         .from(contactFormWrapper.current, { xPercent: 100 })
         .fromTo(contactFormWrapper.current, { autoAlpha: 0 },  { autoAlpha: 1 })
         .from(contactForm.current, { xPercent: 100 })
         .from(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
       } else {
-          console.log("closing")
+          // console.log("closing")
           tl
           .to(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
           .to(contactForm.current, { xPercent: 100 })

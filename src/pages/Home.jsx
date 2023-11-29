@@ -22,15 +22,11 @@ const Home = () => {
             {
                 hasLoaded && (
                     <>
-                        {/* <ContactForm isOpen={isMenuToggled} /> */}
                         <HeroSection>
-                            {/* <Model3D beginAnim={hasLoaded} /> */}
                             <HeroSlider />
                             <Navbar />
                             <ScrollIndicator />
-                            {/* <Menu />  */}
-                            {/* ipodhiku menu ah inga vei.. but it should acutally come at the top after adding button and all */}
-                            {/* <Socials /> */}
+                            <HeroHeading />
                         </HeroSection>
                         <ProjectChoice />
                         <SwirlingSection />

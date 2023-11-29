@@ -107,6 +107,7 @@ body {
 
 .color-bw-gradient-title {
   background: #FFFFFF;
+  color: white;
   background: linear-gradient(to bottom, #FFFFFF 61%, #141413 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

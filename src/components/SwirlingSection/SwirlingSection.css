@@ -1,7 +1,7 @@
 .swirling-section {
     margin-top: 35vh;
     display: flex;
-    min-height: 400vh;
+    min-height: 375vh;
     width: 100%;
     /* justify-content: center; */
     padding-left: 6vw;
@@ -33,7 +33,6 @@
     min-height: 100vh !important;
     align-items: center;
     position: relative;
-    opacity: 0;
     justify-content: center;
     padding-left: 0;
     gap: 0;

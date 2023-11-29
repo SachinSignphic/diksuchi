@@ -1,38 +1,30 @@
 .hero-title-container {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 100%;
     /* justify-content: flex-start; */
-    /* height: 10vh; */
+    /* outline: 1px solid red; */
     overflow: hidden;
+    flex-direction: column;
+    top: 15vh;
+    left: 14vw;
+    /* z-index: 100; */
 }
 
 .company-name {
-    font-size: 14rem;
-    /* line-height: 18rem; */
+    font-size: 9vw;
     width: fit-content;
-    padding-left: 10%;
     letter-spacing: 0.9rem;
     line-height: normal;
-    /* line-height: 80%; */
-    /* position: absolute; */
-    /* top: 80%; */
-    /* height: 15vh; */
-    /* outline: 1px solid red; */
 }
 
 .company-subname {
-    font-size: 7rem;
+    font-size: 5vw;
     background: transparent !important;
     color: black !important;
     -webkit-text-stroke-color: aliceblue;
     -webkit-text-stroke-width: 1px;
     width: fit-content;
     text-align: left;
-    /* line-height: 80%; */
-    /* position: absolute; */
-    /* top: 160%; */
-    /* height: 15vh; */
-    /* left: 55% */
-    /* outline: 1px solid red; */
+    padding-left: 24%;
 }

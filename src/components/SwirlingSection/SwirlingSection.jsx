@@ -23,7 +23,7 @@ const SwirlingSection = () => {
         // console.log(scrollAmount, scrollController.scroll, scrollAmount == scrollController.scroll)
         if (scrollAmount.current != 0 && scrollController.direction == 1) { 
             // console.log(scrollAmount.current)
-            scrollController.scrollTo(portfolioImagesSectionRef.current.offsetTop, { duration: 3.2, lock: true })
+            scrollController.scrollTo(portfolioImagesSectionRef.current.offsetTop, { duration: 5, lock: true })
             scrollAmount.current = 0
             // console.log(scrollAmount.current)
         }
@@ -53,7 +53,7 @@ const SwirlingSection = () => {
                     pin: true,
                     // markers: true,
                     onUpdate: (self) => {
-                        if (self.progress.toFixed(2) == 0.49 && self.direction == 1) {
+                        if (self.progress.toFixed(2) == 0.48 && self.direction == 1) {
                             scrollAmount.current = 1
                         }
                     }
@@ -66,12 +66,11 @@ const SwirlingSection = () => {
             tl.to(scrollingImagesRef.current.querySelectorAll("img"), { yPercent: -30, ease: "power1.inOut" }, "<")
             tl.to(swirlIntroTextRef.current, { scale: '+=175', ease: "power1.in",})
             tl.to(scrollingImagesRef.current, { opacity: 0, ease: "power2.inOut", onComplete: () => {
-                tl.to(swirlIntroTextRef.current, { opacity: 0 }, )
+                tl.to(swirlIntroTextRef.current, { autoAlpha: 0 })
             } }, "<-=40%")
-            tl.eventCallback("onComplete", () => {
-                const portfolioImageAppearTL = gsap.timeline()
-                portfolioImageAppearTL.to(portfolioImagesSectionRef.current, { autoAlpha: 1, duration: 0.8, ease: "power2.inOut" })
-            })
+            // tl.eventCallback("onComplete", () => {
+            //     gsap.to(portfolioImagesSectionRef.current, { autoAlpha: 1, duration: 0.3, ease: "power2.inOut" })
+            // })
             const swirlTimeline = gsap.timeline({
                 defaults: { ease: "none", duration: 32, repeat: -1 },
             })
