@@ -1,0 +1,103 @@
+.our-story-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-top: 10vh;
+    gap: 2vh;
+    height: 1000vh;
+}
+
+.our-story-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+    align-items: center;
+}
+
+.our-story-title h1 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 6.63%, rgba(255, 255, 255, 0.00) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 5vw;
+    letter-spacing: 1.8vw;
+}
+
+.our-story-title h3 {
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.5vw;
+    font-size: 1.9vw;
+}
+
+.our-story {
+    display: flex;
+    justify-content: space-between;
+    gap: 7vw;
+    overflow: hidden;
+    /* outline: 1px solid red; */
+}
+
+.our-story-left, .our-story-right {
+    /* outline: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+}
+
+.our-story-left {
+    height: 45vh;
+    overflow: hidden;
+    margin-top: 10vh;
+}
+
+.story-paras {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh
+}
+
+.our-story-left h2 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5vw;
+    line-height: 3.125vh;
+    font-size: 2vw;
+    margin-top: 5vh;
+}
+
+.our-story p {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 6.63%, rgba(211, 211, 211, 0.753) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 177%;
+    text-align: justify;
+}
+
+.our-story-right {
+    margin-right: 1.6vw;
+    gap: 5vh
+}
+
+.story-image {
+    width: 30vw;
+    height: 63vh;
+    /* overflow: hidden; */
+    display: flex;
+    /* outline: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+/* 
+.story-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+} */
+

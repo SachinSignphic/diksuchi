@@ -1,6 +1,5 @@
 import { useLayoutEffect, useState } from "react";
 import { Navbar, HeroSection, Loader, Menu, Socials, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, HeroSlider, WordFromFounder } from "../components";
-import './Home.css';
 import { gsap } from "gsap";
 
 const Home = () => {

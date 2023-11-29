@@ -1,11 +1,10 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
-import './App.css'
 import Architecture from './pages/Architecture';
 import Interior from './pages/Interior';
-import { useEffect } from 'react';
+import About from './pages/About';
+import './App.css'
 import useBlobity from 'blobity/lib/react/useBlobity';
-import { useLenis } from '@studio-freight/react-lenis';
 
 function App() {
   const { pathname } = useLocation();
@@ -17,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/architecture" element={<Architecture />}></Route>
         <Route path="/interiors" element={<Interior />}></Route>
+        <Route path="/about" element={<About />}></Route>
       </Routes>
     </>
   )

@@ -82,7 +82,7 @@ const ArchitectureGallery = ({ type, title, subtitle }) => {
                         </div>
                     </div>
                     <div className="modern-container" ref={image3}>
-                        <h1 className='font-glacial-r'>THE MODERN</h1>
+                        <h1 className='font-glacial-r'>{data.current[projectNo].title}</h1>
                         <div className="image-3">
                             <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}3.webp`} alt="" />
                         </div>
@@ -90,19 +90,19 @@ const ArchitectureGallery = ({ type, title, subtitle }) => {
                 </div>
                 <div className="right-images">
                     <div className="text-and-image">
-                        <p className='font-glacial-r' ref={p1}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, voluptate?</p>
+                        <p className='font-glacial-r' ref={p1}>{data.current[projectNo].description}</p>
                         <div className='little-container' ref={image1}>
                             <div className="image-4">
                                 <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}4.webp`} alt="" />
                             </div>
-                            <p className='font-glacial-r'>Lorem ipsum dolor sit amet consectetur.</p>
+                            <p className='font-glacial-r'></p>
                         </div>
                     </div>
                     <div className="image-bottom-2" ref={image2}>
                         <div className="image-5">
                             <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}5.webp`} alt="" />
                         </div>
-                        <h1 className='font-glacial-r'>HYDERABAD</h1>
+                        <h1 className='font-glacial-r'>{data.current[projectNo].location}</h1>
                     </div>
                 </div>
             </div>

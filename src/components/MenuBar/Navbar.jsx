@@ -28,19 +28,6 @@ const Navbar = () => {
     return () => tl.revert();
   }, []);
 
-  // useLayoutEffect(() => {
-  //   const menuContext = gsap.context(() => {
-  //     setMenuTimeline(
-  //       menuTimeline
-  //         .from(menuItemsRef.current.querySelectorAll("a"), { yPercent: 100 })
-  //         .pause()
-  //     )
-  //   })
-  //   console.log("??", openLeft, menuTimeline)
-
-  //   return () => menuContext.revert()
-  // }, [menuTimeline])
-
   useLayoutEffect(() => {
     const menuContext = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { duration: 0.4 } })
@@ -88,7 +75,7 @@ const Navbar = () => {
   return (
     <>
       <div className='menu-nav' ref={menuBarRef}>
-          <div className="menu-icon" onClick={() => setOpenLeft(true)}>
+        <div className="menu-icon" data-no-blobity data-blobity-tooltip="≡menu" onClick={() => setOpenLeft(true)}>
             <span className="menu-line"></span>
             <span className="menu-line short"></span>
           </div>

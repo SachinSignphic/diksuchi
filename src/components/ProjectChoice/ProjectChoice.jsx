@@ -115,8 +115,8 @@ const ProjectChoice = () => {
                 }
             });
 
-            tl.set(rightCardRef.current, { scale: 0.9 })
-            tl.set(leftCardRef.current, { scale: 0.9 })
+            gsap.set(rightCardRef.current, { scale: 0.9 })
+            gsap.set(leftCardRef.current, { scale: 0.9 })
 
             tl.from(architectureLetters.chars, {
                 yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut",
