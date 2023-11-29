@@ -1,7 +1,6 @@
 import { useLayoutEffect, useState, useRef } from 'react'
 import './ArchitectureGallery.css'
 import gsap from 'gsap'
-import { useLenis } from '@studio-freight/react-lenis'
 import architectureProjects from './architectureGalleryData'
 import interiorProjects from './interiorGalleryData'
 
@@ -14,10 +13,6 @@ const ArchitectureGallery = ({ type, title, subtitle }) => {
     const p1 = useRef()
     const [projectNo, setProjectNo] = useState(0)
     const data = useRef(type == 'architecture'? architectureProjects: interiorProjects)
-
-    useLenis(scrollController => {
-        scrollController.scrollTo(0)
-    }, [])
 
     const handleNextClick = (e) => {
         const tl = gsap.timeline()
