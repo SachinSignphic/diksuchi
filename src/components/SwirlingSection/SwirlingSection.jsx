@@ -68,9 +68,9 @@ const SwirlingSection = () => {
             tl.to(scrollingImagesRef.current, { opacity: 0, ease: "power2.inOut", onComplete: () => {
                 tl.to(swirlIntroTextRef.current, { autoAlpha: 0 })
             } }, "<-=40%")
-            // tl.eventCallback("onComplete", () => {
-            //     gsap.to(portfolioImagesSectionRef.current, { autoAlpha: 1, duration: 0.3, ease: "power2.inOut" })
-            // })
+            tl.eventCallback("onComplete", () => {
+                tl.to(swirlIntroTextRef.current, { autoAlpha: 0, duration: 0.3, scale: 1, ease: "power2.inOut" })
+            })
             const swirlTimeline = gsap.timeline({
                 defaults: { ease: "none", duration: 32, repeat: -1 },
             })
@@ -181,7 +181,7 @@ const SwirlingSection = () => {
                     {
                         Array(8).fill(1).map((x,y) => x+y).map((item, i) => {
                             return (
-                                <img src={swirlImages[i].src} key={i} className={`precision-image ${swirlImages[i].category}-image`} alt={``} />
+                                <img src={swirlImages[i].src} key={i} loading='lazy' className={`precision-image ${swirlImages[i].category}-image`} alt={``} />
                             )
                         })
                     }
@@ -200,7 +200,7 @@ const SwirlingSection = () => {
                         Array(8).fill(1).map((item, i) => {
                             i += 8;
                             return (
-                                <img src={swirlImages[i].src} key={i} className={`excellence-image ${swirlImages[i].category}-image`} alt={``} />
+                                <img src={swirlImages[i].src} key={i} loading='lazy' className={`excellence-image ${swirlImages[i].category}-image`} alt={``} />
                             )
                         })
                     }

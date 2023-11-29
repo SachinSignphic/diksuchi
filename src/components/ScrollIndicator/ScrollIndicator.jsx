@@ -9,8 +9,8 @@ const ScrollIndicator = () => {
 
     const scrollToTop = () => {
         // let lerpAmount = Math.abs(1 - (scrollController.scroll * 0.0005))
-        let duration = (scrollController.scroll * 0.0005)
-        // console.log(duration, lerpAmount)
+        let duration = (scrollController.scroll * 0.0022)
+        console.log(duration)
         scrollController.scrollTo(0, { duration: duration })
     }
 

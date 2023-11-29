@@ -57,8 +57,8 @@ const sliderData = [
     },
     {
         image: '/test-slider-image-4.jpg',
-        title: 'padmavati apartments',
-        category: 'apartment',
+        title: 'suguna gardens',
+        category: 'villa',
         description: 'Ain\'t no way this is real. Period.',
         link: '#',
     },
