@@ -5,6 +5,7 @@ import Interior from './pages/Interior';
 import About from './pages/About';
 import './App.css'
 import useBlobity from 'blobity/lib/react/useBlobity';
+import Gallery from './pages/Gallery';
 
 function App() {
   const { pathname } = useLocation();
@@ -17,6 +18,7 @@ function App() {
         <Route path="/architecture" element={<Architecture />}></Route>
         <Route path="/interiors" element={<Interior />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/gallery" element={<Gallery />}></Route>
       </Routes>
     </>
   )

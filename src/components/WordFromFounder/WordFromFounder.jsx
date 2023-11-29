@@ -6,7 +6,7 @@ const WordFromFounder = () => {
     const WordFromFounderRef = useRef()
     const paragraphs = useRef()
     const wordFromFounderTitle = useRef()
-    const founderProgress = useRef()
+    const founderImageRef = useRef()
 
     useLayoutEffect(() => {
         const tl = gsap.timeline({
@@ -24,21 +24,20 @@ const WordFromFounder = () => {
         const paras = paragraphs.current;
         const selector = gsap.utils.selector(paras)
 
-        tl.set(founderProgress.current, { transformOrigin: "left center" })
         tl.from(wordFromFounderTitle.current, { opacity: 0 })
+        tl.from(founderImageRef.current, { opacity: 0 }, "<")
         tl.from(paras, { opacity: 0 }, "<")
         tl.to(selector(":first-child"), { yPercent: -100, ease: "power1.inOut" })
-        tl.fromTo(founderProgress.current, { scaleX: 0 }, { scaleX: 1.6 }, "<")
+        
         return () => tl.revert()
     }, [])
 
     return (
         <div className='word-from-founder' ref={WordFromFounderRef}>
-            <div className="founder-image-container">
+            <div className="founder-image-container" ref={founderImageRef}>
                 <img src="/placeholder.jpg" alt="Placeholder" />
             </div>
             <div className="founder-paragraph">
-                <hr ref={founderProgress} />
                 <h1 className='font-glacial-r' ref={wordFromFounderTitle}>WORD FROM OUR FOUNDER</h1>
                 <div className="founder-p" ref={paragraphs}>
                     <div>

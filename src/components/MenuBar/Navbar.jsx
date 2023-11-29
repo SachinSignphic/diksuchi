@@ -119,6 +119,9 @@ const Navbar = () => {
             <Link to="/interiors" data-no-blobity className='font-glacial-b'>INTERIORS</Link>
           </li>
           <li>
+            <Link to="/gallery" data-no-blobity className='font-glacial-b'>GALLERY</Link>
+          </li>
+          <li>
             <Link to="/about" data-no-blobity className='font-glacial-b'>ABOUT</Link>
           </li>
         </ul>
