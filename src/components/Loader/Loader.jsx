@@ -2,21 +2,20 @@ import { useEffect, useRef } from 'react'
 import './Loaders.css'
 import { progressBarAnimation } from './animation';
 
-const Loader = ({ timeline, setState }) => {
+const Loader = () => {
     // const loadingPercentRef = useRef(); // use soon for numbering
     const loadingTitleRef = useRef();
     const loadingSideHRRef = useRef();
     const loadingScreenRef = useRef()
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         // Use the timeline prop to create the timeline in the Loader component
-        timeline && timeline.add(progressBarAnimation(
+        progressBarAnimation(
             loadingTitleRef,
             loadingSideHRRef,
             loadingScreenRef,
-            setState
-        ));
-    }, [timeline]);
+        )
+    }, []);
 
     return (
         <div className='loading-screen' ref={loadingScreenRef}>

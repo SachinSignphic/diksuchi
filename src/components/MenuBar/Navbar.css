@@ -1,7 +1,7 @@
 .menu-nav {
     display: flex;
     padding: 1.5% 1.2%;
-    height: 5%;
+    height: 5vh;
     align-items: center;
     background-color: #f7f7f7;
     backdrop-filter: blur(12px) saturate(200%);
@@ -63,6 +63,7 @@
     background-color: rgba(14, 14, 31, 0.434);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
+    /* justify-content: space-between; */
 }
 
 .contact-form {
@@ -205,4 +206,9 @@
     position: absolute;
     top: 1vh;
     left: 1vw;
+}
+
+.socials-wtf {
+    display: flex;
+    gap: 1vw
 }

@@ -49,20 +49,22 @@ const ArchitectureGallery = ({ type, title, subtitle }) => {
     }
 
     useLayoutEffect(() => {
-        const tl = gsap.timeline()
-        console.log(projectNo)
-        const images = [
-            image1.current, 
-            p1.current,
-            image2.current,
-            image3.current,
-            image4.current,
-            image5.current,
-        ]
-    
-        tl.from(images, { x: '-100vw', stagger: 0.1, duration: 3, ease: "expo.inOut" })
+        const anim = gsap.context(() => {
+            const tl = gsap.timeline()
+            // console.log(projectNo)
+            const images = [
+                image1.current, 
+                p1.current,
+                image2.current,
+                image3.current,
+                image4.current,
+                image5.current,
+            ]
+        
+            tl.from(images, { x: '-100vw', stagger: 0.1, duration: 3, ease: "expo.inOut" })
+        })
 
-        return () => tl.revert()
+        return () => anim.revert()
     }, [projectNo])
 
     return (

@@ -15,7 +15,7 @@
     position: relative;
     display: flex;
     width: 30vw;
-    height: 40vw;
+    height: 35vw;
     justify-content: center;
 }
 
@@ -30,6 +30,7 @@
     flex-direction: column;
     width: 40vw;
     height: 67.3vh;
+    gap: 10%
     /* justify-content: center; */
 }
 
@@ -40,7 +41,7 @@
     overflow: hidden;
     height: 35%;
     /* padding-top: 5vh; */
-    margin-top: 12vh;
+    margin-top: 6vh;
     /* transform-origin: left center; */
     /* transform: scaleX(0) */
 }

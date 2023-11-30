@@ -1,10 +1,9 @@
 import React, { useRef, useLayoutEffect } from 'react'
 import './SwirlingSection.css'
 import gsap from 'gsap'
-import { ScrollTrigger, MotionPathPlugin } from 'gsap/all';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenis } from '@studio-freight/react-lenis';
 import swirlImages from './swirlingSectionData'
-import Blobity from 'blobity';
 
 const SwirlingSection = () => {
     const swirlIntroTextRef = useRef();
@@ -31,7 +30,6 @@ const SwirlingSection = () => {
     })
     
     const handleTextMouseOver = (targetWord) => {
-        console.log("mouse come")
         gsap.to(document.querySelectorAll(`.${targetWord}`), { opacity: 1, filter: 'blur(0px)', duration: 1 })
     }
     
@@ -41,109 +39,108 @@ const SwirlingSection = () => {
 
     useLayoutEffect(() => {
 
-        gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+        gsap.registerPlugin(ScrollTrigger);
 
-        const mM = gsap.matchMedia();
-
-        mM.add("(min-width: 769px)", () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: swirlingIntroTextContainerRef.current,
-                    scrub: 2,
-                    end: `bottom bottom`,
-                    pin: true,
-                    // markers: true,
-                    onUpdate: (self) => {
-                        if (self.progress.toFixed(2) == 0.48 && self.direction == 1) {
-                            scrollAmount.current = 1
+        const theSwirlAnim = gsap.context(() => {
+            const mM = gsap.matchMedia();
+    
+            mM.add("(min-width: 769px)", () => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: swirlingIntroTextContainerRef.current,
+                        scrub: 2,
+                        start: '0% top',
+                        // end: `bottom bottom`,
+                        pin: true,
+                        // markers: true,
+                        onUpdate: (self) => {
+                            if (self.progress.toFixed(2) == 0.48 && self.direction == 1) {
+                                scrollAmount.current = 1
+                            }
                         }
-                    }
-                },
-            });
-            
-            tl.from(swirlIntroTextRef.current.childNodes, { '--rot': 0 })
-            tl.to(introScrollProgressRef.current, { scaleX: 1.323 }, "<")
-            tl.to(scrollingImagesRef.current, { yPercent: -70, ease: "power1.inOut" }, "<")
-            tl.to(scrollingImagesRef.current.querySelectorAll("img"), { yPercent: -30, ease: "power1.inOut" }, "<")
-            tl.to(swirlIntroTextRef.current, { scale: '+=175', ease: "power1.in",})
-            tl.to(scrollingImagesRef.current, { opacity: 0, ease: "power2.inOut", onComplete: () => {
-                tl.to(swirlIntroTextRef.current, { autoAlpha: 0 })
-            } }, "<-=40%")
-            tl.to(swirlIntroTextRef.current, { autoAlpha: 0, duration: 0.3, scale: 0, ease: "power2.inOut" })
-            // tl.eventCallback("onComplete", () => {
-            // })
-            const swirlTimeline = gsap.timeline({
-                defaults: { ease: "none", duration: 32, repeat: -1 },
+                    },
+                });
+
+                
+                tl.from(swirlIntroTextRef.current.childNodes, { '--rot': 0 })
+                tl.to(introScrollProgressRef.current, { scaleX: 1.323 }, "<")
+                tl.to(scrollingImagesRef.current, { yPercent: -70, ease: "power1.inOut" }, "<")
+                tl.to(scrollingImagesRef.current.querySelectorAll("img"), { yPercent: -30, ease: "power1.inOut" }, "<")
+                tl.to(swirlIntroTextRef.current, { scale: '+=175', ease: "power1.in",})
+                tl.to(scrollingImagesRef.current, { opacity: 0, ease: "power2.inOut", onComplete: () => {
+                    tl.to(swirlIntroTextRef.current, { autoAlpha: 0 })
+                    tl.set(swirlIntroTextRef.current, { scale: 0 })
+                } }, "<-=40%")
+                // tl.to(swirlIntroTextRef.current, { autoAlpha: 0, duration: 0.3, scale: 0, ease: "power2.inOut" })
+
+
+                const swirlTimeline = gsap.timeline({
+                    defaults: { ease: "none", duration: 32, repeat: -1 },
+                })
+    
+                // swirlTimeline.set(precisionImages.current, { scale: 1.1 })
+                swirlTimeline.set(excellenceImages.current, { scale: 1.1 })
+                swirlTimeline.to(precisionImages.current, { rotation: 360 })
+                swirlTimeline.set(precisionImages.current.children, { scale: 1.4 }, "<")
+                swirlTimeline.set(precisionImages.current.children[0], { xPercent: 20, yPercent: 60 }, "<")
+                swirlTimeline.to(precisionImages.current.children[0], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[1], { xPercent: -50, yPercent: 430 }, "<")
+                swirlTimeline.to(precisionImages.current.children[1], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[2], { xPercent: 30, yPercent: 700 }, "<")
+                swirlTimeline.to(precisionImages.current.children[2], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[3], { xPercent: 260, yPercent: 750 }, "<")
+                swirlTimeline.to(precisionImages.current.children[3], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[4], { xPercent: 500, yPercent: 700 }, "<")
+                swirlTimeline.to(precisionImages.current.children[4], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[5], { xPercent: 560, yPercent: 310 }, "<")
+                swirlTimeline.to(precisionImages.current.children[5], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[6], { xPercent: 500, yPercent: 60 }, "<")
+                swirlTimeline.to(precisionImages.current.children[6], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[7], { xPercent: 260, yPercent: -20 }, "<")
+                swirlTimeline.to(precisionImages.current.children[7], { rotation: -360 }, "<")
+                
+                swirlTimeline.to(excellenceImages.current, { rotation: -360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children, { scale: 1.45 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[0], { xPercent: 80, yPercent: 90 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[0], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[1], { xPercent: -50, yPercent: 650 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[1], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[2], { xPercent: 60, yPercent: 750 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[2], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[3], { xPercent: 450, yPercent: 1400 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[3], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[4], { xPercent: 850, yPercent: 970 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[4], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[5], { xPercent: 960, yPercent: 650 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[5], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[6], { xPercent: 810, yPercent: 180 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[6], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[7], { xPercent: 450, yPercent: "-=40" }, "<")
+                swirlTimeline.to(excellenceImages.current.children[7], { rotation: 360 }, "<")
+    
             })
-
-            swirlTimeline.set(precisionImages.current, { scale: 0.875 })
-            swirlTimeline.set(excellenceImages.current, { scale: 1.1 })
-            swirlTimeline.to(precisionImages.current, { rotation: 360 })
-            swirlTimeline.set(precisionImages.current.children, { scale: 1.35 }, "<")
-            swirlTimeline.set(precisionImages.current.children[0], { xPercent: 20, yPercent: 60 }, "<")
-            swirlTimeline.to(precisionImages.current.children[0], { rotation: -360 }, "<")
-            swirlTimeline.set(precisionImages.current.children[1], { xPercent: -50, yPercent: 430 }, "<")
-            swirlTimeline.to(precisionImages.current.children[1], { rotation: -360 }, "<")
-            swirlTimeline.set(precisionImages.current.children[2], { xPercent: 30, yPercent: 700 }, "<")
-            swirlTimeline.to(precisionImages.current.children[2], { rotation: -360 }, "<")
-            swirlTimeline.set(precisionImages.current.children[3], { xPercent: 260, yPercent: 750 }, "<")
-            swirlTimeline.to(precisionImages.current.children[3], { rotation: -360 }, "<")
-            swirlTimeline.set(precisionImages.current.children[4], { xPercent: 500, yPercent: 700 }, "<")
-            swirlTimeline.to(precisionImages.current.children[4], { rotation: -360 }, "<")
-            swirlTimeline.set(precisionImages.current.children[5], { xPercent: 560, yPercent: 250 }, "<")
-            swirlTimeline.to(precisionImages.current.children[5], { rotation: -360 }, "<")
-            swirlTimeline.set(precisionImages.current.children[6], { xPercent: 500, yPercent: 60 }, "<")
-            swirlTimeline.to(precisionImages.current.children[6], { rotation: -360 }, "<")
-            swirlTimeline.set(precisionImages.current.children[7], { xPercent: 260, yPercent: -20 }, "<")
-            swirlTimeline.to(precisionImages.current.children[7], { rotation: -360 }, "<")
-            
-            swirlTimeline.to(excellenceImages.current, { rotation: -360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children, { scale: 1.3 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[0], { xPercent: 80, yPercent: 90 }, "<")
-            swirlTimeline.to(excellenceImages.current.children[0], { rotation: 360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[1], { xPercent: -50, yPercent: 650 }, "<")
-            swirlTimeline.to(excellenceImages.current.children[1], { rotation: 360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[2], { xPercent: 60, yPercent: 750 }, "<")
-            swirlTimeline.to(excellenceImages.current.children[2], { rotation: 360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[3], { xPercent: 450, yPercent: 1400 }, "<")
-            swirlTimeline.to(excellenceImages.current.children[3], { rotation: 360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[4], { xPercent: 850, yPercent: 970 }, "<")
-            swirlTimeline.to(excellenceImages.current.children[4], { rotation: 360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[5], { xPercent: 960, yPercent: 650 }, "<")
-            swirlTimeline.to(excellenceImages.current.children[5], { rotation: 360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[6], { xPercent: 810, yPercent: 180 }, "<")
-            swirlTimeline.to(excellenceImages.current.children[6], { rotation: 360 }, "<")
-            swirlTimeline.set(excellenceImages.current.children[7], { xPercent: 450, yPercent: "-=40" }, "<")
-            swirlTimeline.to(excellenceImages.current.children[7], { rotation: 360 }, "<")
-
-        })
-
-        mM.add("(max-width: 768px)", () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: swirlingIntroTextContainerRef.current,
-                    // scrub: true,
-                    start: "0% top",
-                    end: "bottom bottom",
-                    pin: true,
-                    anticipatePin: 1,
-                }
-            });
-            tl.from(swirlIntroTextRef.current, { '--rot': 0, duration: 1 })
-            tl.to(swirlIntroTextRef.current, { scale: 103, ease: "expo.inOut", duration: 2 })
-            tl.to(swirlIntroTextRef.current, { '--perc': 0, duration: 1 })
-            tl.eventCallback("onComplete", () => {
-                tl.revert()
-                window.scrollTo({
-                    top: portfolioImagesSectionRef.current.offsetTop,
-                    behavior: "instant"
+    
+            mM.add("(max-width: 768px)", () => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: swirlingIntroTextContainerRef.current,
+                        // scrub: true,
+                        start: "top top",
+                        end: "bottom bottom",
+                        pin: true,
+                        anticipatePin: 1,
+                    }
+                });
+                tl.from(swirlIntroTextRef.current, { '--rot': 0, duration: 1 })
+                tl.to(swirlIntroTextRef.current, { scale: 103, ease: "expo.inOut", duration: 2 })
+                tl.to(swirlIntroTextRef.current, { '--perc': 0, duration: 1 })
+                tl.eventCallback("onComplete", () => {
+                    tl.revert()
                 })
             })
         })
 
-        return () =>{ 
-            mM.revert();
-        }
+        return () => theSwirlAnim.revert();
     }, [])
 
     return (

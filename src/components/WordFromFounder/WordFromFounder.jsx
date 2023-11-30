@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import './WordFromFounder.css'
 import gsap from 'gsap'
-import { ScrollIndicator } from '../'
+import { ScrollIndicator, Socials } from '../'
 
 const WordFromFounder = () => {
     const WordFromFounderRef = useRef()
@@ -61,6 +61,7 @@ const WordFromFounder = () => {
                         </p>
                     </div>
                 </div>
+                <Socials />
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import './Navbar.css';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 // import useBlobity from 'blobity/lib/react/useBlobity';
-import SplitType from 'split-type';
+import { Socials } from '../'
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false)
@@ -21,11 +21,12 @@ const Navbar = () => {
   const menuStripsRef = useRef()
 
   useLayoutEffect(() => {
+    const menuAnim = gsap.context(() => {
+      const tl = gsap.timeline();
+      tl.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
+    })
 
-    const tl = gsap.timeline();
-    tl.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
-
-    return () => tl.revert();
+    return () => menuAnim.revert();
   }, []);
 
   useLayoutEffect(() => {
@@ -96,6 +97,12 @@ const Navbar = () => {
           <button ref={submitBtn} data-blobity-magnetic="false" data-no-blobity className='font-glacial-r'>
             SUBMIT
           </button>
+          {/* <Socials /> */}
+          {/* <div className="socials-wtf">
+            <div className="icon"></div>
+            <div className="icon"></div>
+            <div className="icon"></div>
+          </div> */}
         </div>
       </div>
 
@@ -115,6 +122,9 @@ const Navbar = () => {
             <Link to="/" data-no-blobity className='font-glacial-b'>HOME</Link>
           </li>
           <li>
+            <Link to="/about" data-no-blobity className='font-glacial-b'>ABOUT</Link>
+          </li>
+          <li>
             <Link to="/architecture" data-no-blobity className='font-glacial-b'>ARCHITECTURE</Link>
           </li>
           <li>
@@ -122,9 +132,6 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/gallery" data-no-blobity className='font-glacial-b'>GALLERY</Link>
-          </li>
-          <li>
-            <Link to="/about" data-no-blobity className='font-glacial-b'>ABOUT</Link>
           </li>
         </ul>
       </div>

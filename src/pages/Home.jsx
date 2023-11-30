@@ -25,7 +25,7 @@ const Home = () => {
 
     return (
         <>
-            {!hasLoaded && <Loader timeline={timeline} setState={setHasLoaded} />}
+            {!hasLoaded && <Loader />}
             {
                 hasLoaded && (
                     <>
