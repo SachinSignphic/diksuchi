@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { useLenis } from "@studio-freight/react-lenis";
 
 const Home = () => {
-    const [hasLoaded, setHasLoaded] = useState(true);
+    const [hasLoaded, setHasLoaded] = useState(false);
     const [timeline, setTimeline] = useState(null);
 
     const scroller = useLenis()
@@ -32,7 +32,7 @@ const Home = () => {
                         <HeroSection>
                             <HeroSlider />
                             <Navbar />
-                            <ScrollIndicator />
+                            <ScrollIndicator height={575} />
                             <HeroHeading />
                         </HeroSection>
                         <ProjectChoice />

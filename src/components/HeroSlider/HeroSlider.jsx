@@ -50,9 +50,9 @@ const HeroSlider = () => {
         parallax={true}
         // loop={true}
         spaceBetween={30}
-        // autoplay={{
-        //   delay: 2000
-        // }}
+        autoplay={{
+          delay: 2000
+        }}
         onSlideChange={(swiper) => {
           const currentSlide = swiper.slides[swiper.activeIndex]
           

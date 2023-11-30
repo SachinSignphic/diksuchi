@@ -6,7 +6,8 @@
     justify-content: center;
     padding-top: 18vh;
     /* outline: 1px solid white; */
-    gap: 6vw
+    gap: 6vw;
+    position: relative;
 }
 
 .founder-image-container {

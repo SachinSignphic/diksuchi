@@ -6,7 +6,7 @@ footer {
 }
 
 .footer > * {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 .footer-contact {
@@ -48,7 +48,7 @@ footer {
 .footer-logo-image {
     width: 80%;
     height: 100%;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     margin: auto;
 }
 

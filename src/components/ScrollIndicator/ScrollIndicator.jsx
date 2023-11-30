@@ -1,9 +1,8 @@
 import React, { useLayoutEffect, useRef } from 'react'
 import './ScrollIndicator.css'
-import gsap from 'gsap'
 import { useLenis } from '@studio-freight/react-lenis'
 
-const ScrollIndicator = () => {
+const ScrollIndicator = ({ height }) => {
     const scrollBarRef = useRef()
     const scrollController = useLenis()
 
@@ -16,7 +15,6 @@ const ScrollIndicator = () => {
 
     useLayoutEffect(() => {
         let totalPageHeight = document.body.scrollHeight;
-
         const handleIndicator = () => {
             let totalScrolled = window.scrollY;
             let totalPerc = (totalScrolled / totalPageHeight) * 100;
@@ -29,7 +27,7 @@ const ScrollIndicator = () => {
     }, [])
 
     return (
-        <div className="scoll-indicator-container">
+        <div className="scoll-indicator-container" style={{ height: height? height + 'vh': 0}}>
             <div className='scroll-indicator'>
                 <h4 className='font-glacial-r' onClick={scrollToTop} data-blobity data-blobity-magnetic="false" >SCROLL TO TOP</h4>
                 <div className="scroll-bar-wrapper" ref={scrollBarRef}>
