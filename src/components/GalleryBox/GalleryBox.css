@@ -77,12 +77,13 @@
 .bottom-box .large-image img, .bottom-box .large-image img {
     width: 100%;
     object-fit: cover;
+    object-position: 6px -950px;
 }
 
 .image-between {
     display: flex;
     flex-direction: column;
-    gap: 2vh
+    gap: 2vh 
 }
 
 .between-img {

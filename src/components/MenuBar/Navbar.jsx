@@ -55,16 +55,16 @@ const Navbar = () => {
       if (openMenu) {
         // console.log("opening")
         tl
-        .from(contactFormWrapper.current, { xPercent: 100 })
-        .fromTo(contactFormWrapper.current, { autoAlpha: 0 },  { autoAlpha: 1 })
-        .from(contactForm.current, { xPercent: 100 })
-        .from(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
+          .from(contactFormWrapper.current, { xPercent: 100 })
+          .fromTo(contactFormWrapper.current, { autoAlpha: 0 }, { autoAlpha: 1 })
+          .from(contactForm.current, { xPercent: 100 })
+          .from(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
       } else {
-          // console.log("closing")
-          tl
+        // console.log("closing")
+        tl
           .to(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
           .to(contactForm.current, { xPercent: 100 })
-          .fromTo(contactFormWrapper.current, { autoAlpha: 1 },  { autoAlpha: 0 })
+          .fromTo(contactFormWrapper.current, { autoAlpha: 1 }, { autoAlpha: 0 })
           .to(contactFormWrapper.current, { xPercent: 100 })
       }
     })
@@ -76,25 +76,25 @@ const Navbar = () => {
     <>
       <div className='menu-nav' ref={menuBarRef}>
         <div className="menu-icon" data-no-blobity data-blobity-tooltip="≡menu" onClick={() => setOpenLeft(true)}>
-            <span className="menu-line"></span>
-            <span className="menu-line short"></span>
-          </div>
-          <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu(true)} className='contact-btn font-glacial-r'>+ Contact</Link>
+          <span className="menu-line"></span>
+          <span className="menu-line short"></span>
+        </div>
+        <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu(true)} className='contact-btn font-glacial-r'>+ Contact</Link>
       </div>
       <div className='contact-form-wrapper' ref={contactFormWrapper}>
         <div className="contact-form" ref={contactForm}>
-            <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu(false)}>
-              <span></span>
-              <span></span>
-            </button>
-            <h1 ref={getInTouch} className='font-glacial-r'>GET IN TOUCH</h1>
-            <label ref={email} className='font-glacial-r' htmlFor='email'>EMAIL</label>
-            <input className='font-glacial-r' type="email" name="email" id="email" />
-            <label ref={message} className='font-glacial-r' htmlFor='review'>MESSAGE</label>
-            <textarea name="message" className='font-glacial-r' id="review"></textarea>
-            <button data-blobity-magnetic="false">
-              <img ref={submitBtn} src="/submit.png" alt="" />
-            </button>
+          <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu(false)}>
+            <span></span>
+            <span></span>
+          </button>
+          <h1 ref={getInTouch} className='font-glacial-r'>GET IN TOUCH</h1>
+          <label ref={email} className='font-glacial-r' htmlFor='email'>EMAIL</label>
+          <input className='font-glacial-r' type="email" name="email" id="email" />
+          <label ref={message} className='font-glacial-r' htmlFor='review'>MESSAGE</label>
+          <textarea name="message" className='font-glacial-r' id="review"></textarea>
+          <button data-blobity-magnetic="false">
+            <img ref={submitBtn} src="/submit.png" alt="" />
+          </button>
         </div>
       </div>
       <div className="menu-wrapper" ref={menuWrapperRef}>

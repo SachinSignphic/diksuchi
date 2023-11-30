@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+    .menu-nav {
+        height: 6vh;
+        width: 100%;
+        transform: translateX(50%);
+    }
+}

@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import './GalleryBox.css'
 
 const GalleryBox = () => {
+    const galleryBoxRef = useRef()
+
+    const [modalOpen, setModalOpen] = useState(false)
+
+    const handleModalOpen = (e) => {
+        console.log(e.target.src)
+    }
+
+    useLayoutEffect(() => {
+        galleryBoxRef.current.addEventListener("click", (e) => {
+            e.stopImmediatePropagation()
+            e.preventDefault()
+            e.stopPropagation()
+            // if (e.target typeof HTMLImageElement)
+        })
+    }, [])
+
     return (
         <>
-            <div className="gallery-box">
+            <div className="gallery-box" ref={galleryBoxRef}>
                 <div className="gallery-title">
                     <h1 className='font-glacial-r'>PORTFOLIO</h1>
                     <h3 className='font-glacial-r'>OUR GALLERY OF LEGACY</h3>
                 </div>
                 <div className="top-box">
                     <div className="image-left">
-                        <img src="/1.webp" alt="" />
+                        <img src="/gallery/g-1.webp" alt="" />
                     </div>
                     <div className="image-between">
                         <div className="between-img">

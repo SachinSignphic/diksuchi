@@ -31,6 +31,7 @@ const SwirlingSection = () => {
     })
     
     const handleTextMouseOver = (targetWord) => {
+        console.log("mouse come")
         gsap.to(document.querySelectorAll(`.${targetWord}`), { opacity: 1, filter: 'blur(0px)', duration: 1 })
     }
     
@@ -53,7 +54,7 @@ const SwirlingSection = () => {
                     pin: true,
                     // markers: true,
                     onUpdate: (self) => {
-                        if (self.progress.toFixed(2) == 0.48 && self.direction == 1) {
+                        if (self.progress.toFixed(2) >= 0.48 && self.direction == 1) {
                             scrollAmount.current = 1
                         }
                     }

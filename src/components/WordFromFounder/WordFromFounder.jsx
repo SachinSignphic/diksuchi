@@ -24,8 +24,9 @@ const WordFromFounder = () => {
         const paras = paragraphs.current;
         const selector = gsap.utils.selector(paras)
 
-        tl.from(wordFromFounderTitle.current, { opacity: 0 })
-        tl.from(founderImageRef.current, { opacity: 0 }, "<")
+        tl.from(WordFromFounderRef.current, { yPercent: -50, autoAlpha: 0 })
+        tl.from(wordFromFounderTitle.current, { opacity: 0 }, "<")
+        tl.from(founderImageRef.current, { opacity: 0 }, "<-=20%")
         tl.from(paras, { opacity: 0 }, "<")
         tl.to(selector(":first-child"), { yPercent: -100, ease: "power1.inOut" })
         
