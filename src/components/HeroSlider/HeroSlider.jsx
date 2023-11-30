@@ -16,10 +16,6 @@ const HeroSlider = () => {
   const prevButtonRef = useRef()
   const [thumbSwiper, setThumbSwiper] = useState(null)
 
-  useEffect(() => {
-    return () => thumbSwiper?.destroy()
-  }, [thumbSwiper])
-
   return (
     <div className='hero-slider'>
       <div className="filler-gradient"></div>
@@ -28,6 +24,7 @@ const HeroSlider = () => {
         className='swiper-thumb'
         spaceBetween={1}
         speed={2000}
+        // loop={true}
         direction={"vertical"}
         modules={[Navigation, Thumbs]}
         centeredSlides={true}
@@ -38,7 +35,7 @@ const HeroSlider = () => {
         {
           sliderData.map((slideData, id) => (
             <SwiperSlide key={id + (id*2)} className='thumb-slide'>
-              <img src={`/slider-${id+1}.webp`} alt={slideData.title} />
+              <img src={`/thumb-${id+1}.webp`} alt={slideData.title} />
             </SwiperSlide>
           ))
         }
@@ -51,6 +48,7 @@ const HeroSlider = () => {
         thumbs={{ swiper: thumbSwiper? thumbSwiper: null }}
         modules={[Thumbs, Navigation, Parallax, Autoplay]}
         parallax={true}
+        // loop={true}
         spaceBetween={30}
         autoplay={{
           delay: 2000

@@ -1,0 +1,112 @@
+.gallery-box {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    gap: 3vh;
+    /* height: 70vh; */
+    margin-top: 15vh;
+}
+
+.gallery-box img {
+    opacity: 0.7;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.gallery-box img:hover {
+    opacity: 1;
+}
+
+.bottom-box {
+    /* outline: 1px solid red; */
+    display: grid;
+    grid-template-columns: 66.3% 30%;
+    width: 100%;
+    gap: 1vw;
+    height: 40vh;
+    overflow: hidden;
+    justify-items: center;
+    position: relative;
+}
+
+.top-box {
+    /* outline: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    height: 40vh;
+    overflow: hidden;
+    gap: 1vw
+}
+
+.gallery-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery-title h1 {
+    font-size: 3vw;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 6.63%, rgba(255, 255, 255, 0.00) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5vw;
+}
+
+
+.top-box .image-left, 
+.top-box .image-between, 
+.top-box .image-last {
+    overflow: hidden;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.top-box .image-left img, 
+.top-box .image-between img, 
+.top-box .image-last img {
+    /* outline: 1px solid red; */
+    /* width: 100%; */
+    object-fit: cover;
+}
+
+.bottom-box .large-image, .bottom-box .small-image {
+    display: flex;
+    width: 100%;
+}
+
+.bottom-box .large-image img, .bottom-box .large-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.image-between {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh
+}
+
+.between-img {
+    overflow: hidden;
+}
+
+.circle-image img {
+    opacity: 1 !important;
+}
+
+.circle-image {
+    width: 12vw;
+    height: 12vw;
+    position: absolute;
+    right: 17vw;
+    overflow: hidden;
+    top: 5vw;
+    border-radius: 50%;
+    outline: 1vw solid black;
+    z-index: 50;
+}
+
+.circle-image img {
+    object-fit: cover;
+    /* width: 100%; */
+    aspect-ratio: 1;
+}

@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import './ProjectChoice.css';
-import architecture from '/slider-1.webp'
+import architecture from '/architecture.webp'
 import gsap from 'gsap';
 import SplitType from 'split-type';
 import { ScrollTrigger } from 'gsap/all';
@@ -22,7 +22,7 @@ const ProjectChoice = () => {
         const selectionFrom = gsap.utils.selector(currentTarget)
 
         gsap.to(selectionFrom('h1'), { xPercent: -5, yPercent: -25, duration: 0.6, ease: "power3.inOut" })
-        gsap.to(selectionFrom('img'), { xPercent: 20, yPercent: 20, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: 5, yPercent: 10, duration: 0.6, ease: "power3.inOut" })
     }
     
     const handleOnMouseLeave = ({ currentTarget }) => {
@@ -36,7 +36,7 @@ const ProjectChoice = () => {
         const selectionFrom = gsap.utils.selector(currentTarget)
 
         gsap.to(selectionFrom('h1'), { xPercent: 5, yPercent: 25, duration: 0.6, ease: "power3.inOut" })
-        gsap.to(selectionFrom('img'), { xPercent: -20, yPercent: -55, duration: 0.6, ease: "power3.inOut" })
+        gsap.to(selectionFrom('img'), { xPercent: -5, yPercent: -10, duration: 0.6, ease: "power3.inOut" })
     }
     
     const handleOnMouseLeave1 = ({ currentTarget }) => {

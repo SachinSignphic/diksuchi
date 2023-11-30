@@ -13,5 +13,6 @@ import InteriorGallery from "./InteriorGallery/InteriorGallery";
 import HeroSlider from "./HeroSlider/HeroSlider";
 import WordFromFounder from "./WordFromFounder/WordFromFounder";
 import OurStory from "./OurStory/OurStory";
+import GalleryBox from "./GalleryBox/GalleryBox";
 
-export { Navbar, HeroSection, Menu, Loader, Socials, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery, HeroSlider, WordFromFounder, OurStory };
+export { Navbar, HeroSection, Menu, Loader, Socials, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery, HeroSlider, WordFromFounder, OurStory, GalleryBox };
