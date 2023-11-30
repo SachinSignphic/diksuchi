@@ -12,19 +12,19 @@ const WordFromFounder = () => {
         const tl = gsap.timeline({
             scrollTrigger: {
                 pin: true,
-                scrub: true,
+                scrub: 1,
                 trigger: WordFromFounderRef.current,
                 end: 'bottom bottom',
                 // markers: true
             },
-            // defaults: {
-            //     ease: ""
-            // }
+            defaults: {
+                ease: "power2.inOut"
+            }
         })
         const paras = paragraphs.current;
         const selector = gsap.utils.selector(paras)
 
-        tl.from(WordFromFounderRef.current, { yPercent: -50, autoAlpha: 0 })
+        tl.from(WordFromFounderRef.current, { yPercent: -20, autoAlpha: 0 })
         tl.from(wordFromFounderTitle.current, { opacity: 0 }, "<")
         tl.from(founderImageRef.current, { opacity: 0 }, "<-=20%")
         tl.from(paras, { opacity: 0 }, "<")
@@ -36,7 +36,7 @@ const WordFromFounder = () => {
     return (
         <div className='word-from-founder' ref={WordFromFounderRef}>
             <div className="founder-image-container" ref={founderImageRef}>
-                <img src="/placeholder.jpg" alt="Placeholder" />
+                <img src="/founder.webp" alt="Placeholder" />
             </div>
             <div className="founder-paragraph">
                 <h1 className='font-glacial-r' ref={wordFromFounderTitle}>WORD FROM OUR FOUNDER</h1>

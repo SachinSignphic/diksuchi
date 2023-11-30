@@ -122,7 +122,7 @@ const ProjectChoice = () => {
                 yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut",
             })
 
-            tl.from(interiotLetter.chars, { yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut", })
+            tl.from(interiotLetter.chars, { yPercent: 100, stagger: 0.03, duration: 1, ease: "expo.inOut", }, "<-=50%")
         })
 
         return () => mM.revert();

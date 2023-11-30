@@ -1,7 +1,7 @@
 .menu-nav {
     display: flex;
-    padding: 0.8vw 1.2vw;
-    height: 7vh;
+    padding: 1.5% 1.2%;
+    height: 5%;
     align-items: center;
     background-color: #f7f7f7;
     backdrop-filter: blur(12px) saturate(200%);

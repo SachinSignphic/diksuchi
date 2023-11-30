@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "react";
-import { Navbar, HeroSection, Loader, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, HeroSlider, WordFromFounder } from "../components";
+import { Navbar, HeroSection, Loader, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, HeroSlider, WordFromFounder, Footer } from "../components";
 import { gsap } from "gsap";
 import { useLenis } from "@studio-freight/react-lenis";
 
@@ -38,6 +38,7 @@ const Home = () => {
                         <ProjectChoice />
                         <SwirlingSection />
                         <WordFromFounder />
+                        <Footer />
                     </>
                 )
             }

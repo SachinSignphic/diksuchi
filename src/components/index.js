@@ -14,5 +14,6 @@ import HeroSlider from "./HeroSlider/HeroSlider";
 import WordFromFounder from "./WordFromFounder/WordFromFounder";
 import OurStory from "./OurStory/OurStory";
 import GalleryBox from "./GalleryBox/GalleryBox";
+import Footer from "./Footer/Footer";
 
-export { Navbar, HeroSection, Menu, Loader, Socials, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery, HeroSlider, WordFromFounder, OurStory, GalleryBox };
+export { Navbar, HeroSection, Menu, Loader, Socials, ProjectChoice, HeroHeading, SwirlingSection, ScrollIndicator, ArchitectureGallery, InteriorGallery, HeroSlider, WordFromFounder, OurStory, GalleryBox, Footer };

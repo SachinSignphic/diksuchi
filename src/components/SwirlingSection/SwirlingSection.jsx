@@ -54,7 +54,7 @@ const SwirlingSection = () => {
                     pin: true,
                     // markers: true,
                     onUpdate: (self) => {
-                        if (self.progress.toFixed(2) >= 0.48 && self.direction == 1) {
+                        if (self.progress.toFixed(2) >= 0.48 && self.direction == 1 && self.progress.toFixed(2) <= 1) {
                             scrollAmount.current = 1
                         }
                     }
@@ -69,9 +69,9 @@ const SwirlingSection = () => {
             tl.to(scrollingImagesRef.current, { opacity: 0, ease: "power2.inOut", onComplete: () => {
                 tl.to(swirlIntroTextRef.current, { autoAlpha: 0 })
             } }, "<-=40%")
-            tl.eventCallback("onComplete", () => {
-                tl.to(swirlIntroTextRef.current, { autoAlpha: 0, duration: 0.3, scale: 1, ease: "power2.inOut" })
-            })
+            tl.to(swirlIntroTextRef.current, { autoAlpha: 0, duration: 0.3, scale: 0, ease: "power2.inOut" })
+            // tl.eventCallback("onComplete", () => {
+            // })
             const swirlTimeline = gsap.timeline({
                 defaults: { ease: "none", duration: 32, repeat: -1 },
             })
@@ -161,7 +161,7 @@ const SwirlingSection = () => {
                         Array(7).fill(1).map((_, i) => {
                             return (
                                 <div className="carousel-card-container" key={i+53}>
-                                    <img src={`/scroll-${i+1}.webp`} alt={`Acrhitecure`} />
+                                    <img src={`/scroll-${i+1}.webp`} loading='lazy' alt={`Architecure`} />
                                 </div>
                             )
                         })
