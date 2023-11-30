@@ -77,6 +77,7 @@ const SwirlingSection = () => {
             })
 
             swirlTimeline.set(precisionImages.current, { scale: 0.875 })
+            swirlTimeline.set(excellenceImages.current, { scale: 1.1 })
             swirlTimeline.to(precisionImages.current, { rotation: 360 })
             swirlTimeline.set(precisionImages.current.children, { scale: 1.35 }, "<")
             swirlTimeline.set(precisionImages.current.children[0], { xPercent: 20, yPercent: 60 }, "<")

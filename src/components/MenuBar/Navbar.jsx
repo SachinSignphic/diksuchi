@@ -75,12 +75,13 @@ const Navbar = () => {
   return (
     <>
       <div className='menu-nav' ref={menuBarRef}>
-        <div className="menu-icon" data-no-blobity data-blobity-tooltip="≡menu" onClick={() => setOpenLeft(true)}>
+        <div className="menu-icon" data-blobity-magnetic="false" data-blobity-tooltip="≡menu" onClick={() => setOpenLeft(true)}>
           <span className="menu-line"></span>
           <span className="menu-line short"></span>
         </div>
         <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu(true)} className='contact-btn font-glacial-r'>+ Contact</Link>
       </div>
+
       <div className='contact-form-wrapper' ref={contactFormWrapper}>
         <div className="contact-form" ref={contactForm}>
           <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu(false)}>
@@ -92,11 +93,12 @@ const Navbar = () => {
           <input className='font-glacial-r' type="email" name="email" id="email" />
           <label ref={message} className='font-glacial-r' htmlFor='review'>MESSAGE</label>
           <textarea name="message" className='font-glacial-r' id="review"></textarea>
-          <button data-blobity-magnetic="false">
-            <img ref={submitBtn} src="/submit.png" alt="" />
+          <button ref={submitBtn} data-blobity-magnetic="false" data-no-blobity className='font-glacial-r'>
+            SUBMIT
           </button>
         </div>
       </div>
+
       <div className="menu-wrapper" ref={menuWrapperRef}>
         <div className="strips-container" ref={menuStripsRef}>
           <div className="menu-strip"></div>

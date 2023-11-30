@@ -86,23 +86,33 @@
 }
 
 .contact-form button:last-child {
-    margin-left: auto;
+    background-color: transparent;
+    font-size: 1.5vw;
+    letter-spacing: 0.6vw;
+    width: 92.5%;
+    outline: 1px solid white;
+    color: white;
+    opacity: 0.6;
+    padding: 1.2vw;
+    margin-left: 2vw;
+    margin-top: 5vh;
+    cursor: pointer;
 }
 
 .contact-form > button span, .menu-wrapper > button span {
     opacity: 0.6;
     width: 3vw;
-    height: 1px;
+    height: 2px;
     background-color: #f7f7f7;
     color: white;
     display: flex;
 }
 
-.contact-form > button span:first-child, .menu-wrapper > button:first-child {
+.contact-form > button span:first-child, .menu-wrapper > button span:first-child {
     transform: rotate(45deg);
 }
 
-.contact-form > button span:last-child, .menu-wrapper > button:last-child {
+.contact-form > button span:last-child, .menu-wrapper > button span:last-child {
     transform: rotate(-45deg);
 }
 

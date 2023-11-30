@@ -19,11 +19,11 @@ const OurStory = ({ pageRef }) => {
                     pin: true,
                     scrub: 0.3,
                     end: 'bottom bottom',
-                    markers: {
-                        indent: 20,
-                        startColor: "white",
-                        endColor: "red"
-                    }
+                    // markers: {
+                    //     indent: 20,
+                    //     startColor: "white",
+                    //     endColor: "red"
+                    // }
                 },
                 defaults: {
                     ease: "power1.inOut"
