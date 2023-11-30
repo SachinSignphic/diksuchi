@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
             <div className="footer-map">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.88294937459295!2d78.39200811504449!3d17.453625416039724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9130c2cabfdf%3A0x802feb0541bebaec!2sDIKSUCHI%20DESIGN%20STUDIO!5e0!3m2!1sen!2sin!4v1701356426420!5m2!1sen!2sin" width="400" height="300" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d237.88294937459295!2d78.39200811504449!3d17.453625416039724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9130c2cabfdf%3A0x802feb0541bebaec!2sDIKSUCHI%20DESIGN%20STUDIO!5e0!3m2!1sen!2sin!4v1701356426420!5m2!1sen!2sin" width="400" height="270" style={{border:0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </footer>
     )

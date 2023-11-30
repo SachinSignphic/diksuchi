@@ -3,10 +3,9 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     color: white;
     width: 100%;
-}
-
-.footer > * {
-    /* outline: 1px solid red; */
+    margin-top: 30vh;
+    background-color: black;
+    padding-bottom: 5vh;
 }
 
 .footer-contact {
