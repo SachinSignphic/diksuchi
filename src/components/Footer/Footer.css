@@ -5,7 +5,6 @@ footer {
     width: 100%;
     margin-top: 30vh;
     background-color: black;
-    padding-bottom: 5vh;
 }
 
 .footer-contact {
@@ -51,6 +50,7 @@ footer {
 }
 
 .footer-logo-image img {
+    width: 100%;
     object-fit: contain;
 }
 
@@ -70,6 +70,7 @@ footer {
         grid-template-columns: none;
         grid-template-rows: repeat(2, 1fr);
         /* outline: 1px solid red; */
+        padding-bottom: 5vh;
     }
     .footer-map {
         width: 90%;
@@ -86,7 +87,6 @@ footer {
     }
 
     .footer-logo-image {
-        display: none;
         order: 1;
     }
 

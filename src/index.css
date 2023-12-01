@@ -75,12 +75,12 @@
   background-color: #6E6E6E;
 }
 
-
 body {
   min-width: 320px;
   min-height: 100vh;
   background: url('/bg.jpg');
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .font-pearl {

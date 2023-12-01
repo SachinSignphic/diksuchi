@@ -53,7 +53,7 @@ const Navbar = () => {
   useLayoutEffect(() => {
     const contactFormContext = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power1.inOut" } })
-      const items = [closeBtn.current, getInTouch.current, email.current, message.current, submitBtn.current]
+      const items = [closeBtn.current, getInTouch.current, contactForm.current.querySelector('input'), contactForm.current.querySelector('textarea'), email.current, message.current, submitBtn.current]
       if (openMenu) {
         // console.log("opening")
         tl
