@@ -10,8 +10,8 @@ const Footer = () => {
                 <h4 className='font-glacial-r'>FLAT NO: 2B, KLSR TOWERS <br />
                     MADHAPUR, TELANGANA,<br />
                     PIN CODE: 500081.</h4>
-                <Link className='font-glacial-r' to={'tel:+919966662421'}>+91 99666 62421</Link>
-                <Link className='font-glacial-r' to={'mailto:diksuchidesignstudio@gmail.com'}>diksuchidesignstudio@gmail.com</Link>
+                <Link data-no-blobity data-blobity-tooltip="call" className='font-glacial-r' to={'tel:+919966662421'}>+91 99666 62421</Link>
+                <Link data-no-blobity data-blobity-tooltip="email" className='font-glacial-r' to={'mailto:diksuchidesignstudio@gmail.com'}>diksuchidesignstudio@gmail.com</Link>
             </div>
             <div className="footer-logo">
                 <div className="footer-logo-image">

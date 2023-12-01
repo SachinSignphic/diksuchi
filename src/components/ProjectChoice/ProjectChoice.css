@@ -57,14 +57,14 @@
 }
 
 .gradient-for {
-    --rotation: 0deg;
-    height: 25vh;
+    --rotation: -15deg;
+    height: 100%;
     width: 100%;
     position: absolute;
     left: 0;
     z-index: 1;
     background: rgb(255,255,255);
-    background: linear-gradient(var(--rotation), rgba(255,255,255,0) 0%, rgba(0,0,0,0) 2%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(var(--rotation), rgba(255,255,255,0) 0%, rgba(0,0,0,0) 60%, rgba(0, 0, 0, 0.836) 100%);
 }
 
 .gradient-architecture {
@@ -74,7 +74,7 @@
 .gradient-interior {
     bottom: 0;
     top: unset;
-    --rotation: 180deg
+    --rotation: 160deg
 }
 
 

@@ -36,7 +36,7 @@ const WordFromFounder = () => {
 
     return (
         <div className='word-from-founder' ref={WordFromFounderRef}>
-            <ScrollIndicator height={100} />
+            <ScrollIndicator height={85} />
             <div className="founder-image-container" ref={founderImageRef}>
                 <img src="/founder.webp" alt="Placeholder" />
             </div>
