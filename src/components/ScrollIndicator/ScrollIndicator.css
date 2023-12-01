@@ -56,3 +56,9 @@
     font-size: 0.75vw;
     letter-spacing: 0.2vh;
 }
+
+@media screen and (max-width: 768px) {
+    .scoll-indicator-container {
+        display: none;
+    }
+}

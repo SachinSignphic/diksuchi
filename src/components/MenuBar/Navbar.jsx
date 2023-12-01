@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import './Navbar.css';
+import './Navbar-mobile.css';
 import { gsap } from 'gsap';
 import { Link } from 'react-router-dom';
 // import useBlobity from 'blobity/lib/react/useBlobity';

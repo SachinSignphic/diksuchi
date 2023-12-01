@@ -27,6 +27,18 @@ const ScrollIndicator = ({ height }) => {
     }, [])
 
     return (
+        (
+            navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ) ? 
+        <>
+        </>
+        :
         <div className="scoll-indicator-container" style={{ height: height? height + 'vh': 0}}>
             <div className='scroll-indicator'>
                 <h4 className='font-glacial-r' onClick={scrollToTop} data-blobity data-blobity-magnetic="false" >SCROLL TO TOP</h4>

@@ -28,3 +28,29 @@
     text-align: left;
     padding-left: 24%;
 }
+
+@media screen and (max-width: 768px) {
+    .hero-title-container {
+        top: 0%;
+        left: 0%;
+        /* transform: translateY(-50%) translateX(-50%); */
+        height: 100%;
+        justify-content: center;
+        background-image: url('/slider-1.webp');
+        background-image:  radial-gradient(circle, rgba(255,255,255,0) 39%, rgba(0,0,0,1) 100%), url('/slider-1.webp')
+    }
+
+    .company-name {
+        font-size: 4rem;
+        text-align: center;
+        letter-spacing: 1rem;
+        width: 100%;
+    }
+
+    .company-subname {
+        width: 100%;
+        text-align: center;
+        font-size: 3rem;
+        padding-left: 0%;
+    }
+}
