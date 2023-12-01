@@ -10,28 +10,36 @@ const WordFromFounder = () => {
     const founderImageRef = useRef()
 
     useLayoutEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                pin: true,
-                scrub: 1,
-                trigger: WordFromFounderRef.current,
-                end: 'bottom bottom',
-                // markers: true
-            },
-            defaults: {
-                ease: "power2.inOut"
-            }
-        })
-        const paras = paragraphs.current;
-        const selector = gsap.utils.selector(paras)
+        const wordFromFounderContext = gsap.context(() => {
 
-        tl.from(WordFromFounderRef.current, { yPercent: -20, autoAlpha: 0 })
-        tl.from(wordFromFounderTitle.current, { opacity: 0 }, "<")
-        tl.from(founderImageRef.current, { opacity: 0 }, "<-=20%")
-        tl.from(paras, { opacity: 0 }, "<")
-        tl.to(selector(":first-child"), { yPercent: -100, ease: "power1.inOut" })
+            const mM = gsap.matchMedia()
+
+            mM.add("(min-width: 768px)", () => {
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        pin: true,
+                        scrub: 1,
+                        trigger: WordFromFounderRef.current,
+                        end: 'bottom bottom',
+                        // markers: true
+                    },
+                    defaults: {
+                        ease: "power2.inOut"
+                    }
+                })
+                const paras = paragraphs.current;
+                const selector = gsap.utils.selector(paras)
         
-        return () => tl.revert()
+                tl.from(WordFromFounderRef.current, { yPercent: -20, autoAlpha: 0 })
+                tl.from(wordFromFounderTitle.current, { opacity: 0 }, "<")
+                tl.from(founderImageRef.current, { opacity: 0 }, "<-=20%")
+                tl.from(paras, { opacity: 0 }, "<")
+                tl.to(selector(":first-child"), { yPercent: -100, ease: "power1.inOut" })
+            })
+            
+        })
+        
+        return () => wordFromFounderContext.revert()
     }, [])
 
     return (

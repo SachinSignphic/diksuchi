@@ -47,7 +47,6 @@ footer {
 .footer-logo-image {
     width: 80%;
     height: 100%;
-    /* outline: 1px solid red; */
     margin: auto;
 }
 
@@ -69,9 +68,37 @@ footer {
 @media screen and (max-width: 768px) {
     footer {
         grid-template-columns: none;
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        /* outline: 1px solid red; */
     }
     .footer-map {
+        width: 90%;
+        padding-left: 10%;
+        /* outline: 1px solid red; */
+        /* outline: 1px solid red; */
+        order: 3;
+    }
+    
+    .footer-contact {
+        /* outline: 1px solid red; */
+        padding-left: 10%;
+        order: 2;
+    }
+
+    .footer-logo-image {
         display: none;
+        order: 1;
+    }
+
+    .footer-contact h3 {
+        font-size: 1.7rem;
+    }
+
+    .footer-contact h4 {
+        font-size: 1.3rem;
+    }
+
+    .footer-contact a {
+        font-size: 1.2rem;
     }
 }
