@@ -57,7 +57,7 @@ const Navbar = () => {
       if (openMenu) {
         // console.log("opening")
         tl
-          .set(contactFormWrapper.current, { zIndex: 1000 })
+          // .set(contactFormWrapper.current, { zIndex: 1000 })
           .fromTo(contactFormWrapper.current, { autoAlpha: 0 }, { autoAlpha: 1 })
           .set(contactForm.current, { autoAlpha: 1, xPercent: 100 })
           .from(contactForm.current, { xPercent: 100 })
