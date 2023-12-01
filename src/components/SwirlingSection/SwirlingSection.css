@@ -66,7 +66,7 @@
     width: 100%;
     overflow: hidden;
     text-transform: uppercase;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: black;
 }
 
 .swirling-section-text-wrapper {
@@ -146,10 +146,24 @@
 @media screen and (max-width: 768px) {
     .swirling-section {
         /* outline: 1px solid red; */
-        min-height: 100vh !important;
+        min-height: 200vh !important;
+    }
+    .swirling-intro-text {
+        margin-top: 50vh;
     }
     .swirling-text-heading {
-        font-size: 14vw;
         transform-origin: 39.77% 43.80%;
+        /* margin-top: 20%; */
+        font-size: 4rem;
+        line-height: 1.2;
+        letter-spacing: 0.5rem;
+    }
+    .carousel-cards {
+        display: none;
+    }
+    .single-word-nofill {
+        margin-bottom: 0;
+        font-size: 3.8rem;
+        /* margin-top: 10%; */
     }
 }

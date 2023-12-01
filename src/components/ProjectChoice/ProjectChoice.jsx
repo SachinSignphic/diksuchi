@@ -134,6 +134,7 @@ const ProjectChoice = () => {
     return (
         <div className='project-choice'>
             <Link preventScrollReset className="fw-card from-right" onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave} ref={rightCardRef} data-blobity-tooltip="visit ↗" data-blobity-magnetic="false" data-no-blobity to="/architecture">
+                <div className="explore-circle font-glacial-r">explore</div>
                 <div ref={rightCardImgWrapper} className='project-image-container'>
                     <div className="gradient-for gradient-architecture"></div>
                     <img key={0} src={architecture} alt="Architecture" ref={projectChoiceImage} />
@@ -141,6 +142,7 @@ const ProjectChoice = () => {
                 <h1 className="fw-card-title font-glacial-b" ref={architectureTextRef}>Architecture</h1>
             </Link>
             <Link className="fw-card from-left" onMouseEnter={handleOnMouseEnter1} onMouseLeave={handleOnMouseLeave1} data-blobity-tooltip="visit ↗" data-no-blobity data-blobity-magnetic="false" ref={leftCardRef} to="/interiors">
+                <div className="explore-circle font-glacial-r">explore</div>
                 <div ref={leftCartImgWrapper} className='project-image-container'>
                     <div className="gradient-for gradient-interior"></div>
                     <img key={1} src="/interior.webp" alt="Interior" ref={interiorImage} />

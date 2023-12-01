@@ -124,15 +124,17 @@ const SwirlingSection = () => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: swirlingIntroTextContainerRef.current,
-                        // scrub: true,
-                        start: "top top",
-                        end: "bottom bottom",
+                        scrub: 1,
+                        // start: "top top",
+                        // end: "bottom bottom",
                         pin: true,
                         anticipatePin: 1,
+                        markers: true
                     }
                 });
-                tl.from(swirlIntroTextRef.current, { '--rot': 0, duration: 1 })
-                tl.to(swirlIntroTextRef.current, { scale: 103, ease: "expo.inOut", duration: 2 })
+                tl.from(swirlIntroTextRef.current, { '--rot': 0 })
+                tl.to(introScrollProgressRef.current, { scaleX: 1.323 }, "<")
+                tl.to(swirlIntroTextRef.current, { scale: 103, ease: "power1.inOut" })
                 tl.to(swirlIntroTextRef.current, { '--perc': 0, duration: 1 })
                 tl.eventCallback("onComplete", () => {
                     tl.revert()
@@ -152,18 +154,35 @@ const SwirlingSection = () => {
                     <span className='font-glacial-b single-word-nofill'>ARCHITECTS</span>
                     <h1 className="swirling-text-heading font-glacial-b">YOU CAN FIND</h1>
                 </div>
-                <div className="carousel-cards" ref={scrollingImagesRef}>
-                    {/* repalce with a map on array */}
-                    {
-                        Array(7).fill(1).map((_, i) => {
-                            return (
-                                <div className="carousel-card-container" key={i+53}>
-                                    <img src={`/scroll-${i+1}.webp`} loading='lazy' alt={`Architecure`} />
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+                {
+
+                    (
+                        navigator.userAgent.match(/Android/i)
+                        || navigator.userAgent.match(/webOS/i)
+                        || navigator.userAgent.match(/iPhone/i)
+                        || navigator.userAgent.match(/iPad/i)
+                        || navigator.userAgent.match(/iPod/i)
+                        || navigator.userAgent.match(/BlackBerry/i)
+                        || navigator.userAgent.match(/Windows Phone/i)
+                    ) ?
+                        <>
+                        </>
+                    :
+                    (
+                        <div className="carousel-cards" ref={scrollingImagesRef}>
+                            {/* repalce with a map on array */}
+                            {
+                                Array(7).fill(1).map((_, i) => {
+                                    return (
+                                        <div className="carousel-card-container" key={i+53}>
+                                            <img src={`/scroll-${i+1}.webp`} loading='lazy' alt={`Architecure`} />
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    )
+                }
             </div>
             
             <div className="swirling-section portfolio-section" ref={portfolioImagesSectionRef}>
