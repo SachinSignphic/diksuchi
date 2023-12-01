@@ -1,5 +1,6 @@
 import { useLayoutEffect, useState, useRef } from 'react'
 import './ArchitectureGallery.css'
+import './ArchitectureGallery-mobile.css'
 import gsap from 'gsap'
 import architectureProjects from './architectureGalleryData'
 import interiorProjects from './interiorGalleryData'
@@ -14,60 +15,94 @@ const ArchitectureGallery = ({ type, title, subtitle }) => {
     const [projectNo, setProjectNo] = useState(0)
     const data = useRef(type == 'architecture'? architectureProjects: interiorProjects)
 
-    const handleNextClick = (e) => {
-        const tl = gsap.timeline()
+    // const handleNextClick = (e) => {
+    //     const tl = gsap.timeline()
 
-        const images = [
-            image1.current,
-            p1.current,
-            image2.current,
-            image3.current,
-            image4.current,
-            image5.current,
-        ].reverse()
+    //     const images = [
+    //         image1.current,
+    //         p1.current,
+    //         image2.current,
+    //         image3.current,
+    //         image4.current,
+    //         image5.current,
+    //     ].reverse()
         
-        tl.to(images, { x: '-100vw', stagger: 0.1, duration: 2, ease: "expo.inOut" }).then(() => {
-            setProjectNo((projectNo + 1) % architectureProjects.length)
-        })
-    }
+    //     tl.to(images, { x: '-100vw', stagger: 0.1, duration: 2, ease: "expo.inOut" }).then(() => {
+    //         setProjectNo((projectNo + 1) % architectureProjects.length)
+    //     })
+    // }
 
-    const handlePreviousClick = (e) => {
-        const tl = gsap.timeline()
+    // const handlePreviousClick = (e) => {
+    //     const tl = gsap.timeline()
 
-        const images = [
-            image1.current,
-            p1.current,
-            image2.current,
-            image3.current,
-            image4.current,
-            image5.current,
-        ].reverse()
+    //     const images = [
+    //         image1.current,
+    //         p1.current,
+    //         image2.current,
+    //         image3.current,
+    //         image4.current,
+    //         image5.current,
+    //     ].reverse()
         
-        tl.to(images, { x: '-100vw', stagger: 0.1, duration: 2, ease: "expo.inOut" }).then(() => {
-            setProjectNo((projectNo - 1 + architectureProjects.length) % architectureProjects.length)
-        })
-    }
+    //     tl.to(images, { x: '-100vw', stagger: 0.1, duration: 2, ease: "expo.inOut" }).then(() => {
+    //         setProjectNo((projectNo - 1 + architectureProjects.length) % architectureProjects.length)
+    //     })
+    // }
 
-    useLayoutEffect(() => {
-        const anim = gsap.context(() => {
-            const tl = gsap.timeline()
-            // console.log(projectNo)
-            const images = [
-                image1.current, 
-                p1.current,
-                image2.current,
-                image3.current,
-                image4.current,
-                image5.current,
-            ]
+    // useLayoutEffect(() => {
+    //     const anim = gsap.context(() => {
+    //         const tl = gsap.timeline()
+    //         // console.log(projectNo)
+    //         const images = [
+    //             image1.current, 
+    //             p1.current,
+    //             image2.current,
+    //             image3.current,
+    //             image4.current,
+    //             image5.current,
+    //         ]
         
-            tl.from(images, { x: '-100vw', stagger: 0.1, duration: 3, ease: "expo.inOut" })
-        })
+    //         tl.from(images, { x: '-100vw', stagger: 0.1, duration: 3, ease: "expo.inOut" })
+    //     })
 
-        return () => anim.revert()
-    }, [projectNo])
+    //     return () => anim.revert()
+    // }, [projectNo])
 
     return (
+        (
+            navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+        ) ? 
+        <div className='architecture-wrapper'>
+            <div className="architecture-title-wrapper">
+                <h1 className='font-glacial-r'>{title}</h1>
+                <h2 className='font-glacial-r'>{subtitle}</h2>
+            </div>
+            <div className="title-image-container">
+                <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}5.webp`} alt='' />
+                <p className="font-glacial-r">{data.current[projectNo].title}</p>
+            </div>
+            <div className="first-image">
+                <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}1.webp`} alt='' />
+                <p className="font-glacial-r">{data.current[projectNo].description}</p>
+            </div>
+            <div className="second-image">
+                <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}2.webp`} alt='' />
+            </div>
+            <div className="third-image">
+                <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}3.webp`} alt='' />
+            </div>
+            <div className="fourth-image">
+                <img loading="lazy" src={`/${type}/${data.current[projectNo].slug}/${data.current[projectNo].prefix}4.webp`} alt='' />
+                <p className="font-glacial-r">{data.current[projectNo].location}</p>
+            </div>
+        </div>
+        :
         <div className='architecture-wrapper'>
             <div className="architecture-title-wrapper">
                 <h1 className='font-glacial-r'>{title}</h1>
