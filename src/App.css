@@ -6,4 +6,5 @@
   margin: auto;
   max-width: 3840px;
   width: 100%;
+  overflow-x: hidden;
 }

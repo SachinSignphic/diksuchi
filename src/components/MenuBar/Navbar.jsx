@@ -57,17 +57,19 @@ const Navbar = () => {
       if (openMenu) {
         // console.log("opening")
         tl
-          .from(contactFormWrapper.current, { xPercent: 100 })
+          .set(contactFormWrapper.current, { zIndex: 1000 })
           .fromTo(contactFormWrapper.current, { autoAlpha: 0 }, { autoAlpha: 1 })
+          .set(contactForm.current, { autoAlpha: 1, xPercent: 100 })
           .from(contactForm.current, { xPercent: 100 })
           .from(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
-      } else {
-        // console.log("closing")
-        tl
+        } else {
+          // console.log("closing")
+          tl
           .to(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
           .to(contactForm.current, { xPercent: 100 })
+          .set(contactForm.current, { autoAlpha: 0, xPercent: 0 })
           .fromTo(contactFormWrapper.current, { autoAlpha: 1 }, { autoAlpha: 0 })
-          .to(contactFormWrapper.current, { xPercent: 100 })
+          .set(contactFormWrapper.current, { zIndex: -50 })
       }
     })
 

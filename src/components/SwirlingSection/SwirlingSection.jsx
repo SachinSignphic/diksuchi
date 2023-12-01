@@ -129,7 +129,8 @@ const SwirlingSection = () => {
                         // end: "bottom bottom",
                         pin: true,
                         anticipatePin: 1,
-                        markers: true
+                        // once: true
+                        // markers: true
                     }
                 });
                 tl.from(swirlIntroTextRef.current, { '--rot': 0 })
@@ -138,7 +139,53 @@ const SwirlingSection = () => {
                 tl.to(swirlIntroTextRef.current, { '--perc': 0, duration: 1 })
                 tl.eventCallback("onComplete", () => {
                     tl.revert()
+                    // tl.set(swirlingIntroTextContainerRef.current, { minHeight: "100vh !important" })
                 })
+
+                const swirlTimeline = gsap.timeline({
+                    defaults: { ease: "none", duration: 32, repeat: -1 },
+                })
+
+                // swirlTimeline.set(precisionImages.current, { scale: 1.1 })
+                swirlTimeline.to(precisionImages.current, { rotation: 360 })
+                swirlTimeline.set(precisionImages.current.children, { scale: 1.4 }, "<")
+                swirlTimeline.set(precisionImages.current, { scale: 1.1 }, "<")
+                swirlTimeline.set(precisionImages.current.children[0], { xPercent: 20, yPercent: 60 }, "<")
+                swirlTimeline.to(precisionImages.current.children[0], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[1], { xPercent: -50, yPercent: 430 }, "<")
+                swirlTimeline.to(precisionImages.current.children[1], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[2], { xPercent: 30, yPercent: 700 }, "<")
+                swirlTimeline.to(precisionImages.current.children[2], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[3], { xPercent: 260, yPercent: 750 }, "<")
+                swirlTimeline.to(precisionImages.current.children[3], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[4], { xPercent: 500, yPercent: 700 }, "<")
+                swirlTimeline.to(precisionImages.current.children[4], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[5], { xPercent: 560, yPercent: 310 }, "<")
+                swirlTimeline.to(precisionImages.current.children[5], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[6], { xPercent: 500, yPercent: 60 }, "<")
+                swirlTimeline.to(precisionImages.current.children[6], { rotation: -360 }, "<")
+                swirlTimeline.set(precisionImages.current.children[7], { xPercent: 260, yPercent: -20 }, "<")
+                swirlTimeline.to(precisionImages.current.children[7], { rotation: -360 }, "<")
+
+                swirlTimeline.to(excellenceImages.current, { rotation: -360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children, { scale: 1.45 }, "<")
+                swirlTimeline.set(excellenceImages.current, { scale: 1.45 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[0], { xPercent: 80, yPercent: 90 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[0], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[1], { xPercent: -50, yPercent: 650 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[1], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[2], { xPercent: 60, yPercent: 750 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[2], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[3], { xPercent: 450, yPercent: 1400 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[3], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[4], { xPercent: 850, yPercent: 970 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[4], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[5], { xPercent: 960, yPercent: 650 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[5], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[6], { xPercent: 810, yPercent: 180 }, "<")
+                swirlTimeline.to(excellenceImages.current.children[6], { rotation: 360 }, "<")
+                swirlTimeline.set(excellenceImages.current.children[7], { xPercent: 450, yPercent: "-=40" }, "<")
+                swirlTimeline.to(excellenceImages.current.children[7], { rotation: 360 }, "<")
             })
         })
 
@@ -170,7 +217,6 @@ const SwirlingSection = () => {
                     :
                     (
                         <div className="carousel-cards" ref={scrollingImagesRef}>
-                            {/* repalce with a map on array */}
                             {
                                 Array(7).fill(1).map((_, i) => {
                                     return (
@@ -187,15 +233,6 @@ const SwirlingSection = () => {
             
             <div className="swirling-section portfolio-section" ref={portfolioImagesSectionRef}>
                 <div className="images-container" id="precision" ref={precisionImages}>
-                    {/* repalce with a map on array */}
-                    {/* <img src="/placeholder.jpg" className='precision-image precision' alt="" />
-                    <img src="/placeholder.jpg" className='precision-image' alt="" />
-                    <img src="/placeholder.jpg" className='precision-image precision' alt="" />
-                    <img src="/placeholder.jpg" className='precision-image' alt="" />
-                    <img src="/placeholder.jpg" className='precision-image precision' alt="" />
-                    <img src="/placeholder.jpg" className='precision-image precision' alt="" />
-                    <img src="/placeholder.jpg" className='precision-image' alt="" />
-                    <img src="/placeholder.jpg" className='precision-image precision' alt="" /> */}
                     {
                         Array(8).fill(1).map((x,y) => x+y).map((item, i) => {
                             return (
@@ -206,14 +243,6 @@ const SwirlingSection = () => {
                 </div>
 
                 <div className="images-container" id="excellence" ref={excellenceImages}>
-                    {/* <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                    <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                    <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                    <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                    <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                    <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                    <img src="/placeholder.jpg" className='excellence-image' alt="" />
-                    <img src="/placeholder.jpg" className='excellence-image' alt="" /> */}
                     {
                         Array(8).fill(1).map((item, i) => {
                             i += 8;

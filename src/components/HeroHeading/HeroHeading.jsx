@@ -31,7 +31,7 @@ const HeroHeading = () => {
   return (
     <div className='hero-title-container' ref={titleContainerRef}>
       <div className='company-name font-glacial-b color-bw-gradient-title'>DIKSUCHI</div>
-      <div className='company-subname font-glacial-b color-bw-gradient-title'>DESIGN STUDIO</div>
+      <div className='company-subname font-glacial-b color-bw-gradient-title'>ARCHITECTS</div>
     </div>
   )
 }

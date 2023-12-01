@@ -65,3 +65,13 @@ footer {
 .footer-map iframe {
     margin: auto;
 }
+
+@media screen and (max-width: 768px) {
+    footer {
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .footer-map {
+        display: none;
+    }
+}
