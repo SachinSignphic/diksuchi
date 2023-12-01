@@ -204,6 +204,7 @@
 
 .menu-wrapper button {
     position: absolute;
+    background-color: transparent;
     top: 1vh;
     left: 1vw;
 }

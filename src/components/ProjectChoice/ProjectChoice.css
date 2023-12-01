@@ -86,6 +86,7 @@
         height: 50vh;
         width: 100%;
         margin-top: 20vh;
+        position: relative;
     }
     .fw-card {
         height: 25vh;
@@ -99,6 +100,7 @@
     }
     .explore-circle {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         --dim: 5rem;
@@ -107,11 +109,12 @@
         width: var(--dim);
         height: var(--dim);
         position: absolute;
-        top: 67%;
-        left: 0;
+        top: 51%;
+        left: 50%;
+        transform: translate(-50%, -51%);
         z-index: 10;
         font-size: 0.9rem;
-        opacity: 0.7;
+        opacity: 0.6;
         color: black;
     }
     .from-left .explore-circle {

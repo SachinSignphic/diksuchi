@@ -149,7 +149,7 @@
         min-height: 200vh;
     }
     .swirling-intro-text {
-        margin-top: 50vh;
+        margin-top: 30vh;
     }
     .swirling-text-heading {
         transform-origin: 39.77% 43.80%;
@@ -175,6 +175,9 @@
     .precision-image, .excellence-image {
         opacity: 0.5;
         /* width: 1rem; */
-        filter: none
+        filter: blur(0.4px)
+    }
+    .gradient-for {
+        display: none;
     }
 }

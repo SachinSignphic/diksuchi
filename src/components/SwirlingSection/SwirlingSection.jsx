@@ -131,6 +131,11 @@ const SwirlingSection = () => {
                         anticipatePin: 1,
                         // once: true
                         // markers: true
+                        onUpdate: (self) => {
+                            if (self.progress.toFixed(2) == 0.48 && self.direction == 1) {
+                                scrollAmount.current = 1
+                            }
+                        }
                     }
                 });
                 tl.from(swirlIntroTextRef.current, { '--rot': 0 })
@@ -148,7 +153,7 @@ const SwirlingSection = () => {
 
                 // swirlTimeline.set(precisionImages.current, { scale: 1.1 })
                 swirlTimeline.to(precisionImages.current, { rotation: 360 })
-                swirlTimeline.set(precisionImages.current.children, { scale: 1.4 }, "<")
+                swirlTimeline.set(precisionImages.current.children, { scale: 1.8 }, "<")
                 swirlTimeline.set(precisionImages.current, { scale: 1.1 }, "<")
                 swirlTimeline.set(precisionImages.current.children[0], { xPercent: 20, yPercent: 60 }, "<")
                 swirlTimeline.to(precisionImages.current.children[0], { rotation: -360 }, "<")
@@ -168,7 +173,7 @@ const SwirlingSection = () => {
                 swirlTimeline.to(precisionImages.current.children[7], { rotation: -360 }, "<")
 
                 swirlTimeline.to(excellenceImages.current, { rotation: -360 }, "<")
-                swirlTimeline.set(excellenceImages.current.children, { scale: 1.45 }, "<")
+                swirlTimeline.set(excellenceImages.current.children, { scale: 1.8 }, "<")
                 swirlTimeline.set(excellenceImages.current, { scale: 1.45 }, "<")
                 swirlTimeline.set(excellenceImages.current.children[0], { xPercent: 80, yPercent: 90 }, "<")
                 swirlTimeline.to(excellenceImages.current.children[0], { rotation: 360 }, "<")

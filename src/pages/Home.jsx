@@ -32,7 +32,7 @@ const Home = () => {
                         <HeroSection>
                             <HeroSlider />
                             <Navbar />
-                            <ScrollIndicator height={575} />
+                            {/* <ScrollIndicator height={575} /> */}
                             <HeroHeading />
                         </HeroSection>
                         <ProjectChoice />

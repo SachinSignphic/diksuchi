@@ -44,7 +44,7 @@ const WordFromFounder = () => {
 
     return (
         <div className='word-from-founder' ref={WordFromFounderRef}>
-            <ScrollIndicator height={85} />
+            {/* <ScrollIndicator height={85} /> */}
             <div className="founder-image-container" ref={founderImageRef}>
                 <img src="/founder.webp" alt="Placeholder" />
             </div>
@@ -69,7 +69,7 @@ const WordFromFounder = () => {
                         </p>
                     </div>
                 </div>
-                <Socials />
+                <Socials link1={'https://www.instagram.com/i.mrudula/'} />
             </div>
         </div>
     )

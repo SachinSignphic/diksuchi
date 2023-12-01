@@ -9,4 +9,27 @@
     .contact-btn {
         font-size: 1.2rem;
     }
+
+    .menu-items li a {
+        font-size: 3rem;
+        /* font-family: 'Glacial-Regular', sans-serif; */
+        color: white;
+        -webkit-text-stroke: 1px;
+        overflow: hidden;
+        text-transform: uppercase;
+        -webkit-text-fill-color: black
+    }
+
+    .menu-wrapper button {
+        top: 2rem;
+        left: 0.6rem
+    }
+
+    .menu-wrapper > button span {
+        width: 3rem;
+    }
+
+    .contact-form > button span:last-child, .menu-wrapper > button span:last-child {
+        transform: rotate(-45deg) translateX(2%);
+    }
 }
