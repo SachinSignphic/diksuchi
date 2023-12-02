@@ -11,7 +11,10 @@ const Navbar = () => {
     toggle: false,
     initial: true
   })
-  const [openLeft, setOpenLeft] = useState(false)
+  const [openLeft, setOpenLeft] = useState({
+    toggle: false,
+    initial: true
+  })
   const menuBarRef = useRef();
   const contactFormWrapper = useRef()
   const contactForm = useRef()
@@ -27,7 +30,8 @@ const Navbar = () => {
   useLayoutEffect(() => {
     const menuAnim = gsap.context(() => {
       const tl1 = gsap.timeline();
-      tl1.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
+      tl1.set(menuBarRef.current, { yPercent: 45 })
+      // tl1.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
       
       // const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power1.inOut" } })
       // if (openMenu.initial) {
@@ -38,7 +42,6 @@ const Navbar = () => {
 
     })
 
-    console.log("initial",openMenu)
     return () => menuAnim.revert();
   }, []);
   
@@ -46,16 +49,23 @@ const Navbar = () => {
     const menuContext = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { duration: 0.4 } })
       const selector = gsap.utils.selector(menuItemsRef.current)
-      if (openLeft) {
+      console.log("openLeft usfct", openLeft)
+      if (openLeft.initial) {
+        console.log("initial run")
         tl
-        .set(menuWrapperRef.current, { autoAlpha: 1 })
-        .from(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
-        .from(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
-      } else {
+          .set(selector('a'), { autoAlpha: 0 })
+          .to(menuStripsRef.current.children, { xPercent: -100, stagger: 0.35, delay: 0.7 })
+          .set(menuWrapperRef.current, { autoAlpha: 0 })
+      } else if (openLeft.toggle) {
         tl
-        .to(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
-        .to(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
-        .set(menuWrapperRef.current, { autoAlpha: 0 })
+          .set(menuWrapperRef.current, { autoAlpha: 1 })
+          .from(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
+          .from(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
+      } else if (!openLeft.toggle && !openLeft.initial) {
+        tl
+          .to(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
+          .to(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
+          .set(menuWrapperRef.current, { autoAlpha: 0 })
       }
     })
     
@@ -66,12 +76,11 @@ const Navbar = () => {
     const contactFormContext = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { duration: 0.4, ease: "power1.inOut" } })
       const items = [closeBtn.current, getInTouch.current, contactForm.current.querySelector('input'), contactForm.current.querySelector('textarea'), email.current, message.current, submitBtn.current]
-      console.log("openMenu usefct", openMenu)
 
       if (openMenu.initial) {
         tl.set(contactFormWrapper.current, { autoAlpha: 0 })
         tl.set(contactForm.current, { autoAlpha: 0 })
-        setOpenMenu({ ...openMenu, initial: false })
+
       } else if (openMenu.toggle) {
         tl
         // .set(contactFormWrapper.current, { zIndex: 1000 })
@@ -96,16 +105,16 @@ const Navbar = () => {
   return (
     <>
       <div className='menu-nav' ref={menuBarRef}>
-        <div className="menu-icon" data-blobity-magnetic="false" data-blobity-tooltip="≡menu" onClick={() => setOpenLeft(true)}>
+        <div className="menu-icon" data-blobity-magnetic="false" data-blobity-tooltip="≡menu" onClick={() => setOpenLeft({ initial: false, toggle: true })}>
           <span className="menu-line"></span>
           <span className="menu-line short"></span>
         </div>
-        <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu({ ...openMenu, toggle: true })} className='contact-btn font-glacial-r'>+ Contact</Link>
+        <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu({ initial: false, toggle: true })} className='contact-btn font-glacial-r'>+ Contact</Link>
       </div>
 
       <div className='contact-form-wrapper' ref={contactFormWrapper}>
         <div className="contact-form" ref={contactForm}>
-          <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu({ ...openMenu, toggle: false })}>
+          <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu({ initial: false, toggle: false })}>
             <span></span>
             <span></span>
           </button>
@@ -133,7 +142,7 @@ const Navbar = () => {
           <div className="menu-strip"></div>
           <div className="menu-strip"></div>
         </div>
-        <button data-blobity-magnetic="false" onClick={() => setOpenLeft(false)} data-blobity-tooltip="close▸">
+        <button data-blobity-magnetic="false" onClick={() => setOpenLeft({ initial: false, toggle: false })} data-blobity-tooltip="close▸">
           <span></span>
           <span></span>
         </button>
