@@ -78,7 +78,7 @@
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: url('/bg.jpg');
+  background: url('/bg.webp');
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
 }

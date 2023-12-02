@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom';
 import { Socials } from '../'
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false)
+  const [openMenu, setOpenMenu] = useState({
+    toggle: false,
+    initial: true
+  })
   const [openLeft, setOpenLeft] = useState(false)
   const menuBarRef = useRef();
   const contactFormWrapper = useRef()
@@ -23,49 +26,63 @@ const Navbar = () => {
 
   useLayoutEffect(() => {
     const menuAnim = gsap.context(() => {
-      const tl = gsap.timeline();
-      tl.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
+      const tl1 = gsap.timeline();
+      tl1.fromTo(menuBarRef.current, { yPercent: -100, duration: 2, ease: "expo.inOut" }, { yPercent: 45 })
+      
+      // const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power1.inOut" } })
+      // if (openMenu.initial) {
+      //   tl.set(contactFormWrapper.current, { autoAlpha: 0 })
+      //   tl.set(contactForm.current, { autoAlpha: 0 })
+      //   setOpenMenu({ ...openMenu, initial: false })
+      // }
+
     })
 
+    console.log("initial",openMenu)
     return () => menuAnim.revert();
   }, []);
-
+  
   useLayoutEffect(() => {
     const menuContext = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { duration: 0.4 } })
       const selector = gsap.utils.selector(menuItemsRef.current)
       if (openLeft) {
         tl
-          .set(menuWrapperRef.current, { autoAlpha: 1 })
-          .from(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
-          .from(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
+        .set(menuWrapperRef.current, { autoAlpha: 1 })
+        .from(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
+        .from(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
       } else {
         tl
-          .to(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
-          .to(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
-          .set(menuWrapperRef.current, { autoAlpha: 0 })
+        .to(selector("a"), { y: "100vh", opacity: 0, stagger: 0.2 })
+        .to(menuStripsRef.current.children, { xPercent: -100, stagger: 0.25 })
+        .set(menuWrapperRef.current, { autoAlpha: 0 })
       }
     })
-
+    
     return () => menuContext.revert()
   }, [openLeft])
-
+  
   useLayoutEffect(() => {
     const contactFormContext = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power1.inOut" } })
+      const tl = gsap.timeline({ defaults: { duration: 0.4, ease: "power1.inOut" } })
       const items = [closeBtn.current, getInTouch.current, contactForm.current.querySelector('input'), contactForm.current.querySelector('textarea'), email.current, message.current, submitBtn.current]
-      if (openMenu) {
-        // console.log("opening")
+      console.log("openMenu usefct", openMenu)
+
+      if (openMenu.initial) {
+        tl.set(contactFormWrapper.current, { autoAlpha: 0 })
+        tl.set(contactForm.current, { autoAlpha: 0 })
+        setOpenMenu({ ...openMenu, initial: false })
+      } else if (openMenu.toggle) {
         tl
-          // .set(contactFormWrapper.current, { zIndex: 1000 })
+        // .set(contactFormWrapper.current, { zIndex: 1000 })
           .fromTo(contactFormWrapper.current, { autoAlpha: 0 }, { autoAlpha: 1 })
           .set(contactForm.current, { autoAlpha: 1, xPercent: 100 })
           .from(contactForm.current, { xPercent: 100 })
           .from(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
-        } else {
-          // console.log("closing")
-          tl
-          .to(items, { opacity: 0, yPercent: 100, stagger: 0.2 })
+      } else if (!openMenu.toggle && !openMenu.initial) {
+        // console.log("closing")
+        tl
+          .to(items, { opacity: 0, yPercent: 100, stagger: 0.1 })
           .to(contactForm.current, { xPercent: 100 })
           .set(contactForm.current, { autoAlpha: 0, xPercent: 0 })
           .fromTo(contactFormWrapper.current, { autoAlpha: 1 }, { autoAlpha: 0 })
@@ -83,12 +100,12 @@ const Navbar = () => {
           <span className="menu-line"></span>
           <span className="menu-line short"></span>
         </div>
-        <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu(true)} className='contact-btn font-glacial-r'>+ Contact</Link>
+        <Link to={"#"} data-blobity-magnetic="false" data-no-blobity data-blobity-tooltip="◂open" onClick={() => setOpenMenu({ ...openMenu, toggle: true })} className='contact-btn font-glacial-r'>+ Contact</Link>
       </div>
 
       <div className='contact-form-wrapper' ref={contactFormWrapper}>
         <div className="contact-form" ref={contactForm}>
-          <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu(false)}>
+          <button ref={closeBtn} data-blobity-magnetic="false" data-blobity-tooltip="close▸" onClick={() => setOpenMenu({ ...openMenu, toggle: false })}>
             <span></span>
             <span></span>
           </button>
