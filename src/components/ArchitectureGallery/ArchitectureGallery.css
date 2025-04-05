@@ -1,0 +1,196 @@
+.architecture-wrapper {
+    /* min-height: 100vh; */
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 7vh;
+    /* opacity: 0.2; */
+}
+
+.architecture-wrapper h1, .architecture-wrapper p {
+    color: white;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.architecture-title-wrapper {
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 1vh 0.5vh;
+    gap: 5vw;
+    align-items: center;
+}
+
+.architecture-title-wrapper h1 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.6vw;
+    line-height: 117px;
+    letter-spacing: 1vw;
+}
+
+.architecture-title-wrapper h2 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.7vw;
+    letter-spacing: 0.7vw;
+    margin-left: auto;
+}
+
+.architecture-images, .right-images, .left-images, .small-big-container, .text-and-image, .image-bottom {
+    display: flex;
+    /* outline: 1px solid white; */
+}
+
+.small-big-container {
+    gap: 8vh !important
+}
+
+.architecture-images {
+    scale: 0.95;
+    padding-left: 9vw;
+}
+
+.architecture-images img {
+    width: 100%;
+}
+
+.left-images {
+    gap: 4vw !important;
+    width: 40vw;
+    transform: translateX(-3vw);
+}
+
+.modern-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-left: 4vw; */
+}
+
+.right-images {
+    flex-direction: column;
+    padding: 1vw;
+    gap: 3vw !important;
+    width: 40vw;
+}
+
+.image-bottom-2 {
+    width: 100%;
+    flex-direction: column;
+}
+
+.image-bottom-2 img {
+    width: 30vw !important;
+}
+
+.image-bottom-2 h1 {
+    margin-left: 6vw;
+    margin-top: 5vh;
+}
+
+.modern-container h1 {
+    letter-spacing: 0.7vw;
+    width: max-content;
+}
+
+.text-and-image {
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.text-and-image > p {
+    width: 38%;
+    text-transform: uppercase;
+    font-size: 0.8vw;
+}
+
+.image-5, .image-4, .image-3, .image-2, .image-1 {
+    display: flex;
+    justify-content: center; 
+    /* outline: 1px solid red; */
+    overflow: hidden;
+    /* height: fit; */
+}
+
+.image-5 {
+    width: 20vw;
+    height: 25vh;
+    margin-left: 2vw;
+}
+
+.image-5 img {
+    object-fit: cover;
+}
+
+.image-4 {
+    width: 18vw;
+}
+
+.image-3 {
+    width: 20vw;
+    height: 67vh;
+}
+
+.image-3 img {
+    object-fit: cover;
+}
+
+.image-1 {
+    width: 7vw;
+    height: 24vh;
+}
+
+.image-1 img {
+    object-fit: cover;
+}
+
+.image-2 {
+    width: 16vw;
+    height: 28vh;
+    /* outline: 1px solid red; */
+    display: flex;
+    transform: scale(1.2) translateY(2vh);
+}
+
+.image-2 img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.architecture-controls {
+    position: absolute;
+    right: 5vw;
+    bottom: 10vh;
+    display: flex;
+    gap: 0.5vw;
+}
+
+.architecture-controls button {
+    /* width: 2vw; */
+    aspect-ratio: 1;
+    padding: 0.7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border-radius: 100px;
+    outline: 1px solid white;
+    border: none;
+}
+
+.architecture-controls button:first-child {
+    transform: rotate(-180deg);
+}
+
+.architecture-controls button img {
+    /* width: 100%; */
+    filter: invert(1);
+    width: 1vw;
+}

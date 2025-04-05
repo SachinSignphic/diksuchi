@@ -1,0 +1,10 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  max-width: 3840px;
+  width: 100%;
+  overflow-x: hidden;
+}

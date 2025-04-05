@@ -1,0 +1,129 @@
+
+  @font-face {
+    font-family:"TANPEARL";
+    src: url(/src/assets/fonts/TAN-PEARL.otf);
+  }
+  @font-face {
+    font-family: "GlacialIndifference";
+    src: url(/src/assets/fonts/GlacialIndifference-Regular.otf);
+  }
+  .wrapper {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 5vw;
+    align-items: center;
+    margin-top: 10vh;
+    width: 85%;
+  }
+  
+  .wrapper h1 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.8vw;
+    line-height: 117px;
+    letter-spacing: 1vw;
+    font-family:"TANPEARL";
+  }
+  
+  .wrapper h2 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2vw;
+    letter-spacing: 0.5vw;
+    margin-left: auto;
+    font-family: "GlacialIndifference";
+  }
+  .card1, .card2{
+    background-color:#111;
+    height:40vh;
+    width: 80%;
+    position: relative;
+    display: flex;
+    margin-top: 6vh;
+    letter-spacing: 0.4rem;
+  }
+  .card2{
+    flex-direction: row-reverse;
+  }
+  img{
+    object-fit:cover;
+    width: 55%;
+    
+  }
+  .grad1{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background:linear-gradient(90deg,transparent ,#111);
+    left:35%;
+  }
+  .grad2{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    background:linear-gradient(to right,#111,transparent);
+    left:45%;
+  }
+  .grad1 div{
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 125%;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 180%;
+    height: 50%;
+  }
+  .grad1 div p{
+    text-align: center;
+    font-family: 'GlacialIndifference';
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.3rem;
+    line-height: 3rem;
+    margin-top: 5%;
+  }
+  .grad1 div h1{
+    font-family: 'TANPEARL';
+    font-size: 3rem;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .grad2 div{
+    margin-top: 30%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 200%;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 180%;
+    height: 50%;
+  }
+  .grad2 div p{
+    text-align: center;
+    font-family: 'GlacialIndifference';
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.3rem;
+    line-height: 3rem;
+    margin-top: 5%;
+  }
+  .grad2 div h1{
+    font-family: 'TANPEARL';
+    font-size: 3rem;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .footerp{
+    height: 10vh;
+  }

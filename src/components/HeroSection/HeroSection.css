@@ -1,0 +1,8 @@
+.hero {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    /* padding: 0.4rem; */
+    position: relative;
+    /* background-color: #323232; this is just an example color. change to actual one and then chnage color of the hr in loader too */
+}

@@ -1,0 +1,183 @@
+.swirling-section {
+    margin-top: 15vh;
+    display: flex;
+    min-height: 375vh;
+    width: 100%;
+    /* justify-content: center; */
+    padding-left: 6vw;
+    gap: 5.5vw;
+    align-items: flex-start;
+    position: relative;
+}
+
+.swirling-intro-text {
+    margin-top: 24vh;
+    --rot: 180deg;
+}
+
+.swirling-intro-text hr {
+    transform-origin: left top;
+    border: none;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: white;
+    position: absolute;
+    top: -14vh;
+    opacity: 60%;
+    left: -14vh;
+    z-index: -1
+}
+
+.portfolio-section {
+    min-height: 100vh !important;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    padding-left: 0;
+    gap: 0;
+}
+
+.carousel-card-container {
+    display: flex;
+    height: 90%;
+    overflow: hidden;
+}
+
+.swirling-text-heading {
+    --n: 136.23%;
+    --rot: 180deg;
+    --perc: 255;
+    font-size: 7vw;
+    color: transparent;
+    background: linear-gradient(var(--rot), rgba(var(--perc), var(--perc), var(--perc), 0.6) 0.56%, rgba(0, 0, 0, 0) var(--n));
+    background-clip: text;
+    transform-origin: 43.255% 35%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 9px;
+    line-height: 14vh;
+}
+
+.single-word-nofill {
+    color: white;
+    font-size: 7vw;
+    -webkit-text-stroke: 1px;
+    width: 100%;
+    overflow: hidden;
+    text-transform: uppercase;
+    -webkit-text-fill-color: black;
+}
+
+.swirling-section-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.swirling-section-type-selector {
+    display: flex;
+    gap: 2vw
+}
+
+.swrirling-images-title {
+    color: white;
+    background: linear-gradient(178.32deg, #FFFFFF 1.42%, rgba(255, 255, 255, 0) 124.8%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3vw;
+}
+
+.portfolio-selector {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.4vw;
+}
+
+/* .portfolio-selector:hover {
+    opacity: 0;
+} */
+
+.images-container {
+    width: 45vw;
+    aspect-ratio: 1;
+    /* outline: 1px solid red; */
+    border-radius: 50%;
+    position: absolute;
+    z-index: -5;
+}
+
+.precision-image, .excellence-image {
+    /* outline: 1px solid red; */
+    width: 7vw;
+    position: absolute;
+    opacity: 0.5;
+    filter: blur(4px)
+}
+
+#excellence {
+    width: 70vw;
+}
+
+.carousel-cards {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    /* outline: 1px solid red; */
+    height: 99.22%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 14.8vw;
+}
+
+.carousel-cards img {
+    width: 100%;
+    object-fit: cover;
+    height: 70vh;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .swirling-section {
+        /* outline: 1px solid red; */
+        min-height: 200vh;
+    }
+    .swirling-intro-text {
+        margin-top: 30vh;
+    }
+    .swirling-text-heading {
+        transform-origin: 39.77% 43.80%;
+        /* margin-top: 20%; */
+        font-size: 4rem;
+        line-height: 1.2;
+        letter-spacing: 0.5rem;
+    }
+    .carousel-cards {
+        display: none;
+    }
+    .single-word-nofill {
+        margin-bottom: 0;
+        font-size: 3.8rem;
+        /* margin-top: 10%; */
+    }
+    .swrirling-images-title {
+        font-size: 4.5rem;
+    }
+    .portfolio-selector {
+        font-size: 2rem;
+    }
+    .precision-image, .excellence-image {
+        opacity: 0.5;
+        /* width: 1rem; */
+        filter: blur(0.4px)
+    }
+    .gradient-for {
+        display: none;
+    }
+}

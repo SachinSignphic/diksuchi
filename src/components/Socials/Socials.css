@@ -1,0 +1,38 @@
+.socials-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+}
+
+.socials-icons {
+    display: flex;
+    gap: 1vw;
+}
+
+.icon {
+    --icon-size: 2.2vw;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border-radius: 50%;
+    /* outline: 2px solid white; */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon img {
+    width: 70%;
+    object-fit: scale-down;
+}
+
+@media screen and (max-width: 768px) {
+    .icon {
+        --icon-size: 2.4rem
+    }
+    .icon img {
+        width: 70%;
+        object-fit: scale-down;
+    }
+}

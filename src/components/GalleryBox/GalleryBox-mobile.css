@@ -1,0 +1,132 @@
+@font-face{
+    font-family: tanpearl;
+    src: url(fonts/TAN-PEARL.otf);
+}
+@font-face {
+    font-family: Galciel;
+    src: url(fonts/GlacialIndifference-Regular.otf);
+}
+@font-face {
+    font-family: Galciel_bold;
+    src: url(fonts/GlacialIndifference-Bold.otf);
+}
+body{
+    background-image: url(/bg.webp);
+}
+.studio_mob{
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 8%;
+  }
+  .top_mob{
+    display: flex;
+    justify-content: space-between;
+  }
+  .top_mob h1{
+    color: #FFFFFF;
+    font-family: Galciel_bold;
+    font-size: 300%;
+  }
+  .top_mob p{
+    color: #F5F5DC;
+    letter-spacing: 0.2rem;
+    font-stretch: expanded;
+    font-size: 60%;
+    font-family: Galciel;
+    margin-top: auto;
+    margin-bottom: 2%;
+  }
+  .swiper1_mob{
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6%;
+    gap: 4%;
+    overflow-x: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.swiper1_mob::-webkit-scrollbar{
+    width: 0;
+}
+.swiper1_mob div{
+    height: 100%;
+    width: 40%;
+    border-radius: 7%;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+.items1_mob{
+    background-image: url(/scroll-1.webp);
+}
+.items2_mob{
+    background-image: url(/scroll-2.webp);
+}
+.items3_mob{
+    background-image: url(/scroll-3.webp);
+}
+.items4_mob{
+    background-image: url(/scroll-4.webp);
+}
+.items5_mob{
+    background-image: url(/scroll-5.webp);
+}
+.items6_mob{
+    background-image: url(/scroll-6.webp);
+}
+.items7_mob{
+    background-image: url(/scroll-7.webp);
+}
+.p1_mob{
+    color: #F5F5DC;
+    letter-spacing: 0.2rem;
+    font-size: 60%;
+    font-family: Galciel;
+    text-align: justify;
+    line-height: 130%;
+    opacity: 0.8;
+    margin: 10% 7%;
+}
+.main-img_mob{
+    height: 30vh;
+}
+.main-img_mob img{
+    height: 80%;
+    width: 90%;
+    margin: 4%;
+    border-radius: 10%;
+}
+.end_mob{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.end_mob img{
+    width: 65%;
+    margin: 5% 0;
+}
+.end_mob p{
+    color: #F5F5DC;
+    font-family: Galciel;
+    text-align: center;
+    font-size: 80%;
+    opacity: 0.8;
+    line-height: 130%;
+    letter-spacing: 0.1rem;
+}
+.credits_mob{
+    color: #F5F5DC;
+    font-family: Galciel;
+    text-align: right;
+    font-size: 80%;
+    opacity: 0.8;
+    line-height: 130%;
+    letter-spacing: 0.2rem;
+    margin: 10%;
+}

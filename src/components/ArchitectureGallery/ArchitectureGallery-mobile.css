@@ -1,0 +1,78 @@
+@media screen and (max-width: 768px) {
+    .architecture-wrapper {
+        width: 85%;
+        gap: 2rem;
+        padding-bottom: 5rem;
+    }
+
+    .architecture-title-wrapper {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .first-image p {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+    }
+    
+    .fourth-image p {
+        font-size: 1.6rem;
+    }
+    
+    .architecture-title-wrapper h1 {
+        font-size: 3rem !important;
+        line-height: 50px !important;
+    }
+    .architecture-title-wrapper h2 {
+        margin-left: auto;
+        font-size: 1.3rem !important;
+        background: linear-gradient(190deg, rgba(255, 255, 255, 0.597) 6.63%, rgba(255, 255, 255, 0) 155.02%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .title-image-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem
+    }
+    
+    .title-image-container p {
+        letter-spacing: 2px;
+        font-size: 1.5rem;
+    }
+
+    .title-image-container img {
+        width: 40vw;
+    }
+
+    .first-image, .second-image, .third-image, .fourth-image {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .first-image img, .second-image img, .third-image img, .fourth-image img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .architecture-controls {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        gap: 1rem
+        /* outline: 1px solid red; */
+    }
+
+    .architecture-controls button {
+        padding: 0;
+        --dim: 4rem;
+        width: var(--dim);
+        height: var(--dim);
+    }
+
+    .architecture-controls button img {
+        width: 50%;
+    }
+}

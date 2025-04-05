@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  gap: 0.6rem;
+  height: 100vh;
+  width: 45%;
+}
+.scroller {
+  overflow-y: hidden;
+}
+.scroller__inner {
+  display: flex;
+  gap: 0.6rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  animation: scroll var(--_animation-duration, 35s) var(--_animation-direction, forwards) linear infinite;
+}
+.left {
+  animation: scroll var(--_animation-duration, 35s) var(--_animation-direction, reverse) linear infinite;
+}
+@keyframes scroll {
+  to {
+    transform: translateY(calc(-50% - 0.5rem));
+  }
+}
+.scroller__inner:hover {
+  animation-play-state: paused;
+}
+.scroller__inner img:hover {
+  opacity: 1;
+  filter: blur(0);
+  transition: 0.4s;
+}
+body {
+  background-color: black;
+}
+.scroller__inner img {
+  height: 30rem;
+  width: 20rem;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: blur(2.5px);
+}
