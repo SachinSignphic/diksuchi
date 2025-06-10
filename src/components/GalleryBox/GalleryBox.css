@@ -1,6 +1,6 @@
 .gallery-box {
     display: flex;
-    width: 70%;
+    width: 90%;
     flex-direction: column;
     gap: 3vh;
     /* height: 70vh; */
@@ -63,7 +63,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     letter-spacing: 0.4vw;
 }
 
@@ -176,34 +176,64 @@
     display: flex;
     justify-content: center;
     gap: 5%;
-    height: 30vh;
+    height: 40vh;
+    margin-top: 3vh;
   }
-.content-box {
-    background: linear-gradient(180deg, rgba(186,186,186,0.4) 0%, rgba(186,186,186,0) 100%);
+.content-box{
+    background: url('/PAS_2722.jpg');
+    background-size: cover;
+    background-position: center;
     flex: 1;
-  }
+}
+.content-box2{
+    background: url('/PAS_2646.jpg');
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+}
 .content-box1{
-    background: linear-gradient(180deg, rgba(186,186,186,0.4) 0%, rgba(186,186,186,0) 100%);
+    background: url('/PAS_2533.jpg');
+    background-size: cover;
+    background-position: center;
     flex: 2;
 }
 .text-section {
     text-transform: uppercase;
     text-align: justify;
     margin-bottom: 2vh;
+    margin-top: 2vh;
   }
   @font-face {
     font-family: "GlacialIndifference";
     src: url(../assets/fonts/GlacialIndifference-Regular.otf);
   }  
 .text-section p{
-    color: #f0e4ce;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.60) 6.63%, rgba(211, 211, 211, 0.753) 155.02%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-top: 3vh;
     font-family: GlacialIndifference;
     letter-spacing: 1.5px;
+    font-size: 150%;
+    line-height: 180%;
 }
 .footer-box{
-    height: 40vh;
+    height: 50vh;
     width: 100%;
-    margin: 0;
-    background: linear-gradient(180deg, rgba(186,186,186,0.4) 0%, rgba(186,186,186,0) 100%);
+    display: flex;
+    gap: 3vw;
+    margin-top: 3vh;
+}
+.footer-box1{
+    flex: 1;
+    background: url('/PAS_2686.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+.footer-box2{
+    flex: 1;
+    background: url('/PAS_2674.jpg');
+    background-size: cover;
+    background-position: center;
 }

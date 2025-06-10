@@ -1,9 +1,12 @@
+body{
+    overflow-y: hidden;
+}
 .architecture-wrapper {
     /* min-height: 100vh; */
     width: 90%;
     display: flex;
     flex-direction: column;
-    margin-top: 7vh;
+    margin-top: 10vh;
     /* opacity: 0.2; */
 }
 
@@ -31,6 +34,7 @@
     font-size: 3.6vw;
     line-height: 117px;
     letter-spacing: 1vw;
+    text-decoration: none;
 }
 
 .architecture-title-wrapper h2 {
@@ -108,7 +112,7 @@
 .text-and-image > p {
     width: 38%;
     text-transform: uppercase;
-    font-size: 0.8vw;
+    font-size: 0.9vw;
 }
 
 .image-5, .image-4, .image-3, .image-2, .image-1 {
@@ -162,35 +166,4 @@
 .image-2 img {
     width: 100%;
     object-fit: cover;
-}
-
-.architecture-controls {
-    position: absolute;
-    right: 5vw;
-    bottom: 10vh;
-    display: flex;
-    gap: 0.5vw;
-}
-
-.architecture-controls button {
-    /* width: 2vw; */
-    aspect-ratio: 1;
-    padding: 0.7vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    border-radius: 100px;
-    outline: 1px solid white;
-    border: none;
-}
-
-.architecture-controls button:first-child {
-    transform: rotate(-180deg);
-}
-
-.architecture-controls button img {
-    /* width: 100%; */
-    filter: invert(1);
-    width: 1vw;
 }

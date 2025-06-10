@@ -5,6 +5,8 @@ import gsap from 'gsap';
 import architectureProjects from './architectureGalleryData';  // Architecture data
 import interiorProjects from './interiorGalleryData';  // Interior data
 import { useParams } from 'react-router-dom';
+import Navbar from '../MenuBar/Navbar';
+import (Navbar);
 
 const ArchitectureGallery = ({ type, title, subtitle }) => {
     const { slug } = useParams();  // Get 'slug' from the URL parameter
@@ -79,6 +81,7 @@ const ArchitectureGallery = ({ type, title, subtitle }) => {
         ) : (
             <div className='architecture-wrapper'>
                 <div className="architecture-title-wrapper">
+                    <Navbar />
                     <h1 className='font-glacial-r'>{project.title}</h1>
                     <h2 className='font-glacial-r'>{project.subtitle}</h2>
                 </div>

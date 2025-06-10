@@ -44,3 +44,7 @@
   -webkit-transform: scaleX(1);
   transform: scaleX(120%);
 }
+.thefinest{
+    position: relative;
+    left: 7%;
+}

@@ -32,7 +32,7 @@ body{
     color: #F5F5DC;
     letter-spacing: 0.2rem;
     font-stretch: expanded;
-    font-size: 60%;
+    font-size: 80%;
     font-family: Galciel;
     margin-top: auto;
     margin-bottom: 2%;
@@ -50,6 +50,7 @@ body{
 }
 .swiper1_mob::-webkit-scrollbar{
     width: 0;
+    height: 0;
 }
 .swiper1_mob div{
     height: 100%;
@@ -60,30 +61,30 @@ body{
     margin: auto;
 }
 .items1_mob{
-    background-image: url(/scroll-1.webp);
+    background-image: url(/PAS_2533.jpg);
 }
 .items2_mob{
-    background-image: url(/scroll-2.webp);
+    background-image: url(/PAS_2569.jpg);
 }
 .items3_mob{
-    background-image: url(/scroll-3.webp);
+    background-image: url(/PAS_2641.jpg);
 }
 .items4_mob{
-    background-image: url(/scroll-4.webp);
+    background-image: url(/PAS_2646.jpg);
 }
 .items5_mob{
-    background-image: url(/scroll-5.webp);
+    background-image: url(/PAS_2674.jpg);
 }
 .items6_mob{
-    background-image: url(/scroll-6.webp);
+    background-image: url(/PAS_2716.jpg);
 }
 .items7_mob{
-    background-image: url(/scroll-7.webp);
+    background-image: url(/PAS_2722.jpg);
 }
 .p1_mob{
     color: #F5F5DC;
-    letter-spacing: 0.2rem;
-    font-size: 60%;
+    letter-spacing: 0.25rem;
+    font-size: 100%;
     font-family: Galciel;
     text-align: justify;
     line-height: 130%;
@@ -91,13 +92,17 @@ body{
     margin: 10% 7%;
 }
 .main-img_mob{
-    height: 30vh;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.main-img_mob img{
-    height: 80%;
-    width: 90%;
-    margin: 4%;
-    border-radius: 10%;
+.main-img_mob div{
+    width: 85%;
+    height: 100%;
+    background-image: url(/PAS_2533.jpg);
+    border-radius: 5%;
+    background-size: cover;
 }
 .end_mob{
     height: 50vh;

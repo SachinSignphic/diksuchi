@@ -126,13 +126,13 @@
   .top_mobile h1{
     color: #FFFFFF;
     font-family: Galciel_bold;
-    font-size: 270%;
+    font-size: 280%;
   }
   .top_mobile p, .bottom_mobile p{
     color: #F5F5DC;
     letter-spacing: 0.2rem;
     font-stretch: expanded;
-    font-size: 60%;
+    font-size: 100%;
     font-family: Galciel;
     margin-top: auto;
     margin-bottom: 2%;
@@ -181,25 +181,25 @@
     margin: auto;
   }
   .items1_mobile{
-    background-image: url(/scroll-1.webp);
+    background-image: url(/PAS_2533.jpg);
 }
 .items2_mobile{
-    background-image: url(/scroll-2.webp);
+    background-image: url(/PAS_2569.jpg);
 }
 .items3_mobile{
-    background-image: url(/scroll-3.webp);
+    background-image: url(/PAS_2641.jpg);
 }
 .items4_mobile{
-    background-image: url(/scroll-4.webp);
+    background-image: url(/PAS_2646.jpg);
 }
 .items5_mobile{
-    background-image: url(/scroll-5.webp);
+    background-image: url(/PAS_2674.jpg);
 }
 .items6_mobile{
-    background-image: url(/scroll-6.webp);
+    background-image: url(/PAS_2716.jpg);
 }
 .items7_mobile{
-    background-image: url(/scroll-7.webp);
+    background-image: url(/PAS_2722.jpg);
 }
 .studio_mobile{
     display: flex;
@@ -296,7 +296,7 @@
     letter-spacing: 0.1rem;
     opacity: 0.8;
     margin-top: 10%;
-    font-size: 80%;
+    font-size: 100%;
     text-transform: capitalize;
 }
 .contact_mobile{
@@ -337,9 +337,7 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
-.swiper2_mobile::-webkit-scrollbar{
-    width: 0;
-}
+
 .swiper2_mobile div{
     height: 100%;
     width: 65%;

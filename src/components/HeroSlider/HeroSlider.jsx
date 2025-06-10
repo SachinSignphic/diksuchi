@@ -33,7 +33,7 @@ const HeroSlider = () => {
         </div>
         <div className='design2'></div>
         <div className='footer'>
-            <p>THE FINEST</p>
+            <p className='thefinest'>THE FINEST</p>
             <p>DIKSUCHI@2023</p>
         </div>
       </div>

@@ -10,7 +10,6 @@
 .our-story-title {
     display: flex;
     justify-content: space-between;
-    padding: 1vw;
     align-items: center;
 }
 
@@ -76,6 +75,7 @@
     letter-spacing: 5px;
     line-height: 220%;
     text-align: justify;
+    font-size: 180%;
 }
 
 .our-story-right {

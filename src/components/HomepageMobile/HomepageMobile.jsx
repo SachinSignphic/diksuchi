@@ -76,7 +76,7 @@ const HomepageMobile = () => {
         </div>
         <div className="bottom_mobile">
           <p>
-            DIKSUCHI. A LEADING ARCHITECTURAL POWERHOUSE. TAKES ITS NAME FROM THE COMPASS-A TOOL SYNONYMOUS WITH ORIENTATION AND NAVIGATION.
+            Diksuchi. A leading architectural powerhouse. Takes name from the Compass-A tool synonymous with orientation and navigation.
           </p>
         </div>
       </div>
@@ -105,7 +105,7 @@ const HomepageMobile = () => {
         <div className="owner_mobile"></div>
       </div>
       <div className="about_mobile">
-        <h1>ABOUT OUR <span>FOUNDER.</span></h1>
+        <h1>About Our <span>Founder.</span></h1>
         <p>
           Experience the captivating blend of creativity and functionality at Diksuchi Design Studio in Hyderabad. Led by our Chief Architect with a B.Arch from C.S.I.I.T and an M.Arch from Bharati Vidyapeeth Pune, we specialize in sustainable architecture, exemplified by projects like the eco-conscious P House. Join us for a transformative journey where we harmonize human spaces with the environment.
         </p>
