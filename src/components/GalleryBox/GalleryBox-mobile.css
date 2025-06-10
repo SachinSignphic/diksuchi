@@ -83,13 +83,14 @@ body{
 }
 .p1_mob{
     color: #F5F5DC;
-    letter-spacing: 0.25rem;
-    font-size: 100%;
+    letter-spacing: 0.1rem;
+    font-size: 120%;
     font-family: Galciel;
-    text-align: justify;
-    line-height: 130%;
+    line-height: 180%;
     opacity: 0.8;
     margin: 10% 7%;
+    text-transform: uppercase;
+    text-align: justify;
 }
 .main-img_mob{
     height: 25vh;

@@ -72,9 +72,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
-    letter-spacing: 5px;
-    line-height: 220%;
+    letter-spacing: 0.1rem;
     text-align: justify;
+    line-height: 150%;
     font-size: 180%;
 }
 

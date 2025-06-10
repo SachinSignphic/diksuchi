@@ -56,6 +56,7 @@ const ArchitectureGallery = ({ type, title, subtitle }) => {
         ) ? (
             <div className='architecture-wrapper'>
                 <div className="architecture-title-wrapper">
+                    <Navbar />
                     <h1 className='font-glacial-r'>{project.title}</h1>
                     <h2 className='font-glacial-r'>{project.subtitle}</h2>
                 </div>
