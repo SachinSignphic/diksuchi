@@ -19,7 +19,9 @@
         overflow: hidden;
         text-transform: uppercase;
     }
-
+    .menu-items li{
+        margin-top: 1vh;
+    }
     .menu-wrapper button {
         top: 2rem;
         left: 0.6rem
