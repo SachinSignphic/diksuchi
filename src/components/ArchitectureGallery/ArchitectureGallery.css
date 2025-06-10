@@ -1,5 +1,7 @@
-body{
-    overflow-y: hidden;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
 }
 .architecture-wrapper {
     /* min-height: 100vh; */
