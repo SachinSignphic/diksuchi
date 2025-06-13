@@ -126,7 +126,7 @@ const HomepageMobile = () => {
         <p>91 99666 6221</p>
         <p><u>diksuchidesignstudio@gmail.com</u></p>
       </div>
-      <p className="credits_mobile">DIKSUCHI@2023</p>
+      <p className="credits_mobile">DIKSUCHI@2025</p>
     </body>
   );
 };
