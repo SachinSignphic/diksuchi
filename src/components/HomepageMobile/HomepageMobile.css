@@ -127,6 +127,7 @@
     color: #FFFFFF;
     font-family: Galciel_bold;
     font-size: 280%;
+    line-height: 125%;
   }
   .top_mobile p, .bottom_mobile p{
     color: #F5F5DC;
@@ -181,25 +182,25 @@
     margin: auto;
   }
   .items1_mobile{
-    background-image: url(/PAS_2533.jpg);
+    background-image: url(/PAS_2533.webp);
 }
 .items2_mobile{
-    background-image: url(/PAS_2569.jpg);
+    background-image: url(/PAS_2569.webp);
 }
 .items3_mobile{
-    background-image: url(/PAS_2641.jpg);
+    background-image: url(/PAS_2641.webp);
 }
 .items4_mobile{
-    background-image: url(/PAS_2646.jpg);
+    background-image: url(/PAS_2646.webp);
 }
 .items5_mobile{
-    background-image: url(/PAS_2674.jpg);
+    background-image: url(/PAS_2674.webp);
 }
 .items6_mobile{
-    background-image: url(/PAS_2716.jpg);
+    background-image: url(/PAS_2716.webp);
 }
 .items7_mobile{
-    background-image: url(/PAS_2722.jpg);
+    background-image: url(/PAS_2722.webp);
 }
 .studio_mobile{
     display: flex;

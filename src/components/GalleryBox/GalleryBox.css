@@ -180,19 +180,19 @@
     margin-top: 3vh;
   }
 .content-box{
-    background: url('/PAS_2722.jpg');
+    background: url('/PAS_2722.webp');
     background-size: cover;
     background-position: center;
     flex: 1;
 }
 .content-box2{
-    background: url('/PAS_2646.jpg');
+    background: url('/PAS_2646.webp');
     background-size: cover;
     background-position: center;
     flex: 1;
 }
 .content-box1{
-    background: url('/PAS_2533.jpg');
+    background: url('/PAS_2533.webp');
     background-size: cover;
     background-position: center;
     flex: 2;
@@ -227,13 +227,13 @@
 }
 .footer-box1{
     flex: 1;
-    background: url('/PAS_2686.jpg');
+    background: url('/PAS_2686.webp');
     background-size: cover;
     background-position: bottom;
 }
 .footer-box2{
     flex: 1;
-    background: url('/PAS_2674.jpg');
+    background: url('/PAS_2674.webp');
     background-size: cover;
     background-position: center;
 }

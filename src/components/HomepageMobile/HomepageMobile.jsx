@@ -40,7 +40,7 @@ const HomepageMobile = () => {
       </div>
       <div className="footer2_mobile">
         <p className="left_mobile">THE FINEST</p>
-        <p className="right_mobile">DIKSUCHI@2023</p>
+        <p className="right_mobile">DIKSUCHI@2025</p>
       </div>
       <div className="swiper_mobile">
         <div className="item1_mobile"></div>

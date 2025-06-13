@@ -3,7 +3,13 @@ import './OurStory.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Socials } from '../'
-
+const imageList = [
+  "/PAS_2722.webp",
+  "/PAS_2560.webp",
+  "/PAS_2611.webp",
+  "/PAS_2659.webp",
+  "/PAS_2697.webp",
+]
 const OurStory = ({ pageRef }) => {
     const ourStoryContent = useRef()
     const ourStoryImages = useRef()
@@ -84,33 +90,29 @@ const OurStory = ({ pageRef }) => {
                 <div className="our-story-left" ref={ourStoryContent}>
                     <div className="story-paras">
                         <h2 className='font-glacial-r'>HISTORY OF THE ELITE</h2>
-                        <img src="/1.webp" alt="" className="mobile-story-img" />
+                        <img src="/PAS_2722.webp" alt="" className="mobile-story-img" />
                         <p className='font-glacial-r'>
                             Diksuchi, a leading architectural powerhouse, takes its name from the compass—a tool synonymous with orientation and navigation. This choice encapsulates the firm's fundamental mission: to provide unwavering guidance and direction in shaping the built environment. Diksuchi is not just an architecture firm; it's a transformative force, firmly believing in the profound impact of well-designed spaces.
                         </p>
-                        <img src="/2.webp" alt="" className="mobile-story-img" />
+                        <img src="/PAS_2560.webp" alt="" className="mobile-story-img" />
                         <p className='font-glacial-r'>
                             With a commitment to going beyond mere functionality, Diksuchi strives to create environments that not only fulfill practical needs but also inspire and uplift. Drawing inspiration from the magnetic compass, the firm underlines its dedication to steering clients and projects toward impeccably designed and purposeful outcomes.
                         </p>
-                        <img src="/3.webp" alt="" className="mobile-story-img" />
+                        <img src="/PAS_2611.webp" alt="" className="mobile-story-img" />
                         <p className='font-glacial-r'>
                             Diksuchi's expertise lies in crafting comprehensive solutions, offering a clear vision that effortlessly navigates through challenges. Every space under their guidance is a testament to a seamless and captivating experience, ensuring it reflects its intended purpose with grace and purpose. In the world of architecture, Diksuchi stands as a beacon, guiding projects to new heights of design excellence.
                         </p>
-                        <img src="/4.webp" alt="" className="mobile-story-img" />
+                        <img src="/PAS_2659.webp" alt="" className="mobile-story-img" />
                         <Socials />
                     </div>
                 </div>
                 <div className="our-story-right" ref={ourStoryImages}>
-                    {
-                        Array(5).fill(1).map((_, i) => {
-                            return (
-                                    <div key={i} className="story-image">
-                                        <img src={`/${i+1}.webp`} alt='' />
-                                    </div>
-                                    )
-                                })
-                            }
-                </div>
+  {imageList.map((src, i) => (
+    <div key={i} className="story-image">
+      <img src={src} alt={`Story image ${i + 1}`} />
+    </div>
+  ))}
+</div>
             </div>
         </div>
     )

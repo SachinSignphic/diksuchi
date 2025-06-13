@@ -27,6 +27,7 @@ body{
     color: #FFFFFF;
     font-family: Galciel_bold;
     font-size: 300%;
+    line-height: 125%;
   }
   .top_mob p{
     color: #F5F5DC;
@@ -61,25 +62,25 @@ body{
     margin: auto;
 }
 .items1_mob{
-    background-image: url(/PAS_2533.jpg);
+    background-image: url(/PAS_2533.webp);
 }
 .items2_mob{
-    background-image: url(/PAS_2569.jpg);
+    background-image: url(/PAS_2569.webp);
 }
 .items3_mob{
-    background-image: url(/PAS_2641.jpg);
+    background-image: url(/PAS_2641.webp);
 }
 .items4_mob{
-    background-image: url(/PAS_2646.jpg);
+    background-image: url(/PAS_2646.webp);
 }
 .items5_mob{
-    background-image: url(/PAS_2674.jpg);
+    background-image: url(/PAS_2674.webp);
 }
 .items6_mob{
-    background-image: url(/PAS_2716.jpg);
+    background-image: url(/PAS_2716.webp);
 }
 .items7_mob{
-    background-image: url(/PAS_2722.jpg);
+    background-image: url(/PAS_2722.webp);
 }
 .p1_mob{
     color: #F5F5DC;
@@ -101,7 +102,7 @@ body{
 .main-img_mob div{
     width: 85%;
     height: 100%;
-    background-image: url(/PAS_2533.jpg);
+    background-image: url(/PAS_2533.webp);
     border-radius: 5%;
     background-size: cover;
 }
