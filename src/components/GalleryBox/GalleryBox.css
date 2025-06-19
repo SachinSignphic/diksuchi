@@ -180,19 +180,19 @@
     margin-top: 3vh;
   }
 .content-box{
-    background: url('/PAS_2722.webp');
+    background: url('/home/PAS_2722_1_11zon.webp');
     background-size: cover;
     background-position: center;
     flex: 1;
 }
 .content-box2{
-    background: url('/PAS_2646.webp');
+    background: url('/home/PAS_2646_3_11zon.webp');
     background-size: cover;
     background-position: center;
     flex: 1;
 }
 .content-box1{
-    background: url('/PAS_2533.webp');
+    background: url('/home/PAS_2533_4_11zon.webp');
     background-size: cover;
     background-position: center;
     flex: 2;
@@ -233,7 +233,7 @@
 }
 .footer-box2{
     flex: 1;
-    background: url('/PAS_2674.webp');
+    background: url('/home/PAS_2674_2_11zon.webp');
     background-size: cover;
     background-position: center;
 }
