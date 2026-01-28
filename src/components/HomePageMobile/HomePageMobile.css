@@ -1,0 +1,87 @@
+.home-header-mob{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.home-logo-mob{
+  margin-top: 8vh;
+  object-fit: contain;
+  width: 70%;
+}
+.home-img-mob{
+  width: 100%;
+}
+.about-us-mob {
+  margin: auto;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+}
+.link-mob {
+  display: flex;
+  margin-top: 5vh;
+}
+
+.link-mob p {
+  font-size: 2rem;
+  font-family: Ela Sans;
+  font-weight: 100;
+  letter-spacing: 0.2rem;
+}
+.link-mob img {
+  object-fit: contain;
+}
+.title-mob {
+  font-family: Ela Sans;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  color: #666666;
+  font-size: 2.2rem;
+  line-height: 120%;
+  text-align: left;
+  margin-top: 3vh;
+}
+.para-mob{
+  flex: 1;
+  font-family: Ela Sans;
+  line-height: 120%;
+  text-align: justify;
+  font-size: 1.7rem;
+  word-spacing: 0.1rem;
+  opacity: 0.65;
+  margin-top: 5vh;
+}
+.since-mob{
+  flex: 1;
+  font-family: Ela Sans;
+  line-height: 120%;
+  font-size: 2.3rem;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  margin-top: auto;
+  text-align: right;
+  margin-top: 5vh;
+}
+.owner-mobile{
+  width: 100%;
+  margin-top: 3vh;
+  object-fit: contain;
+}
+.socials-mob{
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 1.5rem;
+}
+.socials-mob img{
+  object-fit: contain;
+  width: 3rem;
+}
+.our-works-cards-mob{
+  margin-top: 4vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10vh;
+}

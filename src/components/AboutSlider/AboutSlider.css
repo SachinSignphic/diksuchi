@@ -1,0 +1,39 @@
+.slider-section{
+  margin-top: 5vh;
+}
+.process-slider {
+  overflow-x: auto;
+  scrollbar-width: none;      
+  -ms-overflow-style: none; 
+  margin-top: 5vh; 
+}
+.process-slider::-webkit-scrollbar {
+  display: none;            
+}
+.slider-title{
+  text-align: left;
+  font-family: Ela Sans;
+  font-size: 3rem;
+  color: #666;
+  margin-left: 2rem;
+}
+.process-slider{
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.slider-items{
+  background: white;
+  border-radius: 1.4rem;
+}
+.slider-items p{
+  font-family: Ela Sans;
+  padding: 15px;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
+}
+.slider-arrow{
+  object-fit: contain;
+}

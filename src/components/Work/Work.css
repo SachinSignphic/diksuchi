@@ -1,0 +1,33 @@
+.work-top-left{
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+  margin-left: 2rem;
+  margin-top: 10vh;
+}
+.work-top-left h1{
+  font-family: Ela Sans;
+  font-size: 4rem;
+  color: #666;
+}
+.work-top-left img{
+  height: 100%;
+}
+.work-cards{
+  display: flex;
+  padding: 0 2%;
+  justify-content: space-between;
+  margin: 10vh 8vh 0 8vh
+}
+.work-category{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3%;
+  margin-top: 5vh;
+}
+.work-category div{
+  font-family: 'Ela Sans';
+  font-size: 2.3rem;
+  color: #555;
+  cursor: pointer;
+}

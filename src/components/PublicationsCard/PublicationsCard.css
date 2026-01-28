@@ -1,0 +1,35 @@
+.pub-card{
+  height: 50vh;
+  min-width: 30vh;
+  max-width: 35vh;
+}
+.pub-link{
+  display: flex;
+  align-items: center;
+}
+.pub-image{
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+.foot{
+  display: flex;
+  justify-content: space-between;
+}
+.foot p{
+  font-family: sans-serif;
+  margin-top: 1vh;
+  align-items: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  
+}
+.foot h4{
+  margin-top: 1vh;
+  align-items: center;
+  font-family: "Source Serif";
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+

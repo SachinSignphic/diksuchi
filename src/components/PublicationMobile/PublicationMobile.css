@@ -1,0 +1,7 @@
+.publication-cards-mob{
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  align-items: center;
+  margin-bottom: 15vh;
+}

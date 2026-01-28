@@ -1,0 +1,17 @@
+.our-card{
+  height: 30vh;
+  width: 45vh;
+}
+.our-card p{
+  font-family: "Source Serif";
+  margin-top: 1vh;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.our-card div{
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

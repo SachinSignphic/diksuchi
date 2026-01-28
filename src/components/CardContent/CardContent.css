@@ -1,0 +1,91 @@
+.card-head{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2%;
+  margin-top: 5vh;
+}
+.card-head p{
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  font-family: Ela Sans;
+}
+.card-mid{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vh;
+  align-items: start;
+  margin-top: 5vh;
+}
+.card-mid-left{
+  flex: 1.2;
+}
+.card-mid-left p{
+  font-family: Ela Sans;
+  font-size: 3.2rem;
+  margin-top: 3vh;
+  color: #555;
+}
+.card-mid-left img{
+  object-fit: contain;
+  width: 80%;
+  height: 80%;
+}
+.card-mid-right{
+  flex: 1;
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+}
+.legend-left, .legend-right{
+  display: flex;
+  flex-direction: column;
+}
+.legend-left p, .legend-right p{
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  font-family: Ela Sans;
+  text-align: left;
+  margin-bottom: 2vh;
+  color: #92806C;
+}
+.collage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: max-content;
+  gap: 0.5rem;
+  margin: 10vh auto;
+}
+.collage .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-1 {
+  grid-column: 2/span 5;
+  grid-row: span 2;
+}
+
+.img-2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.img-3 {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.img-4 {
+  grid-column: 2 / span 4;
+  grid-row: span 2;
+}
+
+.img-5 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.img-6 {
+  grid-column: span 4;
+  grid-row: span 2;
+}

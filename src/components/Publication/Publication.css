@@ -1,0 +1,6 @@
+.publication-cards{
+  display: flex;
+  padding: 0 2%;
+  justify-content: space-between;
+  margin: 10vh 8vh 0 8vh
+}
